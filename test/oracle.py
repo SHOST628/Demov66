@@ -11,6 +11,7 @@ def dict_fetchall(cursor):
         for row in cursor.fetchall()
     ]
 
+
 conn = cx_Oracle.connect(readconfig.db_url)
 cursor = conn.cursor()
 # cursor.execute('select * from xf_case')
@@ -26,17 +27,20 @@ cursor.execute("select * from xf_tcdata order by tcid,tsid")
 #
 # print(all)
 
-result = dict_fetchall(cursor)
-print(result[0]['OPVALUES'])
-cursor.execute("select runmode from xf_tsuite")
-print(cursor.fetchall())
-
-
+cursor.execute("select * from xf_tsuite")
+all = cursor.fetchall()
+print(all)
+a = 'sd'
+print(type(a))
+if type(a) == str:
+    print("true")
+str1 = all[0][2]
+tup = tuple(str1.split(','))
+str2 = str(tup)
+cursor.execute("select * from xf_tcdata where tcid in %s"%(str2))
+all = cursor.fetchall()
+print(all)
 cursor.close()
 conn.close()
 
-a = -1
-b = 2
 
-c = a or b
-print(c)

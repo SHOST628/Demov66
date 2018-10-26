@@ -10,8 +10,8 @@ class Oracle:
         self._conn = cx_Oracle.connect(db_url)
         self._cursor = self._conn.cursor()
 
-    def select(self,db_url,sql):
-        pass
+    def select(self,sql):
+        return self._cursor.execute(sql)
 
     def dict_fetchall(self,sql):
         """Return all rows from a cursor as a dict"""

@@ -38,54 +38,63 @@ class DemoTestCase(unittest.TestCase,BasePage):
 
         return func
 
-def _generate_testcases(keyword_list):
-    testcaseid_list = []
+def _generate_testcases(testcaseid_list):
+    if testcaseid_list == []:
+        return
+    oracle = Oracle(readconfig.db_url)
     loop_kwlist = []
 
-    # get all testcaseid from testcase table
-    for d in keyword_list:
-        tcid = d['TCID']
-        if tcid not in testcaseid_list:
-            testcaseid_list.append(tcid)
-
-    # need to be fixed?how
-    for l in testcaseid_list:
-        for d in keyword_list:
-            values = list(d.values())
-            if l in values:
-                loop_kwlist.append(d)
+    for tl in testcaseid_list:
+        tcid = tl['TCID']
+        loop_kwlist = oracle.dict_fetchall("select * from xf_tcdata where tcid='%s'"%tcid)
         func = DemoTestCase.group(loop_kwlist)
-        setattr(DemoTestCase, 'test_' + l, func)
+        setattr(DemoTestCase, 'test_' + tcid, func)
         loop_kwlist = []
 
-def _generate_testsuite(tcid):
-    """new a testsuite"""
-    tcid_list = tcid.split(',')
-    tests = []
-    for tl in tcid_list:
-        tl = "test_" + tl
-        tests.append(tl)
-    suite = unittest.TestSuite(map(DemoTestCase,tests))
-    return suite
+    oracle.close()
 
-def _group_testsuite(tsuite_list):
-    """group all testsuite"""
-    create_suite = None
-    suite_list = []
-    for tl in tsuite_list:
+def _generate_mix_testcase(suite_list):
+    if suite_list == []:
+        return
+    loop_kwlist = []
+    oracle = Oracle(readconfig.db_url)
+
+    for sl in suite_list:
+        tmid = sl['TMID']
+        tcid_list = sl['TCID'].split(',')
+        tcids = str(tuple(tcid_list))
+        loop_kwlist = oracle.dict_fetchall('select * from xf_tcdata where tcid in %s'%tcids)
+        func = DemoTestCase.group(loop_kwlist)
+        setattr(DemoTestCase, 'test_' + tmid, func)
+        loop_kwlist = []
+    oracle.close()
+
+def _generate_testsuite(testcaseid_list,tmid_list):
+    if testcaseid_list == [] and tmid_list == []:
+        return
+    caseid_list = []
+    for tl in testcaseid_list:
         tcid = tl['TCID']
-        create_suite = _generate_testsuite(tcid)
-        suite_list.append(create_suite)
-    suite = unittest.TestSuite(suite_list)
+        tcid = 'test_' + tcid
+        caseid_list.append(tcid)
+    for tl in tmid_list:
+        tmid = tl['TMID']
+        tmid = 'test_' + tmid
+        caseid_list.append(tmid)
+    suite = unittest.TestSuite(map(DemoTestCase, caseid_list))
     return suite
-
 
 oracle = Oracle(readconfig.db_url)
-keyword_list = oracle.dict_fetchall("select * from xf_tcdata order by tcid,tsid")
-_generate_testcases(keyword_list)
 
+testcaseid_list = oracle.dict_fetchall("select distinct tcid from xf_tcdata order by tcid")
 suite_list = oracle.dict_fetchall("select * from xf_tsuite order by tmid")
-group_testsuite = _group_testsuite(suite_list)
+tmid_list = oracle.dict_fetchall('select tmid from xf_tsuite')
+
+_generate_testcases(testcaseid_list)
+# _generate_mix_testcase(suite_list)
+group_testsuite = _generate_testsuite(testcaseid_list,tmid_list)
+if type(group_testsuite) == str:
+     print('please add data to xf_tcdata or xf_tsuite')
 
 oracle.close()
 
