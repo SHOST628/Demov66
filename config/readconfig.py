@@ -12,6 +12,8 @@ url = config.get('URL','url')
 report_path = config.get('Report','Path')
 db_url = config.get('DataSource','DB')
 browser_name = config.get("BrowserType","BrowserName")
+login_user = config.get("Login","User")
+login_password = config.get("Login","Psw")
 
 
 

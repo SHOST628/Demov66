@@ -5,18 +5,18 @@ from engine.parsekeyword import ParseKeyword
 from common.oracle import Oracle
 from driver.driver import browser
 from pages.base.basepage import BasePage
+from pages.loginpage import LoginPage
 import os
 import time
 
 class DemoTestCase(unittest.TestCase,BasePage):
 
-    @classmethod
-    def setUpClass(cls):
-        cls.driver = browser(readconfig.browser_name)
+    def setUp(self):
+        self.driver = browser(readconfig.browser_name)
+        LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
+    def tearDown(self):
+        self.driver.quit()
 
     def _use_keyword(self,module_name,func_name,opvalues=None):
         func = ParseKeyword(self.driver).parse(module_name, func_name)
