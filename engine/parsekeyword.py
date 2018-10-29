@@ -27,6 +27,6 @@ class ParseKeyword:
                     print("在该类:%s找不到方法:%s" % (module_name, func_name))
 
         except Exception as e:
-            print(e)
+            raise e
 
 

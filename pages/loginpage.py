@@ -33,7 +33,6 @@ class LoginPage(BasePage):
         self.input_password(psw)
         self.choose_language("English ( en )")
         self.click_submit()
-        self.if_login_success()
 
     def _get_title(self):
         return self.find_element(self._title_loc).text
