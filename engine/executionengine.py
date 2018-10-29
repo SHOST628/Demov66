@@ -18,12 +18,12 @@ class DemoTestCase(unittest.TestCase,BasePage):
     def tearDown(self):
         self.driver.quit()
 
-    def _use_keyword(self,module_name,func_name,opvalues=None):
-        func = ParseKeyword(self.driver).parse(module_name, func_name)
+    def _use_keyword(self,func_name,opvalues=None):
+        func = ParseKeyword(self.driver).parse(func_name)
         if opvalues == "" or opvalues == None:
             func()
         else:
-            opvalist = opvalues.split(',')
+            opvalist = opvalues.split('@@')
             func(*opvalist)
 
     @staticmethod
@@ -32,7 +32,7 @@ class DemoTestCase(unittest.TestCase,BasePage):
             try:
                 for i in range(len(keyword_list)):
                     key_info = keyword_list[i]
-                    self._use_keyword(key_info["PMODULE"], key_info["ACTION"], key_info["OPVALUES"])
+                    self._use_keyword(key_info["XF_ACTION"], key_info["XF_OPVALUES"])
             except Exception as e:
                 raise e
 
@@ -45,10 +45,10 @@ def _generate_testcases(testcaseid_list):
     loop_kwlist = []
 
     for tl in testcaseid_list:
-        tcid = tl['TCID']
-        loop_kwlist = oracle.dict_fetchall("select * from xf_tcdata where tcid='%s'"%tcid)
+        caseid = tl['XF_CASEID']
+        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid='%s'"%caseid)
         func = DemoTestCase.group(loop_kwlist)
-        setattr(DemoTestCase, 'test_' + tcid, func)
+        setattr(DemoTestCase, 'test_' + caseid, func)
         loop_kwlist = []
 
     oracle.close()
@@ -60,46 +60,46 @@ def _generate_mix_testcase(suite_list):
     oracle = Oracle(readconfig.db_url)
 
     for sl in suite_list:
-        tmid = sl['TMID']
-        tcid_list = sl['TCID'].split(',')
-        tcids = str(tuple(tcid_list))
-        loop_kwlist = oracle.dict_fetchall('select * from xf_tcdata where tcid in %s'%tcids)
+        mixid = sl['XF_MIXID']
+        caseid_list = sl['XF_CASEID'].split(',')
+        caseids = str(tuple(caseid_list))
+        loop_kwlist = oracle.dict_fetchall('select * from xf_testcase where xf_caseid in %s'%caseids)
         func = DemoTestCase.group(loop_kwlist)
-        setattr(DemoTestCase, 'test_' + tmid, func)
+        setattr(DemoTestCase, 'test_' + mixid, func)
         loop_kwlist = []
     oracle.close()
 
-def _generate_testsuite(testcaseid_list,tmid_list):
-    if testcaseid_list == [] and tmid_list == []:
+def _generate_testsuite(testcaseid_list,mixid_list):
+    if testcaseid_list == [] and mixid_list == []:
         return
     caseid_list = []
     for tl in testcaseid_list:
-        tcid = tl['TCID']
-        tcid = 'test_' + tcid
-        caseid_list.append(tcid)
-    for tl in tmid_list:
-        tmid = tl['TMID']
-        tmid = 'test_' + tmid
-        caseid_list.append(tmid)
+        caseid = tl['XF_CASEID']
+        caseid = 'test_' + caseid
+        caseid_list.append(caseid)
+    for tl in mixid_list:
+        mixid = tl['XF_MIXID']
+        mixid = 'test_' + mixid
+        caseid_list.append(mixid)
     suite = unittest.TestSuite(map(DemoTestCase, caseid_list))
     return suite
 
 oracle = Oracle(readconfig.db_url)
 
-testcaseid_list = oracle.dict_fetchall("select distinct tcid from xf_tcdata order by tcid")
-suite_list = oracle.dict_fetchall("select * from xf_tsuite order by tmid")
-tmid_list = oracle.dict_fetchall('select tmid from xf_tsuite')
+testcaseid_list = oracle.dict_fetchall("select distinct xf_caseid from xf_testcase order by xf_caseid")
+mixcase_list = oracle.dict_fetchall("select * from xf_mixcase order by xf_mixid")
+mixid_list = oracle.dict_fetchall('select xf_mixid from xf_mixcase')
 
 _generate_testcases(testcaseid_list)
-# _generate_mix_testcase(suite_list)
-group_testsuite = _generate_testsuite(testcaseid_list,tmid_list)
-if type(group_testsuite) == str:
-     print('please add data to xf_tcdata or xf_tsuite')
+# _generate_mix_testcase(mixcase_list)
+testsuite = _generate_testsuite(testcaseid_list, mixid_list)
+if type(testsuite) == str:
+     print('please add data to xf_testcase or xf_mixcase')
 
 oracle.close()
 
 if __name__ == "__main__":
-    unittest.TextTestRunner().run(group_testsuite)
+    unittest.TextTestRunner().run(testsuite)
 #     result = unittest.main(verbosity=2)
 
 

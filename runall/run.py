@@ -1,5 +1,5 @@
 from common.HTMLTestRunner import HTMLTestRunner
-from engine.executionengine import group_testsuite
+from engine.executionengine import testsuite
 import time
 
 if __name__ == "__main__":
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     report_path = '../report/htmlreport/%s_Report.html'%(curtime)
     with open(report_path,'wb') as report:
         runner = HTMLTestRunner(stream=report,title=report_title,description="")
-        runner.run(group_testsuite)
+        runner.run(testsuite)
 
 
 
