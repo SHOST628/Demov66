@@ -30,9 +30,8 @@ class DemoTestCase(unittest.TestCase,BasePage):
     def group(keyword_list):
         def func(self):
             try:
-                for i in range(len(keyword_list)):
-                    key_info = keyword_list[i]
-                    self._use_keyword(key_info["XF_ACTION"], key_info["XF_OPVALUES"])
+                for key_dict in keyword_list:
+                    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
             except Exception as e:
                 raise e
 
@@ -100,7 +99,7 @@ oracle.close()
 
 if __name__ == "__main__":
     unittest.TextTestRunner().run(testsuite)
-#     result = unittest.main(verbosity=2)
+    result = unittest.main(verbosity=2)
 
 
 
