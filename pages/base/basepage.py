@@ -24,20 +24,20 @@ class BasePage:
         self._click(loc)
 
     def _click(self,loc):
-        self.find_element((By.XPATH,loc)).click()
+        self.find_element(loc).click()
 
     def double_click(self,loc):
         self._double_click(loc)
 
     def _double_click(self,loc):
-        on_element = self.find_element((By.XPATH,loc))
+        on_element = self.find_element(loc)
         ActionChains(self._driver).double_click(on_element).perform()
 
     def input_text(self,loc,text):
         self._input_text(loc,text)
 
     def _input_text(self,loc,text):
-        element = self.find_element((By.XPATH,loc))
+        element = self.find_element(loc)
         element.clear()
         element.send_keys(text)
 
@@ -66,7 +66,7 @@ class BasePage:
         self._enter(loc)
 
     def _enter(self,loc):
-        self.find_element((By.XPATH,loc)).send_keys(Keys.ENTER)
+        self.find_element(loc).send_keys(Keys.ENTER)
 
     def select(self,loc,contain_text):
         self._select(loc,contain_text)
@@ -96,8 +96,8 @@ class BasePage:
         :param loc1:
         :param loc2:
         """
-        self.click((By.XPATH,loc1))
-        options = self.find_elements((By.XPATH,loc2))
+        self.click(loc1)
+        options = self.find_elements(loc2)
         del options[0]
         option = random.choice(options)
         option.click()
