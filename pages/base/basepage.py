@@ -80,7 +80,7 @@ class BasePage:
         :param contain_text:
         :return:
         """
-        self.click((By.XPATH,loc))
+        self.click((loc))
         option = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
         option.click()
 

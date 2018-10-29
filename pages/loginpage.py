@@ -31,6 +31,7 @@ class LoginPage(BasePage):
         self.open_backend()
         self.input_user(user)
         self.input_password(psw)
+        self.choose_language("简体中文 ( zh_CN )")
         self.click_submit()
 
     def _get_title(self):
