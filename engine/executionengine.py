@@ -23,7 +23,7 @@ class DemoTestCase(unittest.TestCase,BasePage):
         if opvalues == "" or opvalues == None:
             func()
         else:
-            opvalist = opvalues.split('@@')
+            opvalist = opvalues.split('##')
             func(*opvalist)
 
     @staticmethod
