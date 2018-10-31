@@ -45,19 +45,21 @@ def _generate_testcases(testcaseid_list):
 
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
-        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid='%s'"%caseid)
+        #TODO notice  the order of step execution
+        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid)
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + caseid, func)
         loop_kwlist = []
 
     oracle.close()
 
+#TODO need to fix
 def _generate_mix_testcase(suite_list):
     if suite_list == []:
         return
     loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
-
+    #TODO notice the order of testcase execution
     for sl in suite_list:
         mixid = sl['XF_MIXID']
         caseid_list = sl['XF_CASEID'].split(',')
@@ -85,8 +87,8 @@ def _generate_testsuite(testcaseid_list,mixid_list):
 
 oracle = Oracle(readconfig.db_url)
 
-testcaseid_list = oracle.dict_fetchall("select distinct xf_caseid from xf_testcase order by xf_caseid")
-mixcase_list = oracle.dict_fetchall("select * from xf_mixcase order by xf_mixid")
+testcaseid_list = oracle.dict_fetchall("select distinct xf_caseid from xf_testcase")
+mixcase_list = oracle.dict_fetchall("select * from xf_mixcase")
 mixid_list = oracle.dict_fetchall('select xf_mixid from xf_mixcase')
 
 _generate_testcases(testcaseid_list)

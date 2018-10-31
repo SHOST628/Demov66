@@ -27,20 +27,29 @@ cursor.execute("select * from xf_tcdata order by tcid,tsid")
 #
 # print(all)
 
-cursor.execute("select * from xf_tsuite")
-all = cursor.fetchall()
-print(all)
-a = 'sd'
-print(type(a))
-if type(a) == str:
-    print("true")
-str1 = all[0][2]
-tup = tuple(str1.split(','))
-str2 = str(tup)
-cursor.execute("select * from xf_tcdata where tcid in %s"%(str2))
-all = cursor.fetchall()
-print(all)
+# cursor.execute("select * from xf_tsuite")
+# all = cursor.fetchall()
+# print(all)
+# a = 'sd'
+# print(type(a))
+# if type(a) == str:
+#     print("true")
+# str1 = all[0][2]
+# tup = tuple(str1.split(','))
+# str2 = str(tup)
+# cursor.execute("select * from xf_tcdata where tcid in %s"%(str2))
+# all = cursor.fetchall()
+# print(all)
 cursor.close()
 conn.close()
+
+list1 = ["//div[@id='XF_SUPPCODE']/div", '0', '科传 (TT01)']
+a,b,c = list1
+print(b,'\n','\n',a,'\n',c)
+from unittest import TestCase
+str1 = '新增成功'
+str2 = '单号新增成功'
+TestCase.assertIn(str1,str2,'')
+
 
 

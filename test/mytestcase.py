@@ -54,6 +54,7 @@ class MyTestCase(unittest.TestCase):
             driver.find_element_by_xpath(".//*[@id='xf_staffcode']/input").clear()
             # driver.switch_to.active_element.send_keys("666")
             WebDriverWait(driver,5).until(EC.visibility_of_element_located((By.XPATH,".//*[@id='xf_staffcode']/input"))).send_keys("666")
+
             # driver.find_element_by_xpath(".//*[@id='xf_staffcode']/input").send_keys("666")
             driver.switch_to.active_element.send_keys(Keys.ENTER)
             # driver.find_element_by_xpath(".//*[@id='xf_password']").clear()

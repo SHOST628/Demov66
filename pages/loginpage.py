@@ -7,7 +7,7 @@ class LoginPage(BasePage):
     _username_loc = "//*[@id='xf_staffcode']/input"
     _password_loc = "//*[@id='xf_password']"
     _submit_loc = "//*[@id='okbtn']/span/span"
-    _language_button_loc ="//div[@id='languagetype']/div"
+    _language_button_loc ="//div[@id='languagetype']"
     _title_loc = "//div[@class='v-slot v-slot-v-appheader']/div/div/div[3]/div"
     # _prompt_loc = "//div[@class='v-Notification error v-Notification-error']"
 
@@ -31,7 +31,7 @@ class LoginPage(BasePage):
         self.open_backend()
         self.input_user(user)
         self.input_password(psw)
-        self.choose_language("简体中文 ( zh_CN )")
+        # self.choose_language("简体中文 ( zh_CN )")
         self.click_submit()
 
     def _get_title(self):

@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 import random
 import time
 import os
-import unittest
+from unittest import TestCase
 
 
 class BasePage:
@@ -80,10 +80,22 @@ class BasePage:
         :param contain_text:
         :return:
         """
-        self.click((loc))
-        option = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
-        option.click()
+        # self.click((loc))
+        # target = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
+        # auto scroll into the target
+        # self._driver.execute_script("arguments[0].scrollIntoView(true);",target)
+        # target.click()
 
+        # action = ActionChains(self._driver)
+        # action.move_to_element(target)
+        # action.click().perform()
+
+        self.input_text(loc,contain_text)
+        target = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
+        target.click()
+
+        # self.input_text(loc,contain_text)
+        # self.enter(loc)
 
     def rselect(self,loc1,loc2):
         self._rselect(loc1,loc2)
@@ -97,9 +109,9 @@ class BasePage:
         :param loc2:
         """
         self.click(loc1)
-        options = self.find_elements(loc2)
-        del options[0]
-        option = random.choice(options)
+        targets = self.find_elements(loc2)
+        del targets[0]
+        option = random.choice(targets)
         option.click()
 
     def save_screenshot(self):
@@ -115,14 +127,20 @@ class BasePage:
         self._driver.get_screenshot_as_file(image_path)
         print('lustrat' + image_dir + '/' + image_name + 'luend')
 
-    # @_add
-    # def assertIn(self,member,container,msg=None):
-    #     assert member in container,msg
+    #get element text
+    def _get_text(self,loc):
+        text = self.find_element(loc).text
+        return text
 
+    def assertIn(self,member, loc, msg=None):
+        text = self._get_text(loc)
+        assert member in text,'%s'%msg
 
-# add  checkbox,radiobox
+    # add  checkbox,radiobox
 
-    # capture
+    # add variate
+    def storage(self,var,data):
+        pass
 
     def close(self):
         self._driver.close()
