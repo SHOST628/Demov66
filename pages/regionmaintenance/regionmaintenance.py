@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 
 
-class RegionMaintenance(BasePage):
+class RegionMaintenance(Action):
     """
     区域维护主页面
     """

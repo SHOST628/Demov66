@@ -1,4 +1,4 @@
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 
 def add(func):  # 增加打印日志的方法
     def wrapper(self, first, second, msg=None):
@@ -6,7 +6,7 @@ def add(func):  # 增加打印日志的方法
             func(self, first, second, msg=None)
 
         except AssertionError:
-            BasePage().save_screenshot()
+            Action().save_screenshot()
             raise AssertionError(msg)  # 抛出AssertionError
 
     return wrapper

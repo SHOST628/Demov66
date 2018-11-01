@@ -6,10 +6,12 @@ from selenium.webdriver.common.by import By
 import random
 import time
 import os
+import re
+from common.storage import Storage
 from unittest import TestCase
 
 
-class BasePage:
+class Action:
     def __init__(self,driver):
         self._driver = driver
 
@@ -51,14 +53,15 @@ class BasePage:
         element = self._find_element(loc)
         return element
 
-    def _find_element(self,loc,timeout=10,poll_frequency=0.5):
+    def _find_element(self,loc,timeout=15,poll_frequency=0.5):
         return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+        # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
 
     def find_elements(self,loc):
         elements = self._find_elements(loc)
         return elements
 
-    def _find_elements(self,loc,timeout=10,poll_frequency=0.5):
+    def _find_elements(self,loc,timeout=15,poll_frequency=0.5):
         # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
         return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
 
@@ -139,9 +142,29 @@ class BasePage:
 
     # add  checkbox,radiobox
 
-    # add variate
-    def storage(self,var,data):
-        pass
+    # store variate
+    def storage_docno(self,var):
+        loc = "//div[@class='popupContent']/div/p"
+        contain_text = self.find_element(loc).text
+        # get documnent no
+        doc_no =''.join(re.findall("[A-Za-z0-9]",contain_text))
+        # variate name
+        setattr(Storage,var,doc_no)
+
+    def locate_record(self,var):
+        # self._storage_docno(var)
+        docno = getattr(Storage,var)
+        loc = "//div[text()='%s']"%docno
+        self.click(loc)
+
+    def accept_prompt(self):
+        # this is all prompt location in v66
+        loc = "//div[@class='popupContent']/div/p"
+        # loc = ""
+        self.click(loc)
+
+    # def sleep(self,seconds):
+    #     time.sleep(seconds)
 
     def close(self):
         self._driver.close()

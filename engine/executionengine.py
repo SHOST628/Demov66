@@ -4,12 +4,12 @@ from config import readconfig
 from engine.parsekeyword import ParseKeyword
 from common.oracle import Oracle
 from driver.driver import browser
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 from pages.loginpage import LoginPage
 import os
 import time
 
-class DemoTestCase(unittest.TestCase,BasePage):
+class DemoTestCase(unittest.TestCase, Action):
 
     def setUp(self):
         self.driver = browser(readconfig.browser_name)

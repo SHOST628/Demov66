@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from config import readconfig
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 import unittest
 
-class LoginPage(BasePage):
+class LoginPage(Action):
     _username_loc = "//*[@id='xf_staffcode']/input"
     _password_loc = "//*[@id='xf_password']"
     _submit_loc = "//*[@id='okbtn']/span/span"

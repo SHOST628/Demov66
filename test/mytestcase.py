@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from config import readconfig
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 
 
 class MyTestCase(unittest.TestCase):
@@ -49,7 +49,7 @@ class MyTestCase(unittest.TestCase):
     def test_login(self):
         """testcase login"""
         try:
-            obj = BasePage(driver)
+            obj = Action(driver)
             print(driver.get_cookies())
             driver.find_element_by_xpath(".//*[@id='xf_staffcode']/input").clear()
             # driver.switch_to.active_element.send_keys("666")

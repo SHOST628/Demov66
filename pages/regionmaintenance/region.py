@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
-from pages.base.basepage import BasePage
+from pages.base.keyword import Action
 from pages.navigation import systemmenu
 
-class Region(BasePage):
+class Region(Action):
     """
     区域维护明细页面
     """
