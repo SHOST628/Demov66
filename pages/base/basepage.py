@@ -91,8 +91,9 @@ class BasePage:
         # action.click().perform()
 
         self.input_text(loc,contain_text)
-        target = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
-        target.click()
+        # target = WebDriverWait(self._driver, 10, 0.5).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
+        # target.click()
+        self.enter(loc)
 
         # self.input_text(loc,contain_text)
         # self.enter(loc)
