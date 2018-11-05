@@ -14,6 +14,7 @@ class DemoTestCase(unittest.TestCase, Action):
 
     def setUp(self):
         self.driver = browser(readconfig.browser_name)
+        self.driver.maximize_window()
         LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
     def tearDown(self):
@@ -25,6 +26,7 @@ class DemoTestCase(unittest.TestCase, Action):
             func()
         else:
             opvalist = opvalues.split('##')
+            # Todo transfer var to opvlues by a var name
             for i in range(len(opvalist)):
                 # transfer a variate marked $$ to method
                 if '$$' in opvalist[i]:

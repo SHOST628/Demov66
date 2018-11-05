@@ -36,6 +36,12 @@ class Action:
         on_element = self.find_element(loc)
         ActionChains(self._driver).double_click(on_element).perform()
 
+    def input_text_by_index(self,loc,index,text):
+        elements = self.find_elements(loc)
+        element = elements[index]
+        element.send_keys(text)
+        element.send_keys(Keys.ENTER)
+
     def input_text(self,loc,text):
         self._input_text(loc,text)
 
@@ -79,6 +85,9 @@ class Action:
 
     def _enter(self,loc):
         self.find_element(loc).send_keys(Keys.ENTER)
+
+    def tab(self,loc):
+        self.find_element(loc).send_keys(Keys.TAB)
 
     def select(self,loc,contain_text):
         self._select(loc,contain_text)
@@ -168,7 +177,7 @@ class Action:
 
     def click_by_index(self,loc,index):
         """
-        you can choose this keyword to locate element when a page contains many same properties without an only id in a page
+        you can choose this keyword to locate element when a page without an only id contains many same properties in a page
         :param loc:
         :param index: choose a correct index starting with 0
         :return:
