@@ -8,8 +8,9 @@ import time
 import os
 import re
 from common.storage import Storage
+from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import NoSuchElementException
 from unittest import TestCase
-
 
 class Action:
     def __init__(self,driver):
@@ -54,16 +55,24 @@ class Action:
         return element
 
     def _find_element(self,loc,timeout=15,poll_frequency=0.5):
-        return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
-        # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
+        try:
+            return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+            # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
+        except WebDriverException as e:
+            raise e
 
     def find_elements(self,loc):
         elements = self._find_elements(loc)
         return elements
 
     def _find_elements(self,loc,timeout=15,poll_frequency=0.5):
-        # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
-        return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+        try:
+            # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
+            return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+        except NoSuchElementException as e:
+            raise e
+        except WebDriverException as e:
+            raise e
 
     def enter(self,loc):
         self._enter(loc)
@@ -156,6 +165,17 @@ class Action:
         docno = getattr(Storage,var)
         loc = "//div[text()='%s']"%docno
         self.click(loc)
+
+    def click_by_index(self,loc,index):
+        """
+        you can choose this keyword to locate element when a page contains many same properties without an only id in a page
+        :param loc:
+        :param index: choose a correct index starting with 0
+        :return:
+        """
+        i = int(index)
+        elements = self.find_elements(loc)
+        elements[i].click()
 
     def accept_prompt(self):
         # this is all prompt location in v66

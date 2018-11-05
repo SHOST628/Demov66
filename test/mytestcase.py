@@ -54,7 +54,6 @@ class MyTestCase(unittest.TestCase):
             driver.find_element_by_xpath(".//*[@id='xf_staffcode']/input").clear()
             # driver.switch_to.active_element.send_keys("666")
             WebDriverWait(driver,5).until(EC.visibility_of_element_located((By.XPATH,".//*[@id='xf_staffcode']/input"))).send_keys("666")
-
             # driver.find_element_by_xpath(".//*[@id='xf_staffcode']/input").send_keys("666")
             driver.switch_to.active_element.send_keys(Keys.ENTER)
             # driver.find_element_by_xpath(".//*[@id='xf_password']").clear()
@@ -65,9 +64,17 @@ class MyTestCase(unittest.TestCase):
             # driver.find_element_by_xpath("//span[contains(text(),'简体中文 ( zh_CN )')]").click()
             driver.find_element_by_xpath(".//*[@id='okbtn']/span/span").click()
             # obj.click("//span[contains(text(),'系统菜单')]")
-            obj.click("//span[contains(text(),'系统设定')]")
-            obj.click("//span[contains(text(),'后台系统设定')]")
-            obj.click("//span[contains(text(),'区域维护')]")
+            # obj.click("//span[contains(text(),'系统设定')]")
+            # obj.click("//span[contains(text(),'后台系统设定')]")
+            # obj.click("//span[contains(text(),'区域维护')]")
+            obj.click("//*[text()='仓储管理']")
+            obj.click("//*[text()='采购']")
+            obj.click("//*[text()='采购单维护']")
+            obj.click("//*[text()='新增']")
+            obj.click_by_index("//span[@class='v-button-wrap']",0)
+
+
+
         #     sleep(3)
         #     print(driver.get_cookies())
         #     sleep(2)

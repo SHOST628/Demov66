@@ -6,6 +6,7 @@ from common.oracle import Oracle
 from driver.driver import browser
 from pages.base.keyword import Action
 from pages.loginpage import LoginPage
+from common.storage import Storage
 import os
 import time
 
@@ -24,6 +25,17 @@ class DemoTestCase(unittest.TestCase, Action):
             func()
         else:
             opvalist = opvalues.split('##')
+            for i in range(len(opvalist)):
+                # transfer a variate marked $$ to method
+                if '$$' in opvalist[i]:
+                    var_name = opvalist[i]
+                    var_name = var_name[2:]
+                    try:
+                        if hasattr(Storage,var_name):
+                            var_value = getattr(Storage,var_name,"找不到此变量%s"%var_name)
+                            opvalist[i] = var_value
+                    except Exception as e:
+                        raise e
             func(*opvalist)
 
     @staticmethod
