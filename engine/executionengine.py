@@ -7,6 +7,7 @@ from driver.driver import browser
 from pages.base.keyword import Action
 from pages.loginpage import LoginPage
 from common.storage import Storage
+import re
 import os
 import time
 
@@ -25,19 +26,28 @@ class DemoTestCase(unittest.TestCase, Action):
         if opvalues == "" or opvalues == None:
             func()
         else:
+            # TODO parse a variate from user defining
+            var_list = re.findall("\$(.+?)\$",opvalues)
+            for var in var_list:
+                try:
+                    if hasattr(Storage,var):
+                        var_value = getattr(Storage,var,"找不到此变量%s"%var)
+                        opvalues = re.sub("\$(.+?)\$",var_value,opvalues,count=1)
+                except Exception as e:
+                    raise e
             opvalist = opvalues.split('##')
             # Todo transfer var to opvlues by a var name
-            for i in range(len(opvalist)):
-                # transfer a variate marked $$ to method
-                if '$$' in opvalist[i]:
-                    var_name = opvalist[i]
-                    var_name = var_name[2:]
-                    try:
-                        if hasattr(Storage,var_name):
-                            var_value = getattr(Storage,var_name,"找不到此变量%s"%var_name)
-                            opvalist[i] = var_value
-                    except Exception as e:
-                        raise e
+            # for i in range(len(opvalist)):
+            #     # transfer a variate marked $$ to method
+            #     if '$$' in opvalist[i]:
+            #         var_name = opvalist[i]
+            #         var_name = var_name[2:]
+            #         try:
+            #             if hasattr(Storage,var_name):
+            #                 var_value = getattr(Storage,var_name,"找不到此变量%s"%var_name)
+            #                 opvalist[i] = var_value
+            #         except Exception as e:
+            #             raise e
             func(*opvalist)
 
     @staticmethod
@@ -77,8 +87,10 @@ def _generate_mix_testcase(suite_list):
     for sl in suite_list:
         mixid = sl['XF_MIXID']
         caseid_list = sl['XF_CASEID'].split(',')
+        caseid_str = ','.join(caseid_list)
         caseids = str(tuple(caseid_list))
-        loop_kwlist = oracle.dict_fetchall('select * from xf_testcase where xf_caseid in %s'%caseids)
+        #TODO order by caseid,tsid
+        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid in %s order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str))
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + mixid, func)
         loop_kwlist = []

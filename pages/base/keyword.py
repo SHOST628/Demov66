@@ -29,6 +29,17 @@ class Action:
     def _click(self,loc):
         self.find_element(loc).click()
 
+    def click_by_index(self,loc,index):
+        """
+        you can choose this keyword to locate element when a page without an only id contains many same properties in a page
+        :param loc:
+        :param index: choose a correct index starting with 0
+        :return:
+        """
+        i = int(index)
+        elements = self.find_elements(loc)
+        elements[i].click()
+
     def double_click(self,loc):
         self._double_click(loc)
 
@@ -168,32 +179,19 @@ class Action:
         doc_no =''.join(re.findall("[A-Za-z0-9]",contain_text))
         # variate name
         setattr(Storage,var,doc_no)
+        self.accept_prompt()
 
-    def locate_record(self,var):
-        # self._storage_docno(var)
-        docno = getattr(Storage,var)
-        loc = "//div[text()='%s']"%docno
-        self.click(loc)
-
-    def click_by_index(self,loc,index):
-        """
-        you can choose this keyword to locate element when a page without an only id contains many same properties in a page
-        :param loc:
-        :param index: choose a correct index starting with 0
-        :return:
-        """
-        i = int(index)
-        elements = self.find_elements(loc)
-        elements[i].click()
+    # def locate_record(self,var):
+    #     # self._storage_docno(var)
+    #     docno = getattr(Storage,var)
+    #     loc = "//div[text()='%s']"%docno
+    #     self.click(loc)
 
     def accept_prompt(self):
         # this is all prompt location in v66
         loc = "//div[@class='popupContent']/div/p"
         # loc = ""
         self.click(loc)
-
-    # def sleep(self,seconds):
-    #     time.sleep(seconds)
 
     def close(self):
         self._driver.close()
