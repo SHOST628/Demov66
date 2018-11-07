@@ -78,13 +78,13 @@ def _generate_testcases(testcaseid_list):
     oracle.close()
 
 #TODO need to fix
-def _generate_mix_testcase(suite_list):
-    if suite_list == []:
+def _generate_mix_testcase(mixcase_list):
+    if mixcase_list == []:
         return None
     loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
     #  notice the order of testcase execution
-    for sl in suite_list:
+    for sl in mixcase_list:
         mixid = sl['XF_MIXID']
         caseid_list = sl['XF_CASEID'].split(',')
         caseid_str = ','.join(caseid_list)
