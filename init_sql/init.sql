@@ -67,3 +67,23 @@ tablespace DATA01
     minextents 1
     maxextents unlimited
   );
+
+--指定要执行的用例
+-- Create table
+create table XF_CASEDEBUG
+(
+  xf_caseid       VARCHAR2(20) not null,
+  xf_mixid VARCHAR2(20),
+  xf_excuteuser     VARCHAR2(20)
+)
+tablespace DATA01
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

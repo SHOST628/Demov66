@@ -3,10 +3,9 @@ import cx_Oracle
 
 class Oracle:
     def __init__(self,db_url):
-        """db_url: the path of connection
+        """db_url: connection path format
             db_url  eg: PROMOTION/PROMOTION@172.31.6.234:1521/TESTDB
         """
-
         self._conn = cx_Oracle.connect(db_url)
         self._cursor = self._conn.cursor()
 

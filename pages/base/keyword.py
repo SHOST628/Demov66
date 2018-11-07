@@ -49,7 +49,9 @@ class Action:
 
     def input_text_by_index(self,loc,index,text):
         elements = self.find_elements(loc)
+        index = int(index)
         element = elements[index]
+        element.clear()
         element.send_keys(text)
         element.send_keys(Keys.ENTER)
 
