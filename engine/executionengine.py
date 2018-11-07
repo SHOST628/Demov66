@@ -26,7 +26,7 @@ class DemoTestCase(unittest.TestCase, Action):
         if opvalues == "" or opvalues == None:
             func()
         else:
-            # TODO parse a variate from user defining
+            #  parse a variate from user defining
             var_list = re.findall("\$(.+?)\$",opvalues)
             for var in var_list:
                 try:
@@ -36,7 +36,7 @@ class DemoTestCase(unittest.TestCase, Action):
                 except Exception as e:
                     raise e
             opvalist = opvalues.split('##')
-            # Todo transfer var to opvlues by a var name
+            #  transfer var to opvlues by a var name
             # for i in range(len(opvalist)):
             #     # transfer a variate marked $$ to method
             #     if '$$' in opvalist[i]:
@@ -69,7 +69,7 @@ def _generate_testcases(testcaseid_list):
 
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
-        #TODO notice  the order of step execution
+        #  notice  the order of step execution
         loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid)
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + caseid, func)
@@ -83,13 +83,13 @@ def _generate_mix_testcase(suite_list):
         return
     loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
-    #TODO notice the order of testcase execution
+    #  notice the order of testcase execution
     for sl in suite_list:
         mixid = sl['XF_MIXID']
         caseid_list = sl['XF_CASEID'].split(',')
         caseid_str = ','.join(caseid_list)
         caseids = str(tuple(caseid_list))
-        #TODO order by caseid,tsid
+        #order by caseid,tsid
         loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid in %s order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str))
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + mixid, func)
@@ -98,7 +98,7 @@ def _generate_mix_testcase(suite_list):
 
 def _generate_testsuite(testcaseid_list,mixid_list):
     if testcaseid_list == [] and mixid_list == []:
-        return
+        return None
     caseid_list = []
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
@@ -120,7 +120,7 @@ mixid_list = oracle.dict_fetchall('select xf_mixid from xf_mixcase')
 _generate_testcases(testcaseid_list)
 # _generate_mix_testcase(mixcase_list)
 testsuite = _generate_testsuite(testcaseid_list, mixid_list)
-if type(testsuite) == str:
+if type(testsuite) == None:
      print('please add data to xf_testcase or xf_mixcase')
 
 oracle.close()
