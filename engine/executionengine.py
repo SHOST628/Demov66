@@ -80,7 +80,7 @@ def _generate_testcases(testcaseid_list):
 #TODO need to fix
 def _generate_mix_testcase(suite_list):
     if suite_list == []:
-        return
+        return None
     loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
     #  notice the order of testcase execution
