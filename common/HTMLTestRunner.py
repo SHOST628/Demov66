@@ -623,7 +623,7 @@ class _TestResult(TestResult):
     # note: _TestResult is a pure representation of results.
     # It lacks the output and reporting ability compares to unittest._TextTestResult.
 
-    def __init__(self, verbosity=1):
+    def __init__(self, verbosity=2):
         TestResult.__init__(self)
         self.stdout0 = None
         self.stderr0 = None
