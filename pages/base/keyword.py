@@ -73,7 +73,7 @@ class Action:
         element = self._find_element(loc)
         return element
 
-    def _find_element(self,loc,timeout=15,poll_frequency=0.5):
+    def _find_element(self,loc,timeout=10,poll_frequency=0.5):
         try:
             return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
             # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
@@ -84,7 +84,7 @@ class Action:
         elements = self._find_elements(loc)
         return elements
 
-    def _find_elements(self,loc,timeout=15,poll_frequency=0.5):
+    def _find_elements(self,loc,timeout=10,poll_frequency=0.5):
         try:
             # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
             return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))

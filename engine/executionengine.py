@@ -18,8 +18,8 @@ class DemoTestCase(unittest.TestCase, Action):
         self.driver.maximize_window()
         LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
-    def tearDown(self):
-        self.driver.quit()
+    # def tearDown(self):
+    #     self.driver.quit()
 
     def _use_keyword(self,func_name,opvalues=None):
         func = ParseKeyword(self.driver).parse(func_name)
@@ -36,18 +36,6 @@ class DemoTestCase(unittest.TestCase, Action):
                 except Exception as e:
                     raise e
             opvalist = opvalues.split('##')
-            #  transfer var to opvlues by a var name
-            # for i in range(len(opvalist)):
-            #     # transfer a variate marked $$ to method
-            #     if '$$' in opvalist[i]:
-            #         var_name = opvalist[i]
-            #         var_name = var_name[2:]
-            #         try:
-            #             if hasattr(Storage,var_name):
-            #                 var_value = getattr(Storage,var_name,"找不到此变量%s"%var_name)
-            #                 opvalist[i] = var_value
-            #         except Exception as e:
-            #             raise e
             func(*opvalist)
 
     @staticmethod
@@ -58,7 +46,6 @@ class DemoTestCase(unittest.TestCase, Action):
                     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
             except Exception as e:
                 raise e
-
         return func
 
 def _generate_testcases(testcaseid_list):
@@ -118,9 +105,9 @@ mixcase_list = oracle.dict_fetchall("select * from xf_mixcase")
 mixid_list = oracle.dict_fetchall('select xf_mixid from xf_mixcase')
 
 _generate_testcases(testcaseid_list)
-# _generate_mix_testcase(mixcase_list)
-testsuite = _generate_testsuite(testcaseid_list, mixid_list)
-if type(testsuite) == None:
+_generate_mix_testcase(mixcase_list)
+testsuite = _generate_testsuite(testcaseid_list, mixid_list=[])
+if testsuite == None:
      print('please add data to xf_testcase or xf_mixcase')
 
 oracle.close()

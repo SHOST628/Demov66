@@ -623,7 +623,7 @@ class _TestResult(TestResult):
     # note: _TestResult is a pure representation of results.
     # It lacks the output and reporting ability compares to unittest._TextTestResult.
 
-    def __init__(self, verbosity=2):
+    def __init__(self, verbosity=1):
         TestResult.__init__(self)
         self.stdout0 = None
         self.stderr0 = None
@@ -679,6 +679,12 @@ class _TestResult(TestResult):
             TestResult.addSuccess(self, test)
             output = self.complete_output()
             self.result.append((0, test, output, ''))
+            # todo add quit browser
+            try:
+                driver = getattr(test, "driver")
+                driver.quit()
+            except AttributeError:
+                pass
             if self.verbosity > 1:
                 sys.stderr.write('ok ')
                 sys.stderr.write(str(test))
@@ -691,6 +697,12 @@ class _TestResult(TestResult):
         TestResult.addSkip(self, test, reason)
         output = self.complete_output()
         self.result.append((3, test, '', reason))
+        # todo add quit browser
+        try:
+            driver = getattr(test,"driver")
+            driver.quit()
+        except AttributeError:
+            pass
         if self.verbosity > 1:
             sys.stderr.write('skip ')
             sys.stderr.write(str(test))
@@ -707,6 +719,8 @@ class _TestResult(TestResult):
         try:
             driver = getattr(test, "driver")
             test.img = driver.get_screenshot_as_base64()
+            # todo add quit browser
+            driver.quit()
         except AttributeError:
             test.img = ""
         if self.verbosity > 1:
@@ -725,6 +739,8 @@ class _TestResult(TestResult):
         try:
             driver = getattr(test, "driver")
             test.img = driver.get_screenshot_as_base64()
+            # todo add quit browser
+            driver.quit()
         except AttributeError:
             test.img = ""
         if self.verbosity > 1:
