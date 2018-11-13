@@ -22,9 +22,6 @@ tablespace DATA01
     maxextents unlimited
   );
 
-
-
-
 -- Create table
 --用例组合表
 -- Create table

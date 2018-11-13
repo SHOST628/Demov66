@@ -10,6 +10,7 @@ from common.storage import Storage
 import re
 import os
 import time
+from common.logger import logger
 
 class DemoTestCase(unittest.TestCase, Action):
 

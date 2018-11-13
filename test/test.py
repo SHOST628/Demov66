@@ -1,4 +1,5 @@
 import re
+import time
 
 
 string="新增成功GR1243243单号"
@@ -12,3 +13,6 @@ print(repl)
 s2 = '$34$123$1$'
 nn = re.sub('\$(.*?)\$','sub',s2,count=1)
 print(nn)
+
+rq = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
+print(rq)
