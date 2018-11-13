@@ -36,5 +36,5 @@ class Logger(object):
         self.logger.addHandler(th)
         return self.logger
 
-logger = Logger(filename='case')
+logger = Logger(filename='case').get_logger()
 
