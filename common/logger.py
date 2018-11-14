@@ -12,8 +12,9 @@ class Logger(object):
         'crit':logging.CRITICAL
     }
 
-    def __init__(self, filename, filelevel='debug', streamlevel='info', when='D', backupCount=10, fformatter='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s', sformatter='%(message)s'):
+    def __init__(self, filename, filelevel='debug', streamlevel='info', when='D', backupCount=10, fformatter='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s', sformatter='%(message)s'):
         self.folder = os.path.dirname(os.getcwd()) + '\logs'
+        mkdir(self.folder)
         self.filename = os.path.join(self.folder, filename)
         # set logger format
         self.file_formatter = logging.Formatter(fformatter)
@@ -22,20 +23,52 @@ class Logger(object):
         self.streamlevel = streamlevel
         self.when = when
         self.backupcount = backupCount
-
-    def get_logger(self):
-        mkdir(self.folder)
         self.logger = logging.getLogger(self.filename)
         self.logger.setLevel(self.level_relations.get(self.filelevel))  # set logger level
+
+    def _output(self,level,message):
+        # stop output to console
         sh = logging.StreamHandler()
         sh.setLevel(self.level_relations.get(self.streamlevel))
         sh.setFormatter(self.stream_formatter)
-        th = handlers.TimedRotatingFileHandler(filename=self.filename, when=self.when, backupCount=self.backupcount, encoding='utf-8')  # separate file by time
+        th = handlers.TimedRotatingFileHandler(filename=self.filename, when=self.when,backupCount=self.backupcount,encoding='utf-8')  # separate file by time
         th.setFormatter(self.file_formatter)
         self.logger.addHandler(sh)
         self.logger.addHandler(th)
-        return self.logger
+        if level == 'debug':
+            self.logger.debug(message)
+        elif level == 'info':
+            self.logger.info(message)
+        elif level == 'warning':
+            self.logger.warning(message)
+        elif level == 'error':
+            self.logger.error(message)
+        elif level == 'exception':
+            self.logger.exception(message)
+        elif level == 'critical':
+            self.logger.critical(message)
+        self.logger.removeHandler(th)
+        self.logger.removeHandler(sh)
+        th.close()
 
-logger = Logger(filename='case').get_logger()
+    def debug(self,message):
+        self._output('debug',message)
+
+    def info(self,message):
+        self._output('info',message)
+
+    def warning(self,message):
+        self._output('warning',message)
+
+    def error(self,message):
+        self._output('error',message)
+
+    def exception(self,message):
+        self._output('exception',message)
+
+    def critical(self,message):
+        self._output('critical',message)
+
+logger = Logger(filename='case.log')
 
 

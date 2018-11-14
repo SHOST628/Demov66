@@ -19,8 +19,9 @@ class DemoTestCase(unittest.TestCase, Action):
         self.driver.maximize_window()
         LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
-    # def tearDown(self):
-    #     self.driver.quit()
+    def tearDown(self):
+        logger.info('************************************************************结束执行用例************************************************************\n')
+        # self.driver.quit()
 
     def _use_keyword(self,func_name,opvalues=None):
         func = ParseKeyword(self.driver).parse(func_name)
@@ -42,10 +43,14 @@ class DemoTestCase(unittest.TestCase, Action):
     @staticmethod
     def group(keyword_list):
         def func(self):
+            logger.info('************************************************************开始执行用例************************************************************')
             try:
                 for key_dict in keyword_list:
                     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
+                    logger.info('正在执行用例 %s 的 %s %s %s %s'%(key_dict["XF_CASEID"],key_dict["XF_TSID"],key_dict["XF_TSDESC"],key_dict["XF_ACTION"],key_dict["XF_OPVALUES"]))
             except Exception as e:
+                logger.error('执行用例 %s 的 %s %s %s %s 出错' % (key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],key_dict["XF_OPVALUES"]))
+                logger.exception(e)
                 raise e
         return func
 

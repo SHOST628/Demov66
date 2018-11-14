@@ -36,15 +36,15 @@ class Logger(object):
         self.logger.addHandler(th)
         return self.logger
 
+logger = Logger('all.log', filelevel='debug').get_logger()
 def division():
     try:
         a = 3/0
     except Exception as e:
-        logger.debug(e)
-        print(e)
+        logger.exception(e)
 
 if __name__ == '__main__':
-    logger = Logger('all.log', filelevel='debug').get_logger()
+    division()
     logger.info('info')
     logger.warning('警告')
     logger.critical('严重')

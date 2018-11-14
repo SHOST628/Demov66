@@ -680,11 +680,13 @@ class _TestResult(TestResult):
             output = self.complete_output()
             self.result.append((0, test, output, ''))
             # todo add quit browser
+            # todo 此处修改
             try:
                 driver = getattr(test, "driver")
                 driver.quit()
             except AttributeError:
                 pass
+            # todo 此处修改结束
             if self.verbosity > 1:
                 sys.stderr.write('ok ')
                 sys.stderr.write(str(test))
@@ -698,11 +700,13 @@ class _TestResult(TestResult):
         output = self.complete_output()
         self.result.append((3, test, '', reason))
         # todo add quit browser
+        # todo 此处修改开始
         try:
             driver = getattr(test,"driver")
             driver.quit()
         except AttributeError:
             pass
+        # todo 此处修改结束
         if self.verbosity > 1:
             sys.stderr.write('skip ')
             sys.stderr.write(str(test))
@@ -720,7 +724,9 @@ class _TestResult(TestResult):
             driver = getattr(test, "driver")
             test.img = driver.get_screenshot_as_base64()
             # todo add quit browser
+            # todo 此处修改开始
             driver.quit()
+            # todo 此处修改结束
         except AttributeError:
             test.img = ""
         if self.verbosity > 1:
@@ -740,7 +746,9 @@ class _TestResult(TestResult):
             driver = getattr(test, "driver")
             test.img = driver.get_screenshot_as_base64()
             # todo add quit browser
+            # todo 此处修改开始
             driver.quit()
+            # todo 此处修改结束
         except AttributeError:
             test.img = ""
         if self.verbosity > 1:
@@ -930,6 +938,9 @@ class HTMLTestRunner(Template_mixin):
             # 生成每个TestCase类中所有方法的测试结果
             for tid, (n, t, o, e) in enumerate(cls_results):
                 self._generate_report_test(rows, cid, tid, n, t, o, e)
+                # todo 此处修改
+                # stop outputing exception imformation
+                # self._generate_report_test(rows, cid, tid, n, t, o)
 
         report = self.REPORT_TMPL % dict(
             test_list=''.join(rows),
@@ -951,8 +962,13 @@ class HTMLTestRunner(Template_mixin):
         return chart
 
     def _generate_report_test(self, rows, cid, tid, n, t, o, e):
+    # todo 此处修改
+    # delete exception imformation
+    # def _generate_report_test(self, rows, cid, tid, n, t, o):
         # e.g. 'pt1.1', 'ft1.1', etc
         has_output = bool(o or e)   #o:testcase 里面print出来的内容 ,  e: exception里面的内容,一些出错的信息
+        # todo 此处修改
+        # has_output = bool(o)   #o:testcase 里面print出来的内容
         tid = (n == 0 and 'p' or 'f') + 't%s.%s' % (cid + 1, tid + 1)
         name = t.id().split('.')[-1]
         doc = t.shortDescription() or ""
@@ -962,6 +978,8 @@ class HTMLTestRunner(Template_mixin):
         script = self.REPORT_TEST_OUTPUT_TMPL % dict(
             id=tid,
             output=saxutils.escape(o + e),
+            # todo 此处修改
+            # output=saxutils.escape(o),
         )
         # TODO: 此处修改开始  加入截图
         if t.img:
