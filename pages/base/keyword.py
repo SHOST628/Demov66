@@ -11,6 +11,7 @@ from common.storage import Storage
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
 from unittest import TestCase
+from common.logger import logger
 
 class Action:
     def __init__(self,driver):
@@ -181,6 +182,7 @@ class Action:
         doc_no =''.join(re.findall("[A-Za-z0-9]",contain_text))
         # variate name
         setattr(Storage,var,doc_no)
+        logger.info('存储单号为%s'%doc_no)
         self.accept_prompt()
 
     # def locate_record(self,var):
