@@ -10,7 +10,7 @@ import re
 from common.storage import Storage
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
-from unittest import TestCase
+from selenium.common.exceptions import TimeoutException
 from common.logger import logger
 
 class Action:
@@ -78,7 +78,14 @@ class Action:
         try:
             return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
             # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
+        except NoSuchElementException as e:
+            logger.exception(e)
+            raise e
+        except TimeoutException as e:
+            logger.exception(e)
+            raise e
         except WebDriverException as e:
+            logger.exception(e)
             raise e
 
     def find_elements(self,loc):
@@ -90,8 +97,13 @@ class Action:
             # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
             return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
         except NoSuchElementException as e:
+            logger.exception(e)
+            raise e
+        except TimeoutException as e:
+            logger.exception(e)
             raise e
         except WebDriverException as e:
+            logger.exception(e)
             raise e
 
     def enter(self,loc):
@@ -163,7 +175,7 @@ class Action:
         self._driver.get_screenshot_as_file(image_path)
         print('lustrat' + image_dir + '/' + image_name + 'luend')
 
-    #get element text
+    #get text in element
     def _get_text(self,loc):
         text = self.find_element(loc).text
         return text
@@ -196,6 +208,15 @@ class Action:
         loc = "//div[@class='popupContent']/div/p"
         # loc = ""
         self.click(loc)
+
+    # send file
+    def send_file(self,file_path):
+        # element = self.find_element("//input[@class='gwt-FileUpload']")
+        element = self._driver.find_element(By.XPATH,"//input[@class='gwt-FileUpload']")
+        try:
+            element.send_keys(file_path)
+        except Exception:
+            logger.error("文件路径名:%s 不正确"% file_path)
 
     def close(self):
         self._driver.close()

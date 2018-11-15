@@ -68,11 +68,17 @@ class MyTestCase(unittest.TestCase):
             # obj.click("//span[contains(text(),'系统设定')]")
             # obj.click("//span[contains(text(),'后台系统设定')]")
             # obj.click("//span[contains(text(),'区域维护')]")
-            obj.click("//*[text()='仓储管理']")
-            obj.click("//*[text()='采购']")
-            obj.click("//*[text()='采购单维护']")
-            obj.click("//*[text()='新增']")
-            obj.click_by_index("//span[@class='v-button-wrap']",0)
+            # obj.click("//*[text()='仓储管理']")
+            # obj.click("//*[text()='采购']")
+            # obj.click("//*[text()='采购单维护']")
+            # obj.click("//*[text()='新增']")
+            # obj.click_by_index("//span[@class='v-button-wrap']",0)
+            obj.click("//span[text()='会员管理']")
+            obj.click("//span[text()='会员导入']")
+            obj.click("//span[text()='导入']")
+            # driver.find_element_by_xpath("//input[@class='gwt-FileUpload']").send_keys("D:/requirements.txt")
+            obj.send_file("D:/requirements.txt")
+            sleep(5)
 
 
 

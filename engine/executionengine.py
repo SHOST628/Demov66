@@ -20,7 +20,7 @@ class DemoTestCase(unittest.TestCase, Action):
         LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
     def tearDown(self):
-        logger.info('**************************************************结束执行用例**************************************************')
+        logger.info('***************************************************END***************************************************')
         # self.driver.quit()
 
     def _use_keyword(self,func_name,opvalues=None):
@@ -43,7 +43,7 @@ class DemoTestCase(unittest.TestCase, Action):
     @staticmethod
     def group(keyword_list):
         def func(self):
-            logger.info('**************************************************开始执行用例**************************************************')
+            logger.info('**************************************************START**************************************************')
             try:
                 for key_dict in keyword_list:
                     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
@@ -56,7 +56,7 @@ class DemoTestCase(unittest.TestCase, Action):
 
 def _generate_testcases(testcaseid_list):
     if testcaseid_list == []:
-        return
+        return None
     oracle = Oracle(readconfig.db_url)
     loop_kwlist = []
 
@@ -114,7 +114,8 @@ _generate_testcases(testcaseid_list)
 _generate_mix_testcase(mixcase_list)
 testsuite = _generate_testsuite(testcaseid_list, mixid_list=[])
 if testsuite == None:
-     print('please add data to xf_testcase or xf_mixcase')
+    testsuite = unittest.TestSuite()
+    logger.info('缺少用例数据，请在数据库的xf_testcase添加数据')
 
 oracle.close()
 
