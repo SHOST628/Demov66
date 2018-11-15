@@ -3,7 +3,7 @@ from logging import handlers
 import os
 from common.file import mkdir
 
-class Logger(object):
+class Logger:
     level_relations = {
         'debug':logging.DEBUG,
         'info':logging.INFO,
@@ -12,7 +12,7 @@ class Logger(object):
         'crit':logging.CRITICAL
     }
 
-    def __init__(self, filename, filelevel='debug', streamlevel='info', when='D', backupCount=10, fformatter='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s', sformatter='%(message)s'):
+    def __init__(self, filename, filelevel='debug', streamlevel='info', when='D',interval=1, backupCount=10, fformatter='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s - %(message)s', sformatter='%(asctime)s - %(message)s'):
         self.folder = os.path.dirname(os.getcwd()) + '\logs'
         mkdir(self.folder)
         self.filename = os.path.join(self.folder, filename)
@@ -22,6 +22,7 @@ class Logger(object):
         self.filelevel = filelevel
         self.streamlevel = streamlevel
         self.when = when
+        self.interval = interval
         self.backupcount = backupCount
         self.logger = logging.getLogger(self.filename)
         self.logger.setLevel(self.level_relations.get(self.filelevel))  # set logger level
@@ -31,7 +32,7 @@ class Logger(object):
         sh = logging.StreamHandler()
         sh.setLevel(self.level_relations.get(self.streamlevel))
         sh.setFormatter(self.stream_formatter)
-        th = handlers.TimedRotatingFileHandler(filename=self.filename, when=self.when,backupCount=self.backupcount,encoding='utf-8')  # separate file by time
+        th = handlers.TimedRotatingFileHandler(filename=self.filename, when=self.when,interval=self.interval,backupCount=self.backupcount,encoding='utf-8')  # separate file by time
         th.setFormatter(self.file_formatter)
         self.logger.addHandler(sh)
         self.logger.addHandler(th)
