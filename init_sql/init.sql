@@ -71,7 +71,7 @@ create table XF_CASEDEBUG
 (
   xf_caseid       VARCHAR2(20) not null,
   xf_mixid VARCHAR2(20),
-  xf_excuteuser     VARCHAR2(20)
+  xf_executeuser     VARCHAR2(20)
 )
 tablespace DATA01
   pctfree 10

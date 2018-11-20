@@ -19,6 +19,7 @@ class Action:
 
     def open(self,url):
         self._open(url)
+        logger.info("打开网址 %s"% url)
 
     def _open(self,url):
         self._driver.get(url)
@@ -160,7 +161,9 @@ class Action:
         targets = self.find_elements(loc2)
         del targets[0]
         option = random.choice(targets)
+        option_text = option.text
         option.click()
+        logger.info("选择选项 %s" % option_text)
 
     def save_screenshot(self):
         self._save_screenshot()

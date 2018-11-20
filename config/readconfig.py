@@ -14,6 +14,9 @@ db_url = config.get('DataSource','DB')
 browser_name = config.get("BrowserType","BrowserName")
 login_user = config.get("Login","User")
 login_password = config.get("Login","Psw")
+debug_mode = int(config.get("Debug","mode"))
+execute_user = config.get("Debug", "execute_user")
+CaseMixed = config.get("CaseMixed","CaseMixed")
 
 
 

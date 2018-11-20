@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from config import readconfig
 from pages.base.keyword import Action
 import unittest
+from common.logger import logger
 
 class LoginPage(Action):
     _username_loc = "//*[@id='xf_staffcode']/input"
@@ -30,7 +31,9 @@ class LoginPage(Action):
     def login(self,user,psw):
         self.open_backend()
         self.input_user(user)
+        logger.info("登录用户 %s"% user)
         self.input_password(psw)
+        logger.info("登录密码 %s"% psw)
         # self.choose_language("简体中文 ( zh_CN )")
         self.click_submit()
 

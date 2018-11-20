@@ -11,8 +11,9 @@ import re
 import os
 import time
 from common.logger import logger
+from common.logger import sql_log
 
-class DemoTestCase(unittest.TestCase, Action):
+class DemoTestCase(unittest.TestCase):
 
     def setUp(self):
         self.driver = browser(readconfig.browser_name)
@@ -33,9 +34,11 @@ class DemoTestCase(unittest.TestCase, Action):
             for var in var_list:
                 try:
                     if hasattr(Storage,var):
-                        var_value = getattr(Storage,var,"找不到此变量%s"%var)
+                        var_value = getattr(Storage,var)
                         opvalues = re.sub("\$(.+?)\$",var_value,opvalues,count=1)
-                except Exception as e:
+                        logger.info("变量 %s 的值为 %s"%(var,var_value))
+                except AttributeError as e:
+                    logger.error("找不到变量 %s" % var)
                     raise e
             opvalist = opvalues.split('##')
             func(*opvalist)
@@ -44,29 +47,39 @@ class DemoTestCase(unittest.TestCase, Action):
     def group(keyword_list):
         def func(self):
             logger.info('**************************************************START**************************************************')
-            try:
+            if keyword_list != []:
                 for key_dict in keyword_list:
-                    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-                    logger.info('执行用例 %s 的 %s %s %s %s 成功'%(key_dict["XF_CASEID"],key_dict["XF_TSID"],key_dict["XF_TSDESC"],key_dict["XF_ACTION"],key_dict["XF_OPVALUES"]))
-            except Exception as e:
-                logger.error('执行用例 %s 的 %s %s %s %s 出错' % (key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],key_dict["XF_OPVALUES"]))
-                logger.exception(e)
-                raise e
+                    try:
+                        logger.info('正在执行用例 %s 的 %s %s %s %s' % (
+                            key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
+                            key_dict["XF_OPVALUES"]))
+                        self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
+                    except Exception as e:
+                        logger.error('执行用例 %s 的 %s %s %s %s 出错' % (
+                            key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
+                            key_dict["XF_OPVALUES"]))
+                        logger.exception(e)
+                        raise e
+            else:
+                logger.info("没有查询到该用例，无法执行")
+                self.assertFalse(True)
         return func
 
 def _generate_testcases(testcaseid_list):
     if testcaseid_list == []:
         return None
     oracle = Oracle(readconfig.db_url)
-    loop_kwlist = []
+    # loop_kwlist = []
 
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
         #  notice  the order of step execution
-        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid)
+        sql = "select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid
+        loop_kwlist = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,loop_kwlist)
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + caseid, func)
-        loop_kwlist = []
+        # loop_kwlist = []
 
     oracle.close()
 
@@ -74,7 +87,7 @@ def _generate_testcases(testcaseid_list):
 def _generate_mix_testcase(mixcase_list):
     if mixcase_list == []:
         return None
-    loop_kwlist = []
+    # loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
     #  notice the order of testcase execution
     for sl in mixcase_list:
@@ -83,10 +96,13 @@ def _generate_mix_testcase(mixcase_list):
         caseid_str = ','.join(caseid_list)
         caseids = str(tuple(caseid_list))
         #order by caseid,tsid
-        loop_kwlist = oracle.dict_fetchall("select * from xf_testcase where xf_caseid in %s order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str))
+        sql = "select * from xf_testcase where xf_caseid in %s \
+        order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str)
+        loop_kwlist = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,loop_kwlist)
         func = DemoTestCase.group(loop_kwlist)
         setattr(DemoTestCase, 'test_' + mixid, func)
-        loop_kwlist = []
+        # loop_kwlist = []
     oracle.close()
 
 def _generate_testsuite(testcaseid_list,mixid_list):
@@ -99,23 +115,55 @@ def _generate_testsuite(testcaseid_list,mixid_list):
         caseid_list.append(caseid)
     for tl in mixid_list:
         mixid = tl['XF_MIXID']
-        mixid = 'test_' + mixid
-        caseid_list.append(mixid)
+        if mixid == None or mixid == '':
+            pass
+        else:
+            mixid = 'test_' + mixid
+            caseid_list.append(mixid)
     suite = unittest.TestSuite(map(DemoTestCase, caseid_list))
     return suite
 
 oracle = Oracle(readconfig.db_url)
+Flag = readconfig.debug_mode
 
-testcaseid_list = oracle.dict_fetchall("select distinct xf_caseid from xf_testcase")
-mixcase_list = oracle.dict_fetchall("select * from xf_mixcase")
-mixid_list = oracle.dict_fetchall('select xf_mixid from xf_mixcase')
+# deciding execute all testcases or debug some testcases control by the config mode in ini,if mode == 1, debug case,else execute all testcases
+# the config executeuser deciding whose testcase to execute
+if not Flag:
+    sql = "select distinct xf_caseid from xf_testcase"
+    testcaseid_list = oracle.dict_fetchall(sql)
+    sql_log(logger,sql,testcaseid_list)
+    sql = "select * from xf_mixcase"
+    mixcase_list = oracle.dict_fetchall(sql)
+    sql_log(logger,sql,mixcase_list)
+    sql = "select xf_mixid from xf_mixcase"
+    mixid_list = oracle.dict_fetchall(sql)
+    sql_log(logger,sql,mixid_list)
+else:
+    execute_user = readconfig.execute_user
+    if execute_user == '':
+        sql = "select xf_caseid from xf_casedebug where xf_executeuser is null order by xf_caseid"
+        testcaseid_list = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,testcaseid_list)
+        sql = "select xf_mixid from xf_casedebug where xf_executeuser is null order by xf_mixid"
+        mixid_list = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,mixid_list)
+    else:
+        sql = "select xf_caseid from xf_casedebug where xf_executeuser = '%s' order by xf_caseid" % execute_user
+        testcaseid_list = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,testcaseid_list)
+        sql = "select xf_mixid from xf_casedebug where xf_executeuser = '%s' order by xf_mixid" % execute_user
+        mixid_list = oracle.dict_fetchall(sql)
+        sql_log(logger,sql,mixid_list)
+    mixcase_list = []
+    for i in mixid_list:
+        mixid = i.values()
+        sql = "select * from xf_mixcase where xf_mixid = '%s'" % mixid
+        mixcase_list = mixcase_list + oracle.dict_fetchall(sql)
+    sql_log(logger,sql,mixcase_list)
 
 _generate_testcases(testcaseid_list)
 _generate_mix_testcase(mixcase_list)
-testsuite = _generate_testsuite(testcaseid_list, mixid_list=[])
-if testsuite == None:
-    testsuite = unittest.TestSuite()
-    logger.info('缺少用例数据，请在数据库的xf_testcase添加数据')
+testsuite = _generate_testsuite(testcaseid_list = [], mixid_list = [])
 
 oracle.close()
 

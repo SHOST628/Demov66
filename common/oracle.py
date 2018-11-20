@@ -1,4 +1,6 @@
 import cx_Oracle
+from cx_Oracle import ProgrammingError
+from common.logger import logger
 
 
 class Oracle:
@@ -9,9 +11,6 @@ class Oracle:
         self._conn = cx_Oracle.connect(db_url)
         self._cursor = self._conn.cursor()
 
-    def select(self,sql):
-        return self._cursor.execute(sql)
-
     def dict_fetchall(self,sql):
         """Return all rows from a cursor as a dict"""
         try:
@@ -21,17 +20,18 @@ class Oracle:
                 dict(zip(columns, row))
                 for row in self._cursor.fetchall()
             ]
-        except Exception as e:
+        except ProgrammingError as e:
+            logger.exception(e)
             raise e
 
-    # def select_all(self,db_url,sql_string):
-    #     conn = cx_Oracle.connect(db_url)
-    #     cusor = conn.cusor()
-    #     cusor.excute(sql_string)
-    #     cusor.fetchall()
-
-    def select_many(self):
-        pass
+    def select(self,sql):
+        try:
+            self._cursor.execute(sql)
+            result = self._cursor.fetchall()
+            return result
+        except ProgrammingError as e:
+            logger.exception(e)
+            raise e
 
     def insert(self):
         pass
