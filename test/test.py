@@ -40,5 +40,8 @@ import time
 # print(t)
 
 
-
+li = [1,2,3,4]
+li1 = [2,4]
+li2 = li.pop(2)
+print(li2)
 

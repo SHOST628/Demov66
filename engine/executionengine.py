@@ -71,14 +71,21 @@ def _generate_testcases(testcaseid_list):
     oracle = Oracle(readconfig.db_url)
     # loop_kwlist = []
 
+    global exclude_caseid_list
+
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
         #  notice  the order of step execution
         sql = "select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid
         loop_kwlist = oracle.dict_fetchall(sql)
         sql_log(logger,sql,loop_kwlist)
-        func = DemoTestCase.group(loop_kwlist)
-        setattr(DemoTestCase, 'test_' + caseid, func)
+        ifmix = loop_kwlist[0]['XF_IFMIX']  # it will not execute the case if ifmix larger than 0
+        if ifmix:
+            logger.info("测试用例 %s 不能单独执行" % caseid)
+            exclude_caseid_list.append(caseid)
+        else:
+            func = DemoTestCase.group(loop_kwlist)
+            setattr(DemoTestCase, 'test_' + caseid, func)
         # loop_kwlist = []
 
     oracle.close()
@@ -109,10 +116,12 @@ def _generate_testsuite(testcaseid_list,mixid_list):
     if testcaseid_list == [] and mixid_list == []:
         return None
     caseid_list = []
+    global exclude_caseid_list
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
-        caseid = 'test_' + caseid
-        caseid_list.append(caseid)
+        if caseid not in exclude_caseid_list:
+            caseid = 'test_' + caseid
+            caseid_list.append(caseid)
     for tl in mixid_list:
         mixid = tl['XF_MIXID']
         if mixid == None or mixid == '':
@@ -126,7 +135,9 @@ def _generate_testsuite(testcaseid_list,mixid_list):
 oracle = Oracle(readconfig.db_url)
 Flag = readconfig.debug_mode
 
-# deciding execute all testcases or debug some testcases control by the config mode in ini,if mode == 1, debug case,else execute all testcases
+exclude_caseid_list = [] # exclude testcases that can't run alone
+
+# deciding execute all testcases or debug some testcases controling by the config mode in ini,if mode == 1, debug case,else execute all testcases
 # the config executeuser deciding whose testcase to execute
 if not Flag:
     sql = "select distinct xf_caseid from xf_testcase"
@@ -163,7 +174,7 @@ else:
 
 _generate_testcases(testcaseid_list)
 _generate_mix_testcase(mixcase_list)
-testsuite = _generate_testsuite(testcaseid_list, mixid_list = [])
+testsuite = _generate_testsuite(testcaseid_list, mixid_list)
 
 oracle.close()
 

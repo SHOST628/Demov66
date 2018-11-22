@@ -8,7 +8,8 @@ create table XF_TESTCASE
   xf_tsid     VARCHAR2(50) not null,
   xf_tsdesc   VARCHAR2(4000),
   xf_action   VARCHAR2(50) not null,
-  xf_opvalues VARCHAR2(500)
+  xf_opvalues VARCHAR2(500),
+  xf_ifmix    integer
 )
 tablespace DATA01
   pctfree 10

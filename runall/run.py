@@ -34,7 +34,10 @@ if __name__ == "__main__":
         #     _cond.acquire()
         #     run(case)
         #     _cond.release()
-        run(testsuite)
+        try:
+            run(testsuite)
+        except Exception as e:
+            logger.exception(e)
         logger.info("【结束执行用例】")
         logger.info("")
     else:
