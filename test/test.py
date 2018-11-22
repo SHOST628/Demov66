@@ -1,5 +1,6 @@
 import re
 import time
+import time
 
 
 # string="新增成功GR1243243单号"
@@ -27,11 +28,17 @@ import time
 # from common.oracle import Oracle
 # from config import readconfig
 # oracle = Oracle(readconfig.db_url)
-dic = [{"a":1},{"b":2}]
-li = [i.values() for i in dic]
-print(li)
+# dic = [{"a":1},{"b":2}]
+# li = [i.values() for i in dic]
+# print(li)
+#
+# a = [1]
+# b = [2]
+# print(a+b)
+#
+# t = time.strftime('%Y-%m-%d',time.localtime())
+# print(t)
 
-a = [1]
-b = [2]
-print(a+b)
+
+
 

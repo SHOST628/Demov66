@@ -163,7 +163,7 @@ else:
 
 _generate_testcases(testcaseid_list)
 _generate_mix_testcase(mixcase_list)
-testsuite = _generate_testsuite(testcaseid_list = [], mixid_list = [])
+testsuite = _generate_testsuite(testcaseid_list, mixid_list = [])
 
 oracle.close()
 

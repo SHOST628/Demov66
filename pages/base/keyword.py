@@ -189,6 +189,10 @@ class Action:
 
     # add  checkbox,radiobox
 
+    # set variate
+    def _storage(self,var,value):
+        setattr(Storage,var,value)
+
     # store variate
     def storage_docno(self,var):
         loc = "//div[@class='popupContent']/div/p"
@@ -220,6 +224,15 @@ class Action:
             element.send_keys(file_path)
         except Exception:
             logger.error("文件路径名:%s 不正确"% file_path)
+
+    def get_current_date(self,name = 'curtime'):
+        """
+        store time value
+        :param name: variate name
+        :return:
+        """
+        t = time.strftime('%Y-%m-%d',time.localtime())
+        self._storage(name,t)
 
     def close(self):
         self._driver.close()

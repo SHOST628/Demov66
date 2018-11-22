@@ -29,13 +29,20 @@ class LoginPage(Action):
         self.click(self._submit_loc)
 
     def login(self,user,psw):
-        self.open_backend()
-        self.input_user(user)
-        logger.info("登录用户 %s"% user)
-        self.input_password(psw)
-        logger.info("登录密码 %s"% psw)
-        # self.choose_language("简体中文 ( zh_CN )")
-        self.click_submit()
+        try:
+            self.open_backend()
+        except:
+            logger.error("无法访问该路径 %s"% readconfig.url)
+        try:
+            self.input_user(user)
+            logger.info("登录用户 %s"% user)
+            self.input_password(psw)
+            logger.info("登录密码 %s"% psw)
+            # self.choose_language("简体中文 ( zh_CN )")
+            self.click_submit()
+        except Exception as e:
+            logger.exception(e)
+            raise e
 
     def _get_title(self):
         return self.find_element(self._title_loc).text
