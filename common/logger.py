@@ -70,10 +70,6 @@ class Logger:
     def critical(self,message):
         self._output('critical',message)
 
-def sql_log(logger,sql,result):
-    logger.info("DBSQLSTATEMENT - %s" % sql)
-    logger.debug("DBRESULTS - %s" % result)
-
 logger = Logger(filename='case.log')
 
 

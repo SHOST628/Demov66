@@ -45,3 +45,17 @@ li1 = [2,4]
 li2 = li.pop(2)
 print(li2)
 
+import sys
+def a():
+    print(sys._getframe().f_code.co_name)
+
+a()
+
+str1 = "('a','b','c',)"
+id = str1.rindex(',')
+str1 = str1.replace(',','')
+print(str1)
+
+
+li = ['a']
+print(','.join(li))

@@ -40,9 +40,6 @@ if __name__ == "__main__":
             logger.exception(e)
         logger.info("【结束执行用例】")
         logger.info("")
-    else:
-        logger.info('缺少用例数据，请指定或者添加相应的用例数据')
-        logger.info("")
 
 
 

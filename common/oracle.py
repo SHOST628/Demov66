@@ -15,11 +15,11 @@ class Oracle:
         """Return all rows from a cursor as a dict"""
         try:
             self._cursor.execute(sql)
+            logger.debug("DBSQLSTATEMENT - %s" % sql)
             columns = [col[0] for col in self._cursor.description]
-            return [
-                dict(zip(columns, row))
-                for row in self._cursor.fetchall()
-            ]
+            result = [dict(zip(columns, row)) for row in self._cursor.fetchall()]
+            logger.debug("DBRESULTS - %s" % result)
+            return result
         except ProgrammingError as e:
             logger.exception(e)
             raise e

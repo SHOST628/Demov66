@@ -11,7 +11,6 @@ import re
 import os
 import time
 from common.logger import logger
-from common.logger import sql_log
 
 class DemoTestCase(unittest.TestCase):
 
@@ -67,25 +66,30 @@ class DemoTestCase(unittest.TestCase):
 
 def _generate_testcases(testcaseid_list):
     if testcaseid_list == []:
+        logger.info("找不到基础用例信息")
         return None
     oracle = Oracle(readconfig.db_url)
     # loop_kwlist = []
-
     global exclude_caseid_list
-
+    logger.info("<开始生成基础测试用例>")
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
         #  notice  the order of step execution
         sql = "select * from xf_testcase where xf_caseid='%s' order by xf_tsid"%caseid
         loop_kwlist = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,loop_kwlist)
-        ifmix = loop_kwlist[0]['XF_IFMIX']  # it will not execute the case if ifmix larger than 0
-        if ifmix:
-            logger.info("测试用例 %s 不能单独执行" % caseid)
-            exclude_caseid_list.append(caseid)
+        if loop_kwlist:
+            ifmix = loop_kwlist[0]['XF_IFMIX']  # it will not execute the case if ifmix larger than 0
+            if ifmix:
+                logger.info("测试用例 %s 不能单独执行" % caseid)
+                exclude_caseid_list.append(caseid)
+            else:
+                func = DemoTestCase.group(loop_kwlist)
+                setattr(DemoTestCase, 'test_' + caseid, func)
+                logger.info("已生成用例 test_%s" % caseid)
         else:
-            func = DemoTestCase.group(loop_kwlist)
-            setattr(DemoTestCase, 'test_' + caseid, func)
+            logger.info("找不到该用例id %s，无法生成用例 test_%s" % (caseid,caseid))
+            exclude_caseid_list.append(caseid)
+    logger.info("<基础测试用例生成结束>")
         # loop_kwlist = []
 
     oracle.close()
@@ -93,84 +97,101 @@ def _generate_testcases(testcaseid_list):
 #TODO need to fix
 def _generate_mix_testcase(mixcase_list):
     if mixcase_list == []:
+        logger.info("没有需要组合的用例")
         return None
     # loop_kwlist = []
     oracle = Oracle(readconfig.db_url)
+    global exclude_mixid_list
     #  notice the order of testcase execution
+    logger.info("<开始生成组合测试用例>")
     for sl in mixcase_list:
         mixid = sl['XF_MIXID']
         caseid_list = sl['XF_CASEID'].split(',')
         caseid_str = ','.join(caseid_list)
         caseids = str(tuple(caseid_list))
+        if len(caseid_list) == 1:
+            caseids = caseids.replace(',','')
         #order by caseid,tsid
-        sql = "select * from xf_testcase where xf_caseid in %s \
-        order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str)
+        sql = "select * from xf_testcase where xf_caseid in %s " \
+              "order by instr('%s',rtrim(cast(xf_caseid as nchar))),xf_tsid"%(caseids,caseid_str)
         loop_kwlist = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,loop_kwlist)
-        func = DemoTestCase.group(loop_kwlist)
-        setattr(DemoTestCase, 'test_' + mixid, func)
+        if loop_kwlist:
+            func = DemoTestCase.group(loop_kwlist)
+            setattr(DemoTestCase, 'test_' + mixid, func)
+            logger.info("已生成组合用例 test_%s" % mixid)
+        else:
+            exclude_mixid_list.append(mixid)
+            logger.info("无法查询到基础用例id %s , 组合用例id %s 无法生成组合用例" % (caseid_list,mixid))
         # loop_kwlist = []
+    logger.info("<组合测试用例生成结束>")
     oracle.close()
 
 def _generate_testsuite(testcaseid_list,mixid_list):
     if testcaseid_list == [] and mixid_list == []:
+        logger.info("缺少用例数据，请指定或者添加相应的用例数据")
         return None
     caseid_list = []
     global exclude_caseid_list
+    logger.info("<开始加载测试用例>")
     for tl in testcaseid_list:
         caseid = tl['XF_CASEID']
         if caseid not in exclude_caseid_list:
             caseid = 'test_' + caseid
             caseid_list.append(caseid)
+    logger.info("已加载基础测试用例 %s" % caseid_list)
     for tl in mixid_list:
         mixid = tl['XF_MIXID']
         if mixid == None or mixid == '':
             pass
+        elif mixid in exclude_mixid_list:
+            logger.info("组合用例id %s 没有基础用例信息，无法加载" % mixid)
         else:
             mixid = 'test_' + mixid
             caseid_list.append(mixid)
+    logger.info("已加载全部测试用例 %s" % caseid_list)
+    logger.info("<测试用例加载结束>")
+    logger.debug("<开始组合测试套件>")
     suite = unittest.TestSuite(map(DemoTestCase, caseid_list))
+    logger.debug("已组合全部测试套件 %s" % suite)
+    logger.debug("<测试套件组合结束>")
     return suite
 
 oracle = Oracle(readconfig.db_url)
 Flag = readconfig.debug_mode
 
-exclude_caseid_list = [] # exclude testcases that can't run alone
+exclude_caseid_list = [] # exclude base testcases that can't run alone
+exclude_mixid_list = [] # exclude mix testcase that can not run alone
 
 # deciding execute all testcases or debug some testcases controling by the config mode in ini,if mode == 1, debug case,else execute all testcases
 # the config executeuser deciding whose testcase to execute
-if not Flag:
-    sql = "select distinct xf_caseid from xf_testcase"
-    testcaseid_list = oracle.dict_fetchall(sql)
-    sql_log(logger,sql,testcaseid_list)
-    sql = "select * from xf_mixcase"
-    mixcase_list = oracle.dict_fetchall(sql)
-    sql_log(logger,sql,mixcase_list)
-    sql = "select xf_mixid from xf_mixcase"
-    mixid_list = oracle.dict_fetchall(sql)
-    sql_log(logger,sql,mixid_list)
-else:
+if Flag:
+    logger.info("***调试模式***")
     execute_user = readconfig.execute_user
     if execute_user == '':
         sql = "select xf_caseid from xf_casedebug where xf_executeuser is null order by xf_caseid"
         testcaseid_list = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,testcaseid_list)
         sql = "select xf_mixid from xf_casedebug where xf_executeuser is null order by xf_mixid"
         mixid_list = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,mixid_list)
     else:
         sql = "select xf_caseid from xf_casedebug where xf_executeuser = '%s' order by xf_caseid" % execute_user
         testcaseid_list = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,testcaseid_list)
         sql = "select xf_mixid from xf_casedebug where xf_executeuser = '%s' order by xf_mixid" % execute_user
         mixid_list = oracle.dict_fetchall(sql)
-        sql_log(logger,sql,mixid_list)
     mixcase_list = []
     for i in mixid_list:
-        mixid = i.values()
-        sql = "select * from xf_mixcase where xf_mixid = '%s'" % mixid
-        mixcase_list = mixcase_list + oracle.dict_fetchall(sql)
-    sql_log(logger,sql,mixcase_list)
+        mixid = i["XF_MIXID"]
+        if mixid:
+            sql = "select * from xf_mixcase where xf_mixid = '%s'" % mixid
+            mixcase_list = mixcase_list + oracle.dict_fetchall(sql)
+else:
+    logger.info("***普通模式***")
+    sql = "select distinct xf_caseid from xf_testcase"
+    testcaseid_list = oracle.dict_fetchall(sql)
+    sql = "select * from xf_mixcase"
+    mixcase_list = oracle.dict_fetchall(sql)
+    sql = "select xf_mixid from xf_mixcase"
+    mixid_list = oracle.dict_fetchall(sql)
+
 
 _generate_testcases(testcaseid_list)
 _generate_mix_testcase(mixcase_list)
