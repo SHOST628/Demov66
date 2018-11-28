@@ -49,13 +49,7 @@ import sys
 def a():
     print(sys._getframe().f_code.co_name)
 
-a()
-
-str1 = "('a','b','c',)"
-id = str1.rindex(',')
-str1 = str1.replace(',','')
+str1 = 'D:\javawork\PyTest\src\main.py'
+index = str1.rindex('\\')
+str1 = str1[index+1:]
 print(str1)
-
-
-li = ['a']
-print(','.join(li))

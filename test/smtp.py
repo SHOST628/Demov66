@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# encoding=utf-8
-# Filename: send_email.py
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText

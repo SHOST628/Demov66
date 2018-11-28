@@ -114,7 +114,7 @@ def _generate_mix_testcase(mixcase_list):
     oracle.close()
 
 # todo notice
-# another method to generate testsuite is that finds test method name containing test by dir method,but order by method name
+# another method to generate testsuite is that finds test method name containing character test by dir method,but order by method name
 def _generate_testsuite(testcaseid_list,mixid_list):
     if testcaseid_list == [] and mixid_list == []:
         return None
