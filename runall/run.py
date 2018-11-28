@@ -41,6 +41,7 @@ if __name__ == "__main__":
         except Exception as e:
             logger.exception(e)
         logger.info("【结束执行用例】")
+        logger.info("")
         flag = int(readconfig.if_send)
         if flag:
             logger.info("【正在发送邮件报告】")

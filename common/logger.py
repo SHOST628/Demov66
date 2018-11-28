@@ -2,7 +2,6 @@ import logging
 from logging import handlers
 import os
 from common.file import mkdir
-from common.SafeRotatingFileHandler import SafeRotatingFileHandler
 
 class Logger:
     level_relations = {
@@ -34,7 +33,6 @@ class Logger:
         sh.setLevel(self.level_relations.get(self.streamlevel))
         sh.setFormatter(self.stream_formatter)
         th = handlers.TimedRotatingFileHandler(filename=self.filename, when=self.when,interval=self.interval,backupCount=self.backupcount,encoding='utf-8')  # separate file by time
-        # th = SafeRotatingFileHandler(filename=self.filename, when=self.when,interval=self.interval,backupCount=self.backupcount,encoding='utf-8')  # separate file by time
         th.setFormatter(self.file_formatter)
         self.logger.addHandler(sh)
         self.logger.addHandler(th)

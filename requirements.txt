@@ -1,6 +1,4 @@
-backports.ssl-match-hostname==3.5.0.1
-chardet==3.0.4
-cx-Oracle==5.3
-PyMySQL==0.8.0
-selenium==3.8.1
-tornado==3.2
+cx-Oracle==6.2.1
+selenium==3.13.0
+tomorrow==0.2.4
+xlrd==1.1.0
