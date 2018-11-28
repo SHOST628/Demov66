@@ -14,6 +14,7 @@ class Mail:
             server.login(user, passwd)
             self._server = server
         except Exception as e:
+            logger.error("登陆邮件服务器失败")
             logger.exception(e)
 
     def send_mail(self, to_addrs, sub, content, attach_path='', attach_type='', subtype ='plain'):

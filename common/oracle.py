@@ -8,8 +8,11 @@ class Oracle:
         """db_url: connection path format
             db_url  eg: PROMOTION/PROMOTION@172.31.6.234:1521/TESTDB
         """
-        self._conn = cx_Oracle.connect(db_url)
-        self._cursor = self._conn.cursor()
+        try:
+            self._conn = cx_Oracle.connect(db_url)
+            self._cursor = self._conn.cursor()
+        except Exception as e:
+            logger.exception(e)
 
     def dict_fetchall(self,sql):
         """Return all rows from a cursor as a dict"""
@@ -22,7 +25,6 @@ class Oracle:
             return result
         except ProgrammingError as e:
             logger.exception(e)
-            raise e
 
     def select(self,sql):
         try:
@@ -31,7 +33,6 @@ class Oracle:
             return result
         except ProgrammingError as e:
             logger.exception(e)
-            raise e
 
     def insert(self):
         pass

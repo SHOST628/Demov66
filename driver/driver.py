@@ -12,6 +12,7 @@ def browser(browser_type):
             option = webdriver.ChromeOptions()
             option.add_argument('disable-infobars')
             driver = webdriver.Chrome(chrome_options=option)
+            return driver
 
         elif (browser_type == "firefox"):
             pass
@@ -19,6 +20,6 @@ def browser(browser_type):
         else:
             pass
 
-        return driver
+        # return driver
     except Exception as e:
         print(e)
