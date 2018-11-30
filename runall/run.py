@@ -5,6 +5,7 @@ from common.file import mkdir
 from common.logger import logger
 from config import readconfig
 from common.mail import Mail
+import os
 # from tomorrow import threads
 # import threading
 # _lock = threading.RLock()
@@ -15,10 +16,15 @@ report_path = ''
 def run(testsuite):
     report_title = "测试报告"
     curtime = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-    report_folder = '../report/htmlreport'
-    mkdir(report_folder)
+    if readconfig.report_path == '':
+        report_folder = os.path.dirname(os.getcwd()) + '\\report\\htmlreport'
+        mkdir(report_folder)
+    else:
+        report_folder = readconfig.report_path
+        mkdir(report_folder)
     global report_path
-    report_path = '../report/htmlreport/%s_Report.html' % (curtime)
+    report_name = '%s_Report.html' % curtime
+    report_path = os.path.join(report_folder,report_name)
     with open(report_path, 'wb') as report:
         runner = HTMLTestRunner(stream=report, title=report_title, description="")
         runner.run(testsuite)
