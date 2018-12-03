@@ -460,3 +460,53 @@ selenium.common.exceptions.TimeoutException: Message:
 
 2018-12-03 16:13:59,547 - logger.py[line:42] - INFO - 【结束执行用例】
 2018-12-03 16:13:59,548 - logger.py[line:42] - INFO - 
+2018-12-03 16:20:06,237 - logger.py[line:42] - INFO - ***调试模式***
+2018-12-03 16:20:06,240 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2018-12-03 16:20:06,241 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
+2018-12-03 16:20:06,243 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2018-12-03 16:20:06,244 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2018-12-03 16:20:06,345 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2018-12-03 16:20:06,348 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
+2018-12-03 16:20:06,350 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击完成', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='完成']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assertIn', 'XF_OPVALUES': "新增成功##//p[contains(text(),'新增成功')]##add fail", 'XF_IFMIX': None}]
+2018-12-03 16:20:06,351 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
+2018-12-03 16:20:06,352 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2018-12-03 16:20:06,358 - logger.py[line:42] - INFO - 没有需要组合的用例
+2018-12-03 16:20:06,359 - logger.py[line:42] - INFO - <开始加载测试用例>
+2018-12-03 16:20:06,360 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
+2018-12-03 16:20:06,361 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
+2018-12-03 16:20:06,362 - logger.py[line:42] - INFO - <测试用例加载结束>
+2018-12-03 16:20:06,363 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2018-12-03 16:20:06,364 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
+2018-12-03 16:20:06,365 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2018-12-03 16:20:06,382 - logger.py[line:42] - INFO - 【开始执行用例】
+2018-12-03 16:20:14,919 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
+2018-12-03 16:20:25,927 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 80, in _find_element
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+  File "E:\PYTHON\Python37\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2018-12-03 16:20:25,929 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\pages\loginpage.py", line 37, in login
+    self.input_user(user)
+  File "E:\PycharmProjects\AutoTestV66\pages\loginpage.py", line 19, in input_user
+    self.input_text(self._username_loc,text)
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 61, in input_text
+    self._input_text(loc,text)
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 64, in _input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 75, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 87, in _find_element
+    raise e
+  File "E:\PycharmProjects\AutoTestV66\pages\base\keyword.py", line 80, in _find_element
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+  File "E:\PYTHON\Python37\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2018-12-03 16:20:31,285 - logger.py[line:42] - INFO - 【结束执行用例】
+2018-12-03 16:20:31,286 - logger.py[line:42] - INFO - 
