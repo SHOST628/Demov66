@@ -9,18 +9,21 @@ from pages.loginpage import LoginPage
 from common.storage import Storage
 import re
 import os
-import time
+from datetime import datetime
 from common.logger import logger
 
 class DemoTestCase(unittest.TestCase):
 
     def setUp(self):
+        self.start_time = datetime.now()
         self.driver = browser(readconfig.browser_name)
         self.driver.maximize_window()
         LoginPage(self.driver).login(readconfig.login_user,readconfig.login_password)
 
     def tearDown(self):
         logger.info('***************************************************END***************************************************')
+        duration = datetime.now() - self.start_time
+        logger.info("执行用例时间: %s " % duration)
         # self.driver.quit()
 
     def _use_keyword(self,func_name,opvalues=None):
@@ -48,9 +51,6 @@ class DemoTestCase(unittest.TestCase):
             logger.info('**************************************************START**************************************************')
             for key_dict in keyword_list:
                 try:
-                    # logger.info('正在执行用例 %s 的 %s %s %s %s' % (
-                    #     key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
-                    #     key_dict["XF_OPVALUES"]))
                     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
                     logger.info('执行用例 %s 的 %s %s %s %s 成功' % (
                         key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],

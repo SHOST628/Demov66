@@ -19,7 +19,7 @@ if_send = config.get("Mail","If_Send")
 email_host = config.get("Mail","Host")
 email_user = config.get("Mail","User")
 email_psw = config.get("Mail","Psw")
-to_addrs = config.get("Mail","To_Addrs")
+Receivers = config.get("Mail", "Receivers")
 
 
 

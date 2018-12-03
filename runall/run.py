@@ -53,7 +53,7 @@ if __name__ == "__main__":
             logger.info("【正在发送邮件报告】")
             mail = Mail(readconfig.email_host,readconfig.email_user,readconfig.email_psw)
             content = "自动化测试已结束，请查收测试报告"
-            mail.send_mail(readconfig.to_addrs,'自动化测试报告',content,report_path)
+            mail.send_mail(readconfig.Receivers, '自动化测试报告', content, report_path)
             logger.info("【邮件报告发送结束】")
             logger.info("")
     else:
