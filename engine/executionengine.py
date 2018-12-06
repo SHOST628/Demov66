@@ -4,7 +4,7 @@ from config import readconfig
 from engine.parsekeyword import ParseKeyword
 from common.oracle import Oracle
 from driver.driver import browser
-from pages.base.keyword import Action
+from pages.keywords.keyword import BaseKeyword
 from pages.loginpage import LoginPage
 from common.storage import Storage
 import re

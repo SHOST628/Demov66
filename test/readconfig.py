@@ -21,4 +21,7 @@ email_user = config.get("Mail","User")
 email_psw = config.get("Mail","Psw")
 to_addrs = config.get("Mail","To_Addrs")
 
-print(report_path)
+if None:
+    print("No")
+else:
+    print("Yes")

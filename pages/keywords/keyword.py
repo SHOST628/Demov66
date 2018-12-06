@@ -6,14 +6,13 @@ from selenium.webdriver.common.by import By
 import random
 import time
 import os
-import re
-from common.storage import Storage
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from common.logger import logger
+from common.file import mkdir
 
-class Action:
+class BaseKeyword:
     def __init__(self,driver):
         self._driver = driver
 
@@ -25,22 +24,22 @@ class Action:
         self._driver.get(url)
         self._driver.implicitly_wait(10)
 
-    def click(self,loc):
-        self._click(loc)
+    def click(self,loc,index = None):
+        """
+        keyword click can locate a absolutely path or a relative path with index
+        :param loc:
+        :param index:
+        :return:
+        """
+        if index:
+            i = int(index)
+            elements = self.find_elements(loc)
+            elements[i].click()
+        else:
+            self._click(loc)
 
     def _click(self,loc):
         self.find_element(loc).click()
-
-    def click_by_index(self,loc,index):
-        """
-        you can choose this keyword to locate element when a page without an only id contains many same properties in a page
-        :param loc:
-        :param index: choose a correct index starting with 0
-        :return:
-        """
-        i = int(index)
-        elements = self.find_elements(loc)
-        elements[i].click()
 
     def double_click(self,loc):
         self._double_click(loc)
@@ -49,16 +48,23 @@ class Action:
         on_element = self.find_element(loc)
         ActionChains(self._driver).double_click(on_element).perform()
 
-    def input_text_by_index(self,loc,index,text):
-        elements = self.find_elements(loc)
-        index = int(index)
-        element = elements[index]
-        element.clear()
-        element.send_keys(text)
-        element.send_keys(Keys.ENTER)
-
-    def input_text(self,loc,text):
-        self._input_text(loc,text)
+    def input_text(self,loc,text,index = None):
+        """
+        it can choose a absolutely location path or a relative location path
+        :param loc:
+        :param text:
+        :param index:
+        :return:
+        """
+        if index:
+            elements = self.find_elements(loc)
+            index = int(index)
+            element = elements[index]
+            element.clear()
+            element.send_keys(text)
+            element.send_keys(Keys.ENTER)
+        else:
+            self._input_text(loc,text)
 
     def _input_text(self,loc,text):
         element = self.find_element(loc)
@@ -165,18 +171,25 @@ class Action:
         option.click()
         logger.info("选择选项 %s" % option_text)
 
-    def save_screenshot(self):
-        self._save_screenshot()
+    def save_screenshot(self,path):
+        self._save_screenshot(path)
 
-    def _save_screenshot(self):
+    def _save_screenshot(self,path):
+        """
+        save screenshot
+        :param path: the directory of saving screenshot
+        :return:
+        """
         local_time = time.strftime("%Y%m%d_%H%M%S",time.localtime())
         image_name = local_time + '.png'
-        image_dir = os.path.dirname(os.getcwd()) + '/report/screenshot'
-        if not os.path.exists(image_dir):
-            os.makedirs(image_dir)
-        image_path = image_dir + '/'+ image_name
-        self._driver.get_screenshot_as_file(image_path)
-        print('lustrat' + image_dir + '/' + image_name + 'luend')
+        image_dir = mkdir(path)
+        image_path = os.path.join(image_dir,image_name)
+        try:
+            self._driver.get_screenshot_as_file(image_path)
+            logger.info("图片 %s 已保存到路径 %s" % (image_name,image_path))
+        except Exception as e:
+            logger.exception(e)
+            raise e
 
     #get text in element
     def _get_text(self,loc):
@@ -187,52 +200,20 @@ class Action:
         text = self._get_text(loc)
         assert member in text,'%s'%msg
 
-    # add  checkbox,radiobox
-
-    # set variate
-    def _storage(self,var,value):
-        setattr(Storage,var,value)
-
-    # store variate
-    def storage_docno(self,var):
-        loc = "//div[@class='popupContent']/div/p"
-        contain_text = self.find_element(loc).text
-        # get documnent no
-        doc_no =''.join(re.findall("[A-Za-z0-9]",contain_text))
-        # variate name
-        setattr(Storage,var,doc_no)
-        logger.info('存储单号为%s'%doc_no)
-        self.accept_prompt()
-
-    # def locate_record(self,var):
-    #     # self._storage_docno(var)
-    #     docno = getattr(Storage,var)
-    #     loc = "//div[text()='%s']"%docno
-    #     self.click(loc)
-
-    def accept_prompt(self):
-        # this is all prompt location in v66
-        loc = "//div[@class='popupContent']/div/p"
-        # loc = ""
-        self.click(loc)
-
     # send file
-    def send_file(self,file_path):
+    def send_file(self,loc,file_path):
+        """
+        upload file
+        :param loc: the path of the input tag
+        :param file_path: file path
+        :return: None
+        """
         # element = self.find_element("//input[@class='gwt-FileUpload']")
-        element = self._driver.find_element(By.XPATH,"//input[@class='gwt-FileUpload']")
+        element = self._driver.find_element(By.XPATH,loc)
         try:
             element.send_keys(file_path)
         except Exception:
             logger.error("文件路径名:%s 不正确"% file_path)
-
-    def get_current_date(self,name = 'curtime'):
-        """
-        store time value
-        :param name: variate name
-        :return:
-        """
-        t = time.strftime('%Y-%m-%d',time.localtime())
-        self._storage(name,t)
 
     def close(self):
         self._driver.close()

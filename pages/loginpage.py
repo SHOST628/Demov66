@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 from config import readconfig
-from pages.base.keyword import Action
+from pages.keywords.keyword import BaseKeyword
 import unittest
 from common.logger import logger
 
-class LoginPage(Action):
+class LoginPage(BaseKeyword):
     _username_loc = "//*[@id='xf_staffcode']/input"
     _password_loc = "//*[@id='xf_password']"
     _submit_loc = "//*[@id='okbtn']/span/span"

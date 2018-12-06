@@ -1,4 +1,4 @@
-from pages.base.keyword import Action
+from pages.keywords.actionkeyword import Action
 
 class ParseKeyword:
     def __init__(self,driver):

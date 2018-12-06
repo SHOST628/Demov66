@@ -1,19 +1,19 @@
-import os
-import sys
-root_path = os.path.dirname(os.getcwd())
-# path_list = []
-common_path = os.path.join(root_path,'common')
-config_path = os.path.join(root_path,'config')
-driver_path = os.path.join(root_path,'driver')
-engine_path = os.path.join(root_path,'engine')
-pages_path = os.path.join(root_path,'pages')
-base_path = os.path.join(root_path,'pages','base')
-sys.path.append(common_path)
-sys.path.append(config_path)
-sys.path.append(driver_path)
-sys.path.append(engine_path)
-sys.path.append(pages_path)
-sys.path.append(base_path)
+# import os
+# import sys
+# root_path = os.path.dirname(os.getcwd())
+# # path_list = []
+# common_path = os.path.join(root_path,'common')
+# config_path = os.path.join(root_path,'config')
+# driver_path = os.path.join(root_path,'driver')
+# engine_path = os.path.join(root_path,'engine')
+# pages_path = os.path.join(root_path,'pages')
+# base_path = os.path.join(root_path,'pages','keyword')
+# sys.path.append(common_path)
+# sys.path.append(config_path)
+# sys.path.append(driver_path)
+# sys.path.append(engine_path)
+# sys.path.append(pages_path)
+# sys.path.append(base_path)
 
 from common.HTMLTestRunner import HTMLTestRunner
 from engine.executionengine import testsuite
@@ -22,7 +22,7 @@ from common.file import mkdir
 from common.logger import logger
 from config import readconfig
 from common.mail import Mail
-# import os
+import os
 # from tomorrow import threads
 # import threading
 # _lock = threading.RLock()

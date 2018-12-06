@@ -7,4 +7,4 @@ def mkdir(path):
         os.makedirs(path)
         print(path + ' 创建成功')
     else:
-        pass
+        return path
