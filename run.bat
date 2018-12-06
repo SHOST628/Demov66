@@ -1,1 +1,0 @@
-python ./runall/run.py
