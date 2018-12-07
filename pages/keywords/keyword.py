@@ -36,10 +36,7 @@ class BaseKeyword:
             elements = self.find_elements(loc)
             elements[i].click()
         else:
-            self._click(loc)
-
-    def _click(self,loc):
-        self.find_element(loc).click()
+            self.find_element(loc).click()
 
     def double_click(self,loc):
         self._double_click(loc)
@@ -64,12 +61,10 @@ class BaseKeyword:
             element.send_keys(text)
             element.send_keys(Keys.ENTER)
         else:
-            self._input_text(loc,text)
-
-    def _input_text(self,loc,text):
-        element = self.find_element(loc)
-        element.clear()
-        element.send_keys(text)
+            element = self.find_element(loc)
+            element.clear()
+            element.send_keys(text)
+        logger.info("输入文本 %s" % text)
 
     # def find_element_by_text(self,contain_text):
     #     self._find_element_by_text(contain_text)
@@ -192,16 +187,12 @@ class BaseKeyword:
             raise e
 
     #get text in element
-    def _get_text(self,loc):
+    def get_text(self, loc):
         text = self.find_element(loc).text
         return text
 
-    def assertIn(self,member, loc, msg=None):
-        text = self._get_text(loc)
-        assert member in text,'%s'%msg
-
     # send file
-    def send_file(self,loc,file_path):
+    def upload_file(self,loc,file_path):
         """
         upload file
         :param loc: the path of the input tag

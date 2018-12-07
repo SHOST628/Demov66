@@ -51,10 +51,10 @@ class DemoTestCase(unittest.TestCase):
             logger.info('**************************************************START**************************************************')
             for key_dict in keyword_list:
                 try:
-                    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-                    logger.info('执行用例 %s 的 %s %s %s %s 成功' % (
+                    logger.info('正在执行用例 %s 的 %s %s %s %s' % (
                         key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
                         key_dict["XF_OPVALUES"]))
+                    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
                 except Exception as e:
                     logger.error('执行用例 %s 的 %s %s %s %s 出错' % (
                         key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],

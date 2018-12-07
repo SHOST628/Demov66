@@ -43,3 +43,7 @@ class Action(BaseKeyword):
         setattr(Storage,var,doc_no)
         logger.info('存储单号为%s'%doc_no)
         self.accept_prompt()
+
+    def assert_in_prompt(self,member,msg=None):
+        text = self.get_text("//div[@class='popupContent']/div/p")
+        assert member in text,'%s'%msg
