@@ -77,36 +77,16 @@ class BaseKeyword:
         return element
 
     def _find_element(self,loc,timeout=10,poll_frequency=0.5):
-        try:
-            return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
-            # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
-        except NoSuchElementException as e:
-            logger.exception(e)
-            raise e
-        except TimeoutException as e:
-            logger.exception(e)
-            raise e
-        except WebDriverException as e:
-            logger.exception(e)
-            raise e
+        return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+        # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
 
     def find_elements(self,loc):
         elements = self._find_elements(loc)
         return elements
 
     def _find_elements(self,loc,timeout=10,poll_frequency=0.5):
-        try:
-            # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
-            return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
-        except NoSuchElementException as e:
-            logger.exception(e)
-            raise e
-        except TimeoutException as e:
-            logger.exception(e)
-            raise e
-        except WebDriverException as e:
-            logger.exception(e)
-            raise e
+        # return WebDriverWait(self._driver,timeout,poll_frequency).until(lambda x:x.find_elements(loc))
+        return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
 
     def enter(self,loc):
         self._enter(loc)
@@ -183,6 +163,7 @@ class BaseKeyword:
             self._driver.get_screenshot_as_file(image_path)
             logger.info("图片 %s 已保存到路径 %s" % (image_name,image_path))
         except Exception as e:
+            logger.error("图片保存失败")
             logger.exception(e)
             raise e
 

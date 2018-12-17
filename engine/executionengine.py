@@ -12,6 +12,7 @@ import os
 from datetime import datetime
 from common.logger import logger
 
+
 class DemoTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -35,10 +36,9 @@ class DemoTestCase(unittest.TestCase):
             var_list = re.findall("\$(.+?)\$",opvalues)
             for var in var_list:
                 try:
-                    if hasattr(Storage,var):
-                        var_value = getattr(Storage,var)
-                        opvalues = re.sub("\$(.+?)\$",var_value,opvalues,count=1)
-                        logger.info("变量 %s 的值为 %s"%(var,var_value))
+                    var_value = getattr(Storage,var)
+                    opvalues = re.sub("\$(.+?)\$",var_value,opvalues,count=1)
+                    logger.info("变量 %s 的值为 %s"%(var,var_value))
                 except AttributeError as e:
                     logger.error("找不到变量 %s" % var)
                     raise e
