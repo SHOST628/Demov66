@@ -1,270 +1,47 @@
-2018-12-17 11:01:57,649 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:01:57,776 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:01:57,778 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
-2018-12-17 11:01:57,783 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:01:57,793 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:01:57,911 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:01:57,956 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
-2018-12-17 11:01:57,961 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击离开', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assert_in_prompt', 'XF_OPVALUES': '新增成功##add fail', 'XF_IFMIX': None}]
-2018-12-17 11:01:57,964 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
-2018-12-17 11:01:57,967 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:01:58,023 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:01:58,025 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:01:58,027 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
-2018-12-17 11:01:58,029 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
-2018-12-17 11:01:58,031 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:01:58,033 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:01:58,034 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
-2018-12-17 11:01:58,036 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:01:58,142 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:02:09,292 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:02:11,618 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:02:13,215 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:02:15,352 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:02:15,354 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:02:16,966 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:02:16,969 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS01 点击仓储管理 click //span[text()='仓储管理']
-2018-12-17 11:02:18,581 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS02 点击收货 click //span[text()='收货']
-2018-12-17 11:02:20,196 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS03 点击直接收货维护(颜色/尺码) click //span[text()='直接收货维护']
-2018-12-17 11:02:21,831 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS04 点击新增按钮 click //span[text()='新增']
-2018-12-17 11:02:23,497 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS05 选择供应商 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:02:25,894 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:02:27,471 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS06 选择收货地点 select //div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)
-2018-12-17 11:02:29,912 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
-2018-12-17 11:02:31,515 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS07 点击增加按钮 click //div[@class='v-slot v-slot-toolbar-23']/div/span
-2018-12-17 11:02:33,175 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS08 输入货品 input_text //input[@id='GR.XF_PLU-0']##LP001
-2018-12-17 11:02:35,426 - logger.py[line:42] - INFO - 输入文本 LP001
-2018-12-17 11:02:35,428 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS09 输入数量 input_text //input[@id='GR.XF_GRQTY-0']##100
-2018-12-17 11:02:37,640 - logger.py[line:42] - INFO - 输入文本 100
-2018-12-17 11:02:37,644 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS10 输入单位成本 input_text //input[@id='GR.XF_GRUNITCOST-0']##100
-2018-12-17 11:02:39,871 - logger.py[line:42] - INFO - 输入文本 100
-2018-12-17 11:02:39,872 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS11 点击离开 click //span[text()='离开']
-2018-12-17 11:02:41,490 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS12 点击是 click //span[text()='是']
-2018-12-17 11:02:43,123 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS13 判断是否新增成功 assert_in_prompt 新增成功##add fail
-2018-12-17 11:02:45,372 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:02:45,375 - logger.py[line:42] - INFO - 执行用例时间: 0:00:47.212701 
-2018-12-17 11:02:48,989 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:02:48,991 - logger.py[line:42] - INFO - 
-2018-12-17 11:06:03,171 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:06:03,174 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:06:03,175 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
-2018-12-17 11:06:03,178 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:06:03,179 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:06:03,273 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:06:03,279 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
-2018-12-17 11:06:03,283 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击离开', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assert_in_prompt', 'XF_OPVALUES': '新增成功##add fail', 'XF_IFMIX': None}]
-2018-12-17 11:06:03,286 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
-2018-12-17 11:06:03,289 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:06:03,298 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:06:03,301 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:06:03,304 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
-2018-12-17 11:06:03,307 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
-2018-12-17 11:06:03,309 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:06:03,312 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:06:03,315 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
-2018-12-17 11:06:03,317 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:06:03,343 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:06:12,124 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:06:14,399 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:06:16,004 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:06:18,171 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:06:18,172 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:06:19,810 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:06:19,811 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS01 点击仓储管理 click //span[text()='仓储管理']
-2018-12-17 11:06:21,446 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS02 点击收货 click //span[text()='收货']
-2018-12-17 11:06:23,076 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS03 点击直接收货维护(颜色/尺码) click //span[text()='直接收货维护']
-2018-12-17 11:06:24,718 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS04 点击新增按钮 click //span[text()='新增']
-2018-12-17 11:06:26,360 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS05 选择供应商 select //div[@id='XF_SUPPCODE']##科传 (TT01)
-2018-12-17 11:06:27,988 - logger.py[line:46] - ERROR - 执行用例 DirectGr01 的 TS05 选择供应商 select //div[@id='XF_SUPPCODE']##科传 (TT01) 出错
-2018-12-17 11:06:27,991 - logger.py[line:48] - ERROR - Message: invalid element state: Element must be user-editable in order to clear it.
-  (Session info: chrome=71.0.3578.80)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
+2019-01-03 11:30:56,854 - logger.py[line:42] - INFO - ***调试模式***
+2019-01-03 11:30:57,095 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-01-03 11:30:57,100 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
+2019-01-03 11:30:57,107 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-01-03 11:30:57,110 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-01-03 11:30:57,248 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-01-03 11:30:57,259 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
+2019-01-03 11:30:57,265 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击离开', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assert_in_prompt', 'XF_OPVALUES': '新增成功##add fail', 'XF_IFMIX': None}]
+2019-01-03 11:30:57,270 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
+2019-01-03 11:30:57,274 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-01-03 11:30:57,308 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-01-03 11:30:57,313 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-01-03 11:30:57,318 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
+2019-01-03 11:30:57,322 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
+2019-01-03 11:30:57,327 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-01-03 11:30:57,330 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-01-03 11:30:57,331 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
+2019-01-03 11:30:57,332 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-01-03 11:30:57,469 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-01-03 11:31:12,386 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
+2019-01-03 11:31:14,658 - logger.py[line:42] - INFO - 输入文本 SZ001
+2019-01-03 11:31:16,248 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-01-03 11:31:18,405 - logger.py[line:42] - INFO - 输入文本 SZ001
+2019-01-03 11:31:18,407 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-01-03 11:31:20,067 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-01-03 11:31:20,068 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS01 点击仓储管理 click //span[text()='仓储管理']
+2019-01-03 11:31:21,735 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS02 点击收货 click //span[text()='收货']
+2019-01-03 11:31:23,446 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS03 点击直接收货维护(颜色/尺码) click //span[text()='直接收货维护']
+2019-01-03 11:31:25,147 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS04 点击新增按钮 click //span[text()='新增']
+2019-01-03 11:31:27,083 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS05 选择供应商 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
+2019-01-03 11:31:29,673 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
+2019-01-03 11:31:31,297 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS06 选择收货地点 select //div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)
+2019-01-03 11:31:33,765 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
+2019-01-03 11:31:35,416 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS07 点击增加按钮 click //div[@class='v-slot v-slot-toolbar-23']/div/span
+2019-01-03 11:31:37,209 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS08 输入货品 input_text //input[@id='GR.XF_PLU-0']##LP001
+2019-01-03 11:31:48,280 - logger.py[line:46] - ERROR - 执行用例 DirectGr01 的 TS08 输入货品 input_text //input[@id='GR.XF_PLU-0']##LP001 出错
+2019-01-03 11:31:48,283 - logger.py[line:48] - ERROR - Message: 
 Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 59, in func
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 57, in func
     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 46, in _use_keyword
     func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 101, in select
-    self._select(loc,contain_text)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 122, in _select
-    self.input_text(loc,contain_text)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 65, in input_text
-    element.clear()
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 95, in clear
-    self._execute(Command.CLEAR_ELEMENT)
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element must be user-editable in order to clear it.
-  (Session info: chrome=71.0.3578.80)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
-
-2018-12-17 11:06:28,052 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:06:28,056 - logger.py[line:42] - INFO - 执行用例时间: 0:00:24.709413 
-2018-12-17 11:06:32,054 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:06:32,057 - logger.py[line:42] - INFO - 
-2018-12-17 11:10:27,823 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:10:27,826 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:10:27,827 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01'}]
-2018-12-17 11:10:27,829 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:10:27,830 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:10:27,929 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:10:27,936 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='PO01' order by xf_tsid
-2018-12-17 11:10:27,938 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01', 'XF_CASEDESC': '采购单维护（无颜色尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击采购', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击采购单维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购单维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择买手', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STAFFCODE']/input##SZ001(SZ001)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '保存当前时间', 'XF_ACTION': 'get_current_date', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入有效期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_EXPIRYDATE']/input##$curtime$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入送货日期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_DLVYDATE']/input##$curtim$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '选择结算周期', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_PAYTERMCODE']/input##01 (01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '选择货币编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_CURRCODE']/input##人民币 (RMB)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击增加订货地点按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##0", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '选择订货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS14', 'XF_TSDESC': '输入分摊率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="*RATIO-0"]##100', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS15', 'XF_TSDESC': '点击增加货品按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##4", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS16', 'XF_TSDESC': '输入货号', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]##LP001', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS17', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS18', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]##30', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS19', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS20', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_ITEMUNITCOST-0"]##80', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS21', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS22', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS23', 'XF_TSDESC': '存储PO单号', 'XF_ACTION': 'storage_docno', 'XF_OPVALUES': 'pono', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS24', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS25', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS26', 'XF_TSDESC': '点击提交审核', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='提交审核']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS27', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS28', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS29', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS30', 'XF_TSDESC': '点击提交接纳', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='接纳']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS31', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS32', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS33', 'XF_TSDESC': '点击直接收货维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS34', 'XF_TSDESC': '点击引用采购单', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='引用采购单']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS35', 'XF_TSDESC': '输入采购单号并回车', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@class='v-textfield v-widget v-has-width']##$pono$##3", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS36', 'XF_TSDESC': '双击记录', 'XF_ACTION': 'double_click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS37', 'XF_TSDESC': '输入汇率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="XF_EXCHRATE"]##1', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS38', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS39', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}]
-2018-12-17 11:10:27,939 - logger.py[line:42] - INFO - 已生成用例 test_PO01
-2018-12-17 11:10:27,940 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:10:27,947 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:10:27,948 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:10:27,950 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_PO01']
-2018-12-17 11:10:27,951 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_PO01']
-2018-12-17 11:10:27,952 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:10:27,953 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:10:27,954 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_PO01>]>
-2018-12-17 11:10:27,955 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:10:27,974 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:10:36,670 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:10:38,928 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:10:40,493 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:10:42,692 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:10:42,694 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:10:44,350 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:10:44,351 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS01 点击仓储管理 click //*[text()='仓储管理']
-2018-12-17 11:10:45,996 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS02 点击采购 click //*[text()='采购']
-2018-12-17 11:10:47,642 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS03 点击采购单维护 click //*[text()='采购单维护']
-2018-12-17 11:10:49,274 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS04 点击新增按钮 click //*[text()='新增']
-2018-12-17 11:10:51,061 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS05 选择供应商编号 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:10:53,805 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:10:55,426 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS06 选择买手 select //div[@id='XF_STAFFCODE']/input##SZ001(SZ001)
-2018-12-17 11:10:57,928 - logger.py[line:42] - INFO - 输入文本 SZ001(SZ001)
-2018-12-17 11:10:59,543 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS07 保存当前时间 get_current_date None
-2018-12-17 11:10:59,546 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$
-2018-12-17 11:10:59,549 - logger.py[line:42] - INFO - 变量 curtime 的值为 2018-12-17
-2018-12-17 11:11:01,844 - logger.py[line:42] - INFO - 输入文本 2018-12-17
-2018-12-17 11:11:01,848 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS09 输入送货日期 input_text //*[@id='XF_DLVYDATE']/input##$curtim$
-2018-12-17 11:11:04,156 - logger.py[line:42] - INFO - 输入文本 $curtim$
-2018-12-17 11:11:04,159 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS10 选择结算周期 select //div[@id='XF_PAYTERMCODE']/input##01 (01)
-2018-12-17 11:11:06,526 - logger.py[line:42] - INFO - 输入文本 01 (01)
-2018-12-17 11:11:08,150 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS11 选择货币编号 select //div[@id='XF_CURRCODE']/input##人民币 (RMB)
-2018-12-17 11:11:10,563 - logger.py[line:42] - INFO - 输入文本 人民币 (RMB)
-2018-12-17 11:11:12,154 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS12 点击增加订货地点按钮 click //span[@class='v-button-wrap']##0
-2018-12-17 11:11:16,565 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS13 选择订货地点 select //div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)
-2018-12-17 11:11:18,977 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
-2018-12-17 11:11:20,581 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS14 输入分摊率 input_text //*[@id="*RATIO-0"]##100
-2018-12-17 11:11:23,500 - logger.py[line:42] - INFO - 输入文本 100
-2018-12-17 11:11:23,502 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS15 点击增加货品按钮 click //span[@class='v-button-wrap']##4
-2018-12-17 11:11:27,830 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS16 输入货号 input_text //*[@id="D.XF_PLU-0"]##LP001
-2018-12-17 11:11:30,069 - logger.py[line:42] - INFO - 输入文本 LP001
-2018-12-17 11:11:30,070 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS17 回车 enter //*[@id="D.XF_PLU-0"]
-2018-12-17 11:11:31,664 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS18 输入数量 input_text //*[@id="D.XF_TTLPOQTY-0"]##30
-2018-12-17 11:11:33,874 - logger.py[line:42] - INFO - 输入文本 30
-2018-12-17 11:11:33,875 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS19 回车 enter //*[@id="D.XF_TTLPOQTY-0"]
-2018-12-17 11:11:35,463 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS20 输入单位成本 input_text //*[@id="D.XF_ITEMUNITCOST-0"]##80
-2018-12-17 11:11:37,668 - logger.py[line:42] - INFO - 输入文本 80
-2018-12-17 11:11:37,671 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS21 点击离开按钮 click //span[text()='离开']
-2018-12-17 11:11:39,285 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS22 点击是 click //span[text()='是']
-2018-12-17 11:11:40,919 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS23 存储PO单号 storage_docno pono
-2018-12-17 11:11:42,509 - logger.py[line:46] - ERROR - 执行用例 PO01 的 TS23 存储PO单号 storage_docno pono 出错
-2018-12-17 11:11:42,512 - logger.py[line:48] - ERROR - Message: stale element reference: element is not attached to the page document
-  (Session info: chrome=71.0.3578.80)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 59, in func
-    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
-    func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\actionkeyword.py", line 39, in storage_docno
-    contain_text = self.find_element(loc).text
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 76, in text
-    return self._execute(Command.GET_ELEMENT_TEXT)['value']
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
-  (Session info: chrome=71.0.3578.80)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64)
-
-2018-12-17 11:11:42,568 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:11:42,571 - logger.py[line:42] - INFO - 执行用例时间: 0:01:14.594267 
-2018-12-17 11:11:47,130 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:11:47,132 - logger.py[line:42] - INFO - 
-2018-12-17 11:14:01,934 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:14:01,937 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:14:01,938 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01'}]
-2018-12-17 11:14:01,941 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:14:01,942 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:14:02,032 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:14:02,035 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='PO01' order by xf_tsid
-2018-12-17 11:14:02,037 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01', 'XF_CASEDESC': '采购单维护（无颜色尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击采购', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击采购单维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购单维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择买手', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STAFFCODE']/input##SZ001(SZ001)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '保存当前时间', 'XF_ACTION': 'get_current_date', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入有效期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_EXPIRYDATE']/input##$curtime$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入送货日期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_DLVYDATE']/input##$curtim$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '选择结算周期', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_PAYTERMCODE']/input##01 (01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '选择货币编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_CURRCODE']/input##人民币 (RMB)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击增加订货地点按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##0", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '选择订货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS14', 'XF_TSDESC': '输入分摊率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="*RATIO-0"]##100', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS15', 'XF_TSDESC': '点击增加货品按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##4", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS16', 'XF_TSDESC': '输入货号', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]##LP001', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS17', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS18', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]##30', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS19', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS20', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_ITEMUNITCOST-0"]##80', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS21', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS22', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS23', 'XF_TSDESC': '存储PO单号', 'XF_ACTION': 'storage_docno', 'XF_OPVALUES': 'pono', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS24', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS25', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS26', 'XF_TSDESC': '点击提交审核', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='提交审核']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS27', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS28', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS29', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS30', 'XF_TSDESC': '点击提交接纳', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='接纳']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS31', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS32', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS33', 'XF_TSDESC': '点击直接收货维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS34', 'XF_TSDESC': '点击引用采购单', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='引用采购单']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS35', 'XF_TSDESC': '输入采购单号并回车', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@class='v-textfield v-widget v-has-width']##$pono$##3", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS36', 'XF_TSDESC': '双击记录', 'XF_ACTION': 'double_click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS37', 'XF_TSDESC': '输入汇率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="XF_EXCHRATE"]##1', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS38', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS39', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}]
-2018-12-17 11:14:02,038 - logger.py[line:42] - INFO - 已生成用例 test_PO01
-2018-12-17 11:14:02,040 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:14:02,052 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:14:02,054 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:14:02,055 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_PO01']
-2018-12-17 11:14:02,056 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_PO01']
-2018-12-17 11:14:02,057 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:14:02,058 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:14:02,060 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_PO01>]>
-2018-12-17 11:14:02,061 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:14:02,084 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:14:11,221 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:14:13,490 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:14:15,122 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:14:17,304 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:14:17,306 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:14:18,952 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:14:18,954 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS01 点击仓储管理 click //*[text()='仓储管理']
-2018-12-17 11:14:20,595 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS02 点击采购 click //*[text()='采购']
-2018-12-17 11:14:22,258 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS03 点击采购单维护 click //*[text()='采购单维护']
-2018-12-17 11:14:23,926 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS04 点击新增按钮 click //*[text()='新增']
-2018-12-17 11:14:25,587 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS05 选择供应商编号 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:14:28,028 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:14:29,652 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS06 选择买手 select //div[@id='XF_STAFFCODE']/input##SZ001(SZ001)
-2018-12-17 11:14:32,181 - logger.py[line:42] - INFO - 输入文本 SZ001(SZ001)
-2018-12-17 11:14:33,798 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS07 保存当前时间 get_current_date None
-2018-12-17 11:14:33,802 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$
-2018-12-17 11:14:33,805 - logger.py[line:42] - INFO - 变量 curtime 的值为 2018-12-17
-2018-12-17 11:14:36,064 - logger.py[line:42] - INFO - 输入文本 2018-12-17
-2018-12-17 11:14:36,067 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS09 输入送货日期 input_text //*[@id='XF_DLVYDATE']/input##$curtim$
-2018-12-17 11:14:38,351 - logger.py[line:42] - INFO - 输入文本 $curtim$
-2018-12-17 11:14:38,355 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS10 选择结算周期 select //div[@id='XF_PAYTERMCODE']/input##01 (01)
-2018-12-17 11:14:40,754 - logger.py[line:42] - INFO - 输入文本 01 (01)
-2018-12-17 11:14:42,383 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS11 选择货币编号 select //div[@id='XF_CURRCODE']/input##人民币 (RMB)
-2018-12-17 11:14:45,413 - logger.py[line:42] - INFO - 输入文本 人民币 (RMB)
-2018-12-17 11:14:47,034 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS12 点击增加订货地点按钮 click //span[@class='v-button-wrap']##0
-2018-12-17 11:14:51,410 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS13 选择订货地点 select //div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)
-2018-12-17 11:14:53,870 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
-2018-12-17 11:14:55,488 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS14 输入分摊率 input_text //*[@id="*RATIO-0"]##100
-2018-12-17 11:14:57,740 - logger.py[line:42] - INFO - 输入文本 100
-2018-12-17 11:14:57,742 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS15 点击增加货品按钮 click //span[@class='v-button-wrap']##4
-2018-12-17 11:15:02,134 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS16 输入货号 input_text //*[@id="D.XF_PLU-0"]##LP001
-2018-12-17 11:15:04,472 - logger.py[line:42] - INFO - 输入文本 LP001
-2018-12-17 11:15:04,476 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS17 回车 enter //*[@id="D.XF_PLU-0"]
-2018-12-17 11:15:06,090 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS18 输入数量 input_text //*[@id="D.XF_TTLPOQTY-0"]##30
-2018-12-17 11:15:08,334 - logger.py[line:42] - INFO - 输入文本 30
-2018-12-17 11:15:08,336 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS19 回车 enter //*[@id="D.XF_TTLPOQTY-0"]
-2018-12-17 11:15:09,949 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS20 输入单位成本 input_text //*[@id="D.XF_ITEMUNITCOST-0"]##80
-2018-12-17 11:15:12,264 - logger.py[line:42] - INFO - 输入文本 80
-2018-12-17 11:15:12,268 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS21 点击离开按钮 click //span[text()='离开']
-2018-12-17 11:15:13,964 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS22 点击是 click //span[text()='是']
-2018-12-17 11:15:15,628 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS23 存储PO单号 storage_docno pono
-2018-12-17 11:15:17,289 - logger.py[line:42] - INFO - 存储单号为
-2018-12-17 11:15:18,902 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS24 定位PO采购记录 click //div[text()='$pono$']
-2018-12-17 11:15:18,905 - logger.py[line:42] - INFO - 变量 pono 的值为 
-2018-12-17 11:15:29,970 - logger.py[line:46] - ERROR - 执行用例 PO01 的 TS24 定位PO采购记录 click //div[text()='$pono$'] 出错
-2018-12-17 11:15:29,973 - logger.py[line:48] - ERROR - Message: 
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 59, in func
-    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
-    func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 39, in click
-    self.find_element(loc).click()
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
     element = self._find_element(loc)
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 80, in _find_element
@@ -273,131 +50,54 @@ Traceback (most recent call last):
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 
-2018-12-17 11:15:30,109 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:15:30,112 - logger.py[line:42] - INFO - 执行用例时间: 0:01:28.025034 
-2018-12-17 11:15:34,667 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:15:34,668 - logger.py[line:42] - INFO - 
-2018-12-17 11:21:18,991 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:21:19,000 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:21:19,001 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01'}]
-2018-12-17 11:21:19,003 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:21:19,005 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:21:19,098 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:21:19,114 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='PO01' order by xf_tsid
-2018-12-17 11:21:19,117 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01', 'XF_CASEDESC': '采购单维护（无颜色尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击采购', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击采购单维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购单维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择买手', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STAFFCODE']/input##SZ001(SZ001)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '保存当前时间', 'XF_ACTION': 'get_current_date', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入有效期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_EXPIRYDATE']/input##$curtime$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入送货日期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_DLVYDATE']/input##$curtim$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '选择结算周期', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_PAYTERMCODE']/input##01 (01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '选择货币编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_CURRCODE']/input##人民币 (RMB)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击增加订货地点按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##0", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '选择订货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS14', 'XF_TSDESC': '输入分摊率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="*RATIO-0"]##100', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS15', 'XF_TSDESC': '点击增加货品按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##4", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS16', 'XF_TSDESC': '输入货号', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]##LP001', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS17', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS18', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]##30', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS19', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS20', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_ITEMUNITCOST-0"]##80', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS21', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS22', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS23', 'XF_TSDESC': '存储PO单号', 'XF_ACTION': 'storage_docno', 'XF_OPVALUES': 'pono', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS24', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS25', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS26', 'XF_TSDESC': '点击提交审核', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='提交审核']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS27', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS28', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS29', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS30', 'XF_TSDESC': '点击提交接纳', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='接纳']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS31', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS32', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS33', 'XF_TSDESC': '点击直接收货维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS34', 'XF_TSDESC': '点击引用采购单', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='引用采购单']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS35', 'XF_TSDESC': '输入采购单号并回车', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@class='v-textfield v-widget v-has-width']##$pono$##3", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS36', 'XF_TSDESC': '双击记录', 'XF_ACTION': 'double_click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS37', 'XF_TSDESC': '输入汇率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="XF_EXCHRATE"]##1', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS38', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS39', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}]
-2018-12-17 11:21:19,118 - logger.py[line:42] - INFO - 已生成用例 test_PO01
-2018-12-17 11:21:19,120 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:21:19,126 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:21:19,128 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:21:19,129 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_PO01']
-2018-12-17 11:21:19,130 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_PO01']
-2018-12-17 11:21:19,131 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:21:19,132 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:21:19,133 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_PO01>]>
-2018-12-17 11:21:19,134 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:21:19,150 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:21:27,932 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:21:30,163 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:21:31,772 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:21:33,924 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:21:33,926 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:21:35,569 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:21:35,573 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS01 点击仓储管理 click //*[text()='仓储管理']
-2018-12-17 11:21:37,229 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS02 点击采购 click //*[text()='采购']
-2018-12-17 11:21:38,878 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS03 点击采购单维护 click //*[text()='采购单维护']
-2018-12-17 11:21:40,513 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS04 点击新增按钮 click //*[text()='新增']
-2018-12-17 11:21:42,204 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS05 选择供应商编号 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:21:44,657 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:21:46,268 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS06 选择买手 select //div[@id='XF_STAFFCODE']/input##SZ001(SZ001)
-2018-12-17 11:21:49,235 - logger.py[line:42] - INFO - 输入文本 SZ001(SZ001)
-2018-12-17 11:21:50,841 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS07 保存当前时间 get_current_date None
-2018-12-17 11:21:50,845 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$
-2018-12-17 11:21:50,849 - logger.py[line:46] - ERROR - 执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$ 出错
-2018-12-17 11:21:50,852 - logger.py[line:48] - ERROR - info() takes 2 positional arguments but 3 were given
+2019-01-03 11:31:48,430 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-01-03 11:31:48,432 - logger.py[line:42] - INFO - 执行用例时间: 0:00:50.941914 
+2019-01-03 11:31:52,964 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-01-03 11:31:52,966 - logger.py[line:42] - INFO - 
+2019-01-03 11:38:59,191 - logger.py[line:42] - INFO - ***调试模式***
+2019-01-03 11:38:59,195 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-01-03 11:38:59,197 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
+2019-01-03 11:38:59,200 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-01-03 11:38:59,201 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-01-03 11:38:59,344 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-01-03 11:38:59,348 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
+2019-01-03 11:38:59,352 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击离开', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assert_in_prompt', 'XF_OPVALUES': '新增成功##add fail', 'XF_IFMIX': None}]
+2019-01-03 11:38:59,354 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
+2019-01-03 11:38:59,356 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-01-03 11:38:59,364 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-01-03 11:38:59,366 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-01-03 11:38:59,368 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
+2019-01-03 11:38:59,370 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
+2019-01-03 11:38:59,372 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-01-03 11:38:59,374 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-01-03 11:38:59,376 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
+2019-01-03 11:38:59,377 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-01-03 11:38:59,408 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-01-03 11:39:08,176 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
+2019-01-03 11:39:10,477 - logger.py[line:42] - INFO - 输入文本 SZ001
+2019-01-03 11:39:12,078 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-01-03 11:39:14,192 - logger.py[line:42] - INFO - 输入文本 SZ001
+2019-01-03 11:39:14,193 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-01-03 11:39:15,929 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-01-03 11:39:15,935 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS01 点击仓储管理 click //span[text()='仓储管理']
+2019-01-03 11:39:17,617 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS02 点击收货 click //span[text()='收货']
+2019-01-03 11:39:19,295 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS03 点击直接收货维护(颜色/尺码) click //span[text()='直接收货维护']
+2019-01-03 11:39:20,984 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS04 点击新增按钮 click //span[text()='新增']
+2019-01-03 11:39:22,734 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS05 选择供应商 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
+2019-01-03 11:39:25,251 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
+2019-01-03 11:39:26,903 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS06 选择收货地点 select //div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)
+2019-01-03 11:39:29,864 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
+2019-01-03 11:39:31,492 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS07 点击增加按钮 click //div[@class='v-slot v-slot-toolbar-23']/div/span
+2019-01-03 11:39:33,153 - logger.py[line:42] - INFO - 正在执行用例 DirectGr01 的 TS08 输入货品 input_text //input[@id='GR.XF_PLU-0']##LP001
+2019-01-03 11:39:44,219 - logger.py[line:46] - ERROR - 执行用例 DirectGr01 的 TS08 输入货品 input_text //input[@id='GR.XF_PLU-0']##LP001 出错
+2019-01-03 11:39:44,222 - logger.py[line:48] - ERROR - Message: 
 Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 60, in func
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 57, in func
     self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 41, in _use_keyword
-    logger.info('是否存在变量： ',hasattr(Storage,var))
-TypeError: info() takes 2 positional arguments but 3 were given
-2018-12-17 11:21:50,859 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:21:50,863 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.709814 
-2018-12-17 11:21:55,492 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:21:55,494 - logger.py[line:42] - INFO - 
-2018-12-17 11:22:54,739 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:22:54,743 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:22:54,744 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01'}]
-2018-12-17 11:22:54,746 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:22:54,747 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:22:54,828 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:22:54,831 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='PO01' order by xf_tsid
-2018-12-17 11:22:54,834 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01', 'XF_CASEDESC': '采购单维护（无颜色尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击采购', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击采购单维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购单维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择买手', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STAFFCODE']/input##SZ001(SZ001)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '保存当前时间', 'XF_ACTION': 'get_current_date', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入有效期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_EXPIRYDATE']/input##$curtime$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入送货日期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_DLVYDATE']/input##$curtim$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '选择结算周期', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_PAYTERMCODE']/input##01 (01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '选择货币编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_CURRCODE']/input##人民币 (RMB)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击增加订货地点按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##0", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '选择订货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS14', 'XF_TSDESC': '输入分摊率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="*RATIO-0"]##100', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS15', 'XF_TSDESC': '点击增加货品按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##4", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS16', 'XF_TSDESC': '输入货号', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]##LP001', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS17', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS18', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]##30', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS19', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS20', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_ITEMUNITCOST-0"]##80', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS21', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS22', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS23', 'XF_TSDESC': '存储PO单号', 'XF_ACTION': 'storage_docno', 'XF_OPVALUES': 'pono', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS24', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS25', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS26', 'XF_TSDESC': '点击提交审核', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='提交审核']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS27', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS28', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS29', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS30', 'XF_TSDESC': '点击提交接纳', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='接纳']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS31', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS32', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS33', 'XF_TSDESC': '点击直接收货维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS34', 'XF_TSDESC': '点击引用采购单', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='引用采购单']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS35', 'XF_TSDESC': '输入采购单号并回车', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@class='v-textfield v-widget v-has-width']##$pono$##3", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS36', 'XF_TSDESC': '双击记录', 'XF_ACTION': 'double_click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS37', 'XF_TSDESC': '输入汇率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="XF_EXCHRATE"]##1', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS38', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS39', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}]
-2018-12-17 11:22:54,835 - logger.py[line:42] - INFO - 已生成用例 test_PO01
-2018-12-17 11:22:54,836 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:22:54,843 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:22:54,844 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:22:54,845 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_PO01']
-2018-12-17 11:22:54,846 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_PO01']
-2018-12-17 11:22:54,847 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:22:54,848 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:22:54,849 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_PO01>]>
-2018-12-17 11:22:54,850 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:22:54,881 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:23:04,067 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:23:06,320 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:23:07,926 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:23:10,102 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:23:10,104 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:23:11,712 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:23:11,714 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS01 点击仓储管理 click //*[text()='仓储管理']
-2018-12-17 11:23:13,366 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS02 点击采购 click //*[text()='采购']
-2018-12-17 11:23:14,988 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS03 点击采购单维护 click //*[text()='采购单维护']
-2018-12-17 11:23:16,671 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS04 点击新增按钮 click //*[text()='新增']
-2018-12-17 11:23:18,335 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS05 选择供应商编号 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:23:20,771 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:23:22,399 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS06 选择买手 select //div[@id='XF_STAFFCODE']/input##SZ001(SZ001)
-2018-12-17 11:23:25,456 - logger.py[line:42] - INFO - 输入文本 SZ001(SZ001)
-2018-12-17 11:23:27,071 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS07 保存当前时间 get_current_date None
-2018-12-17 11:23:27,076 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$
-2018-12-17 11:23:27,080 - logger.py[line:42] - INFO - 是否存在变量：True
-2018-12-17 11:23:27,084 - logger.py[line:42] - INFO - 变量 curtime 的值为 2018-12-17
-2018-12-17 11:23:29,343 - logger.py[line:42] - INFO - 输入文本 2018-12-17
-2018-12-17 11:23:29,346 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS09 输入送货日期 input_text //*[@id='XF_DLVYDATE']/input##$curtim$
-2018-12-17 11:23:31,631 - logger.py[line:42] - INFO - 输入文本 $curtim$
-2018-12-17 11:23:31,633 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS10 选择结算周期 select //div[@id='XF_PAYTERMCODE']/input##01 (01)
-2018-12-17 11:23:33,988 - logger.py[line:42] - INFO - 输入文本 01 (01)
-2018-12-17 11:23:35,614 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS11 选择货币编号 select //div[@id='XF_CURRCODE']/input##人民币 (RMB)
-2018-12-17 11:23:38,047 - logger.py[line:42] - INFO - 输入文本 人民币 (RMB)
-2018-12-17 11:23:39,663 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS12 点击增加订货地点按钮 click //span[@class='v-button-wrap']##0
-2018-12-17 11:23:44,115 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS13 选择订货地点 select //div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)
-2018-12-17 11:23:46,544 - logger.py[line:42] - INFO - 输入文本 尚潮时装 (SZ)
-2018-12-17 11:23:48,163 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS14 输入分摊率 input_text //*[@id="*RATIO-0"]##100
-2018-12-17 11:23:50,413 - logger.py[line:42] - INFO - 输入文本 100
-2018-12-17 11:23:50,417 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS15 点击增加货品按钮 click //span[@class='v-button-wrap']##4
-2018-12-17 11:23:54,761 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS16 输入货号 input_text //*[@id="D.XF_PLU-0"]##LP001
-2018-12-17 11:23:57,046 - logger.py[line:42] - INFO - 输入文本 LP001
-2018-12-17 11:23:57,050 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS17 回车 enter //*[@id="D.XF_PLU-0"]
-2018-12-17 11:23:58,666 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS18 输入数量 input_text //*[@id="D.XF_TTLPOQTY-0"]##30
-2018-12-17 11:24:00,872 - logger.py[line:42] - INFO - 输入文本 30
-2018-12-17 11:24:00,874 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS19 回车 enter //*[@id="D.XF_TTLPOQTY-0"]
-2018-12-17 11:24:02,471 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS20 输入单位成本 input_text //*[@id="D.XF_ITEMUNITCOST-0"]##80
-2018-12-17 11:24:04,723 - logger.py[line:42] - INFO - 输入文本 80
-2018-12-17 11:24:04,726 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS21 点击离开按钮 click //span[text()='离开']
-2018-12-17 11:24:06,383 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS22 点击是 click //span[text()='是']
-2018-12-17 11:24:08,072 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS23 存储PO单号 storage_docno pono
-2018-12-17 11:24:09,720 - logger.py[line:42] - INFO - 存储单号为
-2018-12-17 11:24:11,332 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS24 定位PO采购记录 click //div[text()='$pono$']
-2018-12-17 11:24:11,334 - logger.py[line:42] - INFO - 是否存在变量：True
-2018-12-17 11:24:11,336 - logger.py[line:42] - INFO - 变量 pono 的值为 
-2018-12-17 11:24:22,403 - logger.py[line:46] - ERROR - 执行用例 PO01 的 TS24 定位PO采购记录 click //div[text()='$pono$'] 出错
-2018-12-17 11:24:22,406 - logger.py[line:48] - ERROR - Message: 
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 60, in func
-    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 49, in _use_keyword
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 46, in _use_keyword
     func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 39, in click
-    self.find_element(loc).click()
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
     element = self._find_element(loc)
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 80, in _find_element
@@ -406,62 +106,26 @@ Traceback (most recent call last):
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 
-2018-12-17 11:24:22,414 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:24:22,416 - logger.py[line:42] - INFO - 执行用例时间: 0:01:27.533006 
-2018-12-17 11:24:27,000 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:24:27,004 - logger.py[line:42] - INFO - 
-2018-12-17 11:30:48,294 - logger.py[line:42] - INFO - ***调试模式***
-2018-12-17 11:30:48,298 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2018-12-17 11:30:48,299 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01'}]
-2018-12-17 11:30:48,302 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2018-12-17 11:30:48,304 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2018-12-17 11:30:48,395 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2018-12-17 11:30:48,398 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='PO01' order by xf_tsid
-2018-12-17 11:30:48,401 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'PO01', 'XF_CASEDESC': '采购单维护（无颜色尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击采购', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击采购单维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='采购单维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//*[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择买手', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STAFFCODE']/input##SZ001(SZ001)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '保存当前时间', 'XF_ACTION': 'get_current_date', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入有效期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_EXPIRYDATE']/input##$curtime$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入送货日期', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//*[@id='XF_DLVYDATE']/input##$curtim$", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '选择结算周期', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_PAYTERMCODE']/input##01 (01)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '选择货币编号', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_CURRCODE']/input##人民币 (RMB)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击增加订货地点按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##0", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '选择订货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_STORECODE-0']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS14', 'XF_TSDESC': '输入分摊率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="*RATIO-0"]##100', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS15', 'XF_TSDESC': '点击增加货品按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[@class='v-button-wrap']##4", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS16', 'XF_TSDESC': '输入货号', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]##LP001', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS17', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_PLU-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS18', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]##30', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS19', 'XF_TSDESC': '回车', 'XF_ACTION': 'enter', 'XF_OPVALUES': '//*[@id="D.XF_TTLPOQTY-0"]', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS20', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="D.XF_ITEMUNITCOST-0"]##80', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS21', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS22', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS23', 'XF_TSDESC': '存储PO单号', 'XF_ACTION': 'storage_docno', 'XF_OPVALUES': 'pono', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS24', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS25', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS26', 'XF_TSDESC': '点击提交审核', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='提交审核']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS27', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS28', 'XF_TSDESC': '定位PO采购记录', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS29', 'XF_TSDESC': '点击状态转换', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='状态转换']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS30', 'XF_TSDESC': '点击提交接纳', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='接纳']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS31', 'XF_TSDESC': '取消弹窗', 'XF_ACTION': 'accept_prompt', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS32', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS33', 'XF_TSDESC': '点击直接收货维护', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS34', 'XF_TSDESC': '点击引用采购单', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='引用采购单']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS35', 'XF_TSDESC': '输入采购单号并回车', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@class='v-textfield v-widget v-has-width']##$pono$##3", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS36', 'XF_TSDESC': '双击记录', 'XF_ACTION': 'double_click', 'XF_OPVALUES': "//div[text()='$pono$']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS37', 'XF_TSDESC': '输入汇率', 'XF_ACTION': 'input_text', 'XF_OPVALUES': '//*[@id="XF_EXCHRATE"]##1', 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS38', 'XF_TSDESC': '点击离开按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'PO01', 'XF_CASEDESC': None, 'XF_TSID': 'TS39', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}]
-2018-12-17 11:30:48,402 - logger.py[line:42] - INFO - 已生成用例 test_PO01
-2018-12-17 11:30:48,404 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2018-12-17 11:30:48,411 - logger.py[line:42] - INFO - 没有需要组合的用例
-2018-12-17 11:30:48,412 - logger.py[line:42] - INFO - <开始加载测试用例>
-2018-12-17 11:30:48,413 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_PO01']
-2018-12-17 11:30:48,414 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_PO01']
-2018-12-17 11:30:48,415 - logger.py[line:42] - INFO - <测试用例加载结束>
-2018-12-17 11:30:48,416 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2018-12-17 11:30:48,417 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_PO01>]>
-2018-12-17 11:30:48,418 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2018-12-17 11:30:48,436 - logger.py[line:42] - INFO - 【开始执行用例】
-2018-12-17 11:30:57,215 - logger.py[line:42] - INFO - 打开网址 http://172.31.2.234:8180/STD66/
-2018-12-17 11:30:59,421 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:31:00,997 - logger.py[line:42] - INFO - 登录用户 SZ001
-2018-12-17 11:31:03,204 - logger.py[line:42] - INFO - 输入文本 SZ001
-2018-12-17 11:31:03,206 - logger.py[line:42] - INFO - 登录密码 SZ001
-2018-12-17 11:31:04,800 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2018-12-17 11:31:04,803 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS01 点击仓储管理 click //*[text()='仓储管理']
-2018-12-17 11:31:06,444 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS02 点击采购 click //*[text()='采购']
-2018-12-17 11:31:08,082 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS03 点击采购单维护 click //*[text()='采购单维护']
-2018-12-17 11:31:09,723 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS04 点击新增按钮 click //*[text()='新增']
-2018-12-17 11:31:11,411 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS05 选择供应商编号 select //div[@id='XF_SUPPCODE']/input##科传 (TT01)
-2018-12-17 11:31:13,873 - logger.py[line:42] - INFO - 输入文本 科传 (TT01)
-2018-12-17 11:31:15,497 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS06 选择买手 select //div[@id='XF_STAFFCODE']/input##SZ001(SZ001)
-2018-12-17 11:31:18,017 - logger.py[line:42] - INFO - 输入文本 SZ001(SZ001)
-2018-12-17 11:31:19,628 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS07 保存当前时间 get_current_date None
-2018-12-17 11:31:19,631 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS08 输入有效期 input_text //*[@id='XF_EXPIRYDATE']/input##$curtime$
-2018-12-17 11:31:19,636 - logger.py[line:42] - INFO - 是否存在变量：True
-2018-12-17 11:31:19,638 - logger.py[line:42] - INFO - 变量 curtime 的值为 2018-12-17
-2018-12-17 11:31:21,921 - logger.py[line:42] - INFO - 输入文本 2018-12-17
-2018-12-17 11:31:21,922 - logger.py[line:42] - INFO - 正在执行用例 PO01 的 TS09 输入送货日期 input_text //*[@id='XF_DLVYDATE']/input##$curtim$
-2018-12-17 11:31:21,923 - logger.py[line:42] - INFO - 是否存在变量：False
-2018-12-17 11:31:21,924 - logger.py[line:46] - ERROR - 找不到变量 curtim
-2018-12-17 11:31:21,925 - logger.py[line:46] - ERROR - 执行用例 PO01 的 TS09 输入送货日期 input_text //*[@id='XF_DLVYDATE']/input##$curtim$ 出错
-2018-12-17 11:31:21,926 - logger.py[line:48] - ERROR - type object 'Storage' has no attribute 'curtim'
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 60, in func
-    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 47, in _use_keyword
-    raise e
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 42, in _use_keyword
-    var_value = getattr(Storage,var)
-AttributeError: type object 'Storage' has no attribute 'curtim'
-2018-12-17 11:31:21,928 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2018-12-17 11:31:21,929 - logger.py[line:42] - INFO - 执行用例时间: 0:00:33.490915 
-2018-12-17 11:31:26,442 - logger.py[line:42] - INFO - 【结束执行用例】
-2018-12-17 11:31:26,443 - logger.py[line:42] - INFO - 
+2019-01-03 11:39:44,230 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-01-03 11:39:44,233 - logger.py[line:42] - INFO - 执行用例时间: 0:00:44.821563 
+2019-01-03 11:39:48,806 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-01-03 11:39:48,810 - logger.py[line:42] - INFO - 
+2019-01-03 12:12:29,422 - logger.py[line:42] - INFO - ***调试模式***
+2019-01-03 12:12:29,426 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-01-03 12:12:29,431 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01'}]
+2019-01-03 12:12:29,434 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-01-03 12:12:29,436 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-01-03 12:12:29,590 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-01-03 12:12:29,595 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='DirectGr01' order by xf_tsid
+2019-01-03 12:12:29,598 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货菜单', 'XF_TSID': 'TS01', 'XF_TSDESC': '点击仓储管理', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='仓储管理']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击收货', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='收货']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '点击直接收货维护(颜色/尺码)', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='直接收货维护']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': '直接收货', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='新增']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '选择供应商', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_SUPPCODE']/input##科传 (TT01)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '选择收货地点', 'XF_ACTION': 'select', 'XF_OPVALUES': "//div[@id='XF_GRFINALLOCATION']/input##尚潮时装 (SZ)", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击增加按钮', 'XF_ACTION': 'click', 'XF_OPVALUES': "//div[@class='v-slot v-slot-toolbar-23']/div/span", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS08', 'XF_TSDESC': '输入货品', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_PLU-0']##LP001", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS09', 'XF_TSDESC': '输入数量', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRQTY-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS10', 'XF_TSDESC': '输入单位成本', 'XF_ACTION': 'input_text', 'XF_OPVALUES': "//input[@id='GR.XF_GRUNITCOST-0']##100", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS11', 'XF_TSDESC': '点击离开', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='离开']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS12', 'XF_TSDESC': '点击是', 'XF_ACTION': 'click', 'XF_OPVALUES': "//span[text()='是']", 'XF_IFMIX': None}, {'XF_CASEID': 'DirectGr01', 'XF_CASEDESC': None, 'XF_TSID': 'TS13', 'XF_TSDESC': '判断是否新增成功', 'XF_ACTION': 'assert_in_prompt', 'XF_OPVALUES': '新增成功##add fail', 'XF_IFMIX': None}]
+2019-01-03 12:12:29,600 - logger.py[line:42] - INFO - 已生成用例 test_DirectGr01
+2019-01-03 12:12:29,602 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-01-03 12:12:29,613 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-01-03 12:12:29,615 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-01-03 12:12:29,618 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_DirectGr01']
+2019-01-03 12:12:29,620 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_DirectGr01']
+2019-01-03 12:12:29,622 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-01-03 12:12:29,624 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-01-03 12:12:29,626 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_DirectGr01>]>
+2019-01-03 12:12:29,628 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-01-03 12:12:29,655 - logger.py[line:42] - INFO - 【开始执行用例】
