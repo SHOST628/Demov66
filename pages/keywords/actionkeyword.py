@@ -14,14 +14,14 @@ class Action(BaseKeyword):
         t = time.strftime('%Y-%m-%d',time.localtime())
         self._storage(name,t)
 
-    def send_file(self,loc,file_path):
+    def import_file(self,loc,file_path):
         """
         upload file
         :param loc: the path of the input path
         :param file_path: file path
         :return: None
         """
-        self.send_file(loc,file_path)
+        self.upload_file(loc,file_path)
 
     def accept_prompt(self):
         # this is all prompt location in v66
