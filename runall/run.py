@@ -15,7 +15,6 @@ from common.mail import Mail
 # _lock = threading.RLock()
 # _cond = threading.Condition(lock=_lock)
 
-report_path = ''
 # @threads(2)
 def run(testsuite):
     report_title = "测试报告"
@@ -26,12 +25,12 @@ def run(testsuite):
     else:
         report_folder = readconfig.report_path
         mkdir(report_folder)
-    global report_path
     report_name = '%s_Report.html' % curtime
     report_path = os.path.join(report_folder,report_name)
     with open(report_path, 'wb') as report:
         runner = HTMLTestRunner(stream=report, title=report_title, description="")
         runner.run(testsuite)
+    return report_path
 
 if __name__ == "__main__":
     if testsuite:
@@ -46,10 +45,8 @@ if __name__ == "__main__":
         #     runner.run(testsuite)
         # for case in testsuite:
         #     run(case)
-        try:
-            run(testsuite)
-        except Exception as e:
-            logger.exception(e)
+
+        report_path = run(testsuite)
         logger.info("【结束执行用例】")
         logger.info("")
         flag = int(readconfig.if_send)

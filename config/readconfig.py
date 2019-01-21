@@ -4,7 +4,7 @@ from configparser import ConfigParser
 config_path = os.path.dirname(os.getcwd()) + "/config/config.ini"
 config = ConfigParser()
 config.read(config_path,encoding='utf-8')
-url = config.get('URL','url')
+url = config.get('BackendPath','url')
 report_path = config.get('Report','Path')
 # DB config
 database_connection_url = config.get('DataSource', 'DatabaseConnectionUrl')

@@ -11,6 +11,7 @@ import re
 import os
 from datetime import datetime
 from common.logger import logger
+from selenium.common.exceptions import TimeoutException
 
 
 class DemoTestCase(unittest.TestCase):
@@ -45,20 +46,50 @@ class DemoTestCase(unittest.TestCase):
             opvalist = opvalues.split('##')
             func(*opvalist)
 
+    def _get_location(self,location_id):
+        oracle = Oracle(readconfig.db_url)
+        sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
+        location_list = oracle.dict_fetchall(sql)
+        location = location_list[0]['XF_LOCATION']
+        if location == None:
+            raise Exception("location_id 错误，无法找到对应的location")
+        return location
+
     @staticmethod
     def group(keyword_list):
         def func(self):
             logger.info('**************************************************START**************************************************')
+            location_id = ''
+            opvalues = ''
             for key_dict in keyword_list:
                 try:
-                    logger.info('正在执行用例 %s 的 %s %s %s %s' % (
+                    logger.info('正在执行用例 %s 的 %s %s %s %s %s' % (
                         key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
-                        key_dict["XF_OPVALUES"]))
-                    self._use_keyword(key_dict["XF_ACTION"], key_dict["XF_OPVALUES"])
+                        key_dict["XF_LOCATIONID"],key_dict["XF_OPVALUES"]))
+                    location_id = key_dict["XF_LOCATIONID"]
+                    if location_id == None:
+                        opvalues = key_dict['XF_OPVALUES']
+                        if opvalues == None:
+                            self._use_keyword(key_dict["XF_ACTION"])
+                        else:
+                            self._use_keyword(key_dict["XF_ACTION"], opvalues)
+                    else:
+                        opvalues = key_dict['XF_OPVALUES']
+                        location = self._get_location(location_id)  # get loaction value
+                        if opvalues == None:
+                            self._use_keyword(key_dict["XF_ACTION"], location)
+                        else:
+                            if '##' in location:
+                                location_element = location.split('##')
+                                opvalues = location_element[0] + '##' + opvalues + location_element[1]
+                            else:
+                                opvalues = location + '##' + opvalues
+                            self._use_keyword(key_dict["XF_ACTION"], opvalues)
+
                 except Exception as e:
-                    logger.error('执行用例 %s 的 %s %s %s %s 出错' % (
+                    logger.info('执行用例 %s 的 %s %s %s %s %s 出错' % (
                         key_dict["XF_CASEID"], key_dict["XF_TSID"], key_dict["XF_TSDESC"], key_dict["XF_ACTION"],
-                        key_dict["XF_OPVALUES"]))
+                        key_dict["XF_LOCATIONID"], key_dict["XF_OPVALUES"]))
                     logger.exception(e)
                     raise e
         return func
@@ -155,14 +186,18 @@ if Flag:
     logger.info("***调试模式***")
     execute_user = readconfig.execute_user
     if execute_user == '':
-        sql = "select xf_caseid from xf_casedebug where xf_executeuser is null and xf_caseid is not null order by xf_caseid"
+        sql = "select xf_caseid from xf_casedebug where xf_executeuser is null " \
+              "and xf_caseid is not null order by xf_caseid"
         testcaseid_list = oracle.dict_fetchall(sql)
-        sql = "select xf_mixid from xf_casedebug where xf_executeuser is null and xf_mixid is not null order by xf_mixid"
+        sql = "select xf_mixid from xf_casedebug where xf_executeuser is null " \
+              "and xf_mixid is not null order by xf_mixid"
         mixid_list = oracle.dict_fetchall(sql)
     else:
-        sql = "select xf_caseid from xf_casedebug where xf_executeuser = '%s' and xf_caseid is not null order by xf_caseid" % execute_user
+        sql = "select xf_caseid from xf_casedebug where xf_executeuser = '%s' " \
+              "and xf_caseid is not null order by xf_caseid" % execute_user
         testcaseid_list = oracle.dict_fetchall(sql)
-        sql = "select xf_mixid from xf_casedebug where xf_executeuser = '%s' and xf_mixid is not null order by xf_mixid" % execute_user
+        sql = "select xf_mixid from xf_casedebug where xf_executeuser = '%s' " \
+              "and xf_mixid is not null order by xf_mixid" % execute_user
         mixid_list = oracle.dict_fetchall(sql)
     mixcase_list = []
     for i in mixid_list:

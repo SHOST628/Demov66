@@ -1,4 +1,5 @@
 from pages.keywords.actionkeyword import Action
+from common.logger import logger
 
 class ParseKeyword:
     def __init__(self,driver):
@@ -11,7 +12,7 @@ class ParseKeyword:
                     func = getattr(obj,func_name)
                     return func
                 else:
-                    print("找不到该关键字:%s"%func_name)
+                    logger.info("找不到该关键字:%s"%func_name)
 
         except Exception as e:
             raise e

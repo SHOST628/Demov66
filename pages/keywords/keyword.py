@@ -24,7 +24,7 @@ class BaseKeyword:
         self._driver.get(url)
         self._driver.implicitly_wait(10)
 
-    def click(self,loc,index = None):
+    def click(self,loc,index=None):
         """
         keyword click can locate a absolutely path or a relative path with index
         :param loc:
@@ -45,7 +45,7 @@ class BaseKeyword:
         on_element = self.find_element(loc)
         ActionChains(self._driver).double_click(on_element).perform()
 
-    def input_text(self,loc,text,index = None):
+    def input_text(self,loc,text,index=None):
         """
         it can choose a absolutely location path or a relative location path
         :param loc:
