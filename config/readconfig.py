@@ -3,7 +3,7 @@ from configparser import ConfigParser
 
 config_path = os.path.dirname(os.getcwd()) + "/config/config.ini"
 config = ConfigParser()
-config.read(config_path,encoding='utf-8')
+config.read(config_path,encoding='utf-8-sig')
 url = config.get('BackendPath','url')
 report_path = config.get('Report','Path')
 # DB config
