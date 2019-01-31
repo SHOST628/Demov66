@@ -1,6 +1,7 @@
 import os
 from configparser import ConfigParser
 
+os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 config_path = os.path.dirname(os.getcwd()) + "/config/config.ini"
 config = ConfigParser()
 config.read(config_path,encoding='utf-8-sig')

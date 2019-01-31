@@ -1,6 +1,8 @@
 from pages.keywords.keyword import BaseKeyword
 from common.logger import logger
 from common.storage import Storage
+from common.oracle import Oracle
+from config import readconfig
 import time
 import re
 
@@ -43,6 +45,22 @@ class Action(BaseKeyword):
         setattr(Storage,var,doc_no)
         logger.info('存储单号为%s'%doc_no)
         self.accept_prompt()
+
+    # locate menu tree
+    def locate_menu_by_text(self,*text):
+        loc = ""
+        for t in text:
+            loc = "//span[contains(text(),'%s')]" % t
+            self.click(loc)
+
+    def locate_menu_by_id(self,*location_ids):
+        oracle = Oracle(readconfig.db_url)
+        sql = ""
+        for location_id in location_ids:
+            sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
+            location_list = oracle.dict_fetchall(sql)
+            location = location_list[0]['XF_LOCATION']
+            self.click(location)
 
     def assert_in_prompt(self,member,msg=None):
         text = self.get_text("//div[@class='popupContent']/div/p")
