@@ -154,3 +154,41 @@ selenium.common.exceptions.TimeoutException: Message:
 2019-01-31 15:27:30,627 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.989830 
 2019-01-31 15:27:33,483 - logger.py[line:42] - INFO - 【结束执行用例】
 2019-01-31 15:27:33,484 - logger.py[line:42] - INFO - 
+2019-01-31 16:26:51,250 - logger.py[line:42] - INFO - ***调试模式***
+2019-01-31 16:26:51,336 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-01-31 16:26:51,338 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
+2019-01-31 16:26:51,341 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-01-31 16:26:51,342 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-01-31 16:26:51,484 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-01-31 16:26:51,486 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
+2019-01-31 16:26:51,489 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': 'L-A0001(空调1)', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-01-31 16:26:51,490 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
+2019-01-31 16:26:51,491 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-01-31 16:26:51,502 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-01-31 16:26:51,503 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-01-31 16:26:51,504 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
+2019-01-31 16:26:51,505 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
+2019-01-31 16:26:51,506 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-01-31 16:26:51,507 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-01-31 16:26:51,508 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
+2019-01-31 16:26:51,509 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-01-31 16:26:51,529 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-01-31 16:26:59,344 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-01-31 16:27:03,147 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-01-31 16:27:05,444 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-01-31 16:27:07,036 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-01-31 16:27:07,037 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text 货品管理##货品资料维护##货品基础资料维护(颜色/尺码) None
+2019-01-31 16:27:07,200 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)'
+2019-01-31 16:27:07,201 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-01-31 16:27:07,202 - logger.py[line:42] - INFO - 执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text 货品管理##货品资料维护##货品基础资料维护(颜色/尺码) None 出错
+2019-01-31 16:27:07,203 - logger.py[line:48] - ERROR - list index out of range
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 78, in func
+    location = self._get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 53, in _get_location
+    location = location_list[0]['XF_LOCATION']
+IndexError: list index out of range
+2019-01-31 16:27:07,205 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-01-31 16:27:07,206 - logger.py[line:42] - INFO - 执行用例时间: 0:00:15.673896 
+2019-01-31 16:27:10,676 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-01-31 16:27:10,677 - logger.py[line:42] - INFO - 

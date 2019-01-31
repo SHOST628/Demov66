@@ -60,6 +60,8 @@ class Action(BaseKeyword):
             sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
             location_list = oracle.dict_fetchall(sql)
             location = location_list[0]['XF_LOCATION']
+            if location == None:
+                raise Exception("location_id 错误，无法找到对应的location")
             self.click(location)
 
     def assert_in_prompt(self,member,msg=None):

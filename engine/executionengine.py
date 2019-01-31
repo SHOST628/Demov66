@@ -46,7 +46,7 @@ class DemoTestCase(unittest.TestCase):
             opvalist = opvalues.split('##')
             func(*opvalist)
 
-    def _get_location(self,location_id):
+    def get_location(self, location_id):
         oracle = Oracle(readconfig.db_url)
         sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
         location_list = oracle.dict_fetchall(sql)
@@ -75,7 +75,7 @@ class DemoTestCase(unittest.TestCase):
                             self._use_keyword(key_dict["XF_ACTION"], opvalues)
                     else:
                         opvalues = key_dict['XF_OPVALUES']
-                        location = self._get_location(location_id)  # get loaction value
+                        location = self.get_location(location_id)  # get loaction value
                         if opvalues == None:
                             self._use_keyword(key_dict["XF_ACTION"], location)
                         else:
