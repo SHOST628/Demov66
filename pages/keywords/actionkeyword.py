@@ -53,6 +53,7 @@ class Action(BaseKeyword):
             loc = "//span[contains(text(),'%s')]" % t
             self.click(loc)
 
+    # TODO to be fixed (can't use this keyword)
     def locate_menu_by_id(self,*location_ids):
         oracle = Oracle(readconfig.db_url)
         sql = ""

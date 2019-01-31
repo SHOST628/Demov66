@@ -3,7 +3,7 @@ from logging import handlers
 import os
 from common.file import mkdir
 
-class Logger:
+class Logger(object):
     level_relations = {
         'debug':logging.DEBUG,
         'info':logging.INFO,

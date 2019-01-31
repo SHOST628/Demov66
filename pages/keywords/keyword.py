@@ -12,7 +12,7 @@ from selenium.common.exceptions import TimeoutException
 from common.logger import logger
 from common.file import mkdir
 
-class BaseKeyword:
+class BaseKeyword(object):
     def __init__(self,driver):
         self._driver = driver
 

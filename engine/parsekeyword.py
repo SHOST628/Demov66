@@ -1,7 +1,7 @@
 from pages.keywords.actionkeyword import Action
 from common.logger import logger
 
-class ParseKeyword:
+class ParseKeyword(object):
     def __init__(self,driver):
         self.driver = driver
 

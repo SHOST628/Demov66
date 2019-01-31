@@ -5,7 +5,7 @@ import smtplib
 from common.logger import logger
 
 
-class Mail:
+class Mail(object):
     def __init__(self, host, user, passwd):
         self._user = user
         try:

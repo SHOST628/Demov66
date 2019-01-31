@@ -3,7 +3,7 @@ from cx_Oracle import ProgrammingError
 from common.logger import logger
 
 
-class Oracle:
+class Oracle(object):
     def __init__(self,db_url):
         """db_url: connection path format
             db_url  eg: PROMOTION/PROMOTION@172.31.6.234:1521/TESTDB

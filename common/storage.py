@@ -1,3 +1,3 @@
 #storage some document no or other information
-class Storage:
+class Storage(object):
     pass
