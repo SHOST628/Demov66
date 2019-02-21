@@ -16,14 +16,14 @@ class Action(BaseKeyword):
         t = time.strftime('%Y-%m-%d',time.localtime())
         self._storage(name,t)
 
-    def import_file(self,loc,file_path):
+    def import_file(self, loc, file_name):
         """
         upload file
         :param loc: the path of the input path
-        :param file_path: file path
+        :param file_name: file path
         :return: None
         """
-        self.upload_file(loc,file_path)
+        self.upload_file(loc, file_name)
 
     def accept_prompt(self):
         # this is all prompt location in v66
@@ -68,3 +68,6 @@ class Action(BaseKeyword):
     def assert_in_prompt(self,member,msg=None):
         text = self.get_text("//div[@class='popupContent']/div/p")
         assert member in text,'%s'%msg
+
+    def testcase_doc(self,desci):
+        logger.info("用例描述 ：%s" % desci)

@@ -1,331 +1,903 @@
-2019-01-31 15:15:00,652 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 15:15:00,773 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 15:15:00,775 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 15:15:00,780 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 15:15:00,781 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 15:15:00,917 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 15:15:00,922 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 15:15:00,925 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu', 'XF_LOCATIONID': None, 'XF_OPVALUES': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu', 'XF_LOCATIONID': None, 'XF_OPVALUES': '(商品大类)##电器##L-A0001(空调1)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 15:15:00,926 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 15:15:00,927 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 15:15:00,957 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 15:15:00,958 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 15:15:00,959 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 15:15:00,960 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 15:15:00,961 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 15:15:00,962 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 15:15:00,963 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 15:15:00,964 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 15:15:01,087 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 15:15:12,693 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 15:15:16,678 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 15:15:18,802 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 15:15:20,706 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 15:15:20,707 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu None 货品管理##货品资料维护##货品基础资料维护(颜色/尺码)
-2019-01-31 15:15:26,384 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS02 输入款号 input_text SM_STYLE 123
-2019-01-31 15:15:26,559 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_STYLE'
-2019-01-31 15:15:26,560 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ITEMMAS.XF_STYLE"]'}]
-2019-01-31 15:15:38,139 - logger.py[line:42] - INFO - 执行用例 ITEMMAS 的 TS02 输入款号 input_text SM_STYLE 123 出错
-2019-01-31 15:15:38,141 - logger.py[line:48] - ERROR - Message: 
+2019-02-21 11:17:23,007 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 11:17:23,114 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 11:17:23,115 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 11:17:23,121 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 11:17:23,122 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 11:17:23,504 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 11:17:23,517 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 11:17:23,519 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 11:17:23,520 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 11:17:23,521 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 11:17:23,535 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 11:17:23,536 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 11:17:23,537 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:17:23,538 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:17:23,539 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 11:17:23,539 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 11:17:23,540 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 11:17:23,541 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 11:17:23,626 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 11:17:33,905 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 11:17:38,906 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 11:17:41,027 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 11:17:42,774 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 11:17:42,775 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 后台系统设定##成本中心维护
+2019-02-21 11:17:53,809 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 后台系统设定##成本中心维护 出错
+2019-02-21 11:17:53,810 - logger.py[line:48] - ERROR - Message: 
 Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 87, in func
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 81, in func
     self._use_keyword(key_dict["XF_ACTION"], opvalues)
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 47, in _use_keyword
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
     func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
-    element = self.find_element(loc)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
-    element = self._find_element(loc)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 80, in _find_element
-    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
-  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-2019-01-31 15:15:38,231 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 15:15:38,232 - logger.py[line:42] - INFO - 执行用例时间: 0:00:37.143124 
-2019-01-31 15:15:41,735 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 15:15:41,736 - logger.py[line:42] - INFO - 
-2019-01-31 15:23:36,344 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 15:23:36,348 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 15:23:36,349 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 15:23:36,362 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 15:23:36,363 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 15:23:36,549 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 15:23:36,553 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 15:23:36,555 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '(商品大类)##电器##L-A0001(空调1)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 15:23:36,556 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 15:23:36,557 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 15:23:36,565 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 15:23:36,567 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 15:23:36,568 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 15:23:36,569 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 15:23:36,570 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 15:23:36,571 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 15:23:36,572 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 15:23:36,573 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 15:23:36,596 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 15:23:44,605 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 15:23:48,308 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 15:23:50,465 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 15:23:52,035 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 15:23:52,036 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text None 货品管理##货品资料维护##货品基础资料维护(颜色/尺码)
-2019-01-31 15:23:57,990 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS02 点击新增按钮 click ADD None
-2019-01-31 15:23:58,171 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD'
-2019-01-31 15:23:58,172 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增"]'}]
-2019-01-31 15:23:59,768 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS03 输入款号 input_text SM_STYLE 123
-2019-01-31 15:23:59,981 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_STYLE'
-2019-01-31 15:23:59,982 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ITEMMAS.XF_STYLE"]'}]
-2019-01-31 15:24:02,145 - logger.py[line:42] - INFO - 输入文本 123
-2019-01-31 15:24:02,146 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS04 输入货品描述 input_text SM_DESCI 测试货品
-2019-01-31 15:24:02,327 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_DESCI'
-2019-01-31 15:24:02,328 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI"]'}]
-2019-01-31 15:24:05,036 - logger.py[line:42] - INFO - 输入文本 测试货品
-2019-01-31 15:24:05,037 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS05 点击 添加货品分类 click ADD_ITEM_SORT None
-2019-01-31 15:24:05,193 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ITEM_SORT'
-2019-01-31 15:24:05,195 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="添加货品分类"]'}]
-2019-01-31 15:24:06,798 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text None (商品大类)##电器##L-A0001(空调1)
-2019-01-31 15:24:19,398 - logger.py[line:42] - INFO - 执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text None (商品大类)##电器##L-A0001(空调1) 出错
-2019-01-31 15:24:19,399 - logger.py[line:48] - ERROR - Message: 
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 75, in func
-    self._use_keyword(key_dict["XF_ACTION"], opvalues)
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 47, in _use_keyword
-    func(*opvalist)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\actionkeyword.py", line 52, in locate_menu_by_text
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\actionkeyword.py", line 54, in locate_menu_by_text
     self.click(loc)
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 39, in click
     self.find_element(loc).click()
   File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
     element = self._find_element(loc)
-  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 80, in _find_element
-    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
   File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 
-2019-01-31 15:24:19,402 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 15:24:19,404 - logger.py[line:42] - INFO - 执行用例时间: 0:00:42.805449 
-2019-01-31 15:24:22,976 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 15:24:22,977 - logger.py[line:42] - INFO - 
-2019-01-31 15:26:58,424 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 15:26:58,427 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 15:26:58,428 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 15:26:58,430 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 15:26:58,431 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 15:26:58,594 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 15:26:58,597 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 15:26:58,599 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': 'L-A0001(空调1)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 15:26:58,600 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 15:26:58,601 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 15:26:58,608 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 15:26:58,609 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 15:26:58,610 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 15:26:58,611 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 15:26:58,612 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 15:26:58,613 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 15:26:58,614 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 15:26:58,615 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 15:26:58,634 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 15:27:05,699 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 15:27:09,428 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 15:27:11,526 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 15:27:13,110 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 15:27:13,111 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text None 货品管理##货品资料维护##货品基础资料维护(颜色/尺码)
-2019-01-31 15:27:18,952 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS02 点击新增按钮 click ADD None
-2019-01-31 15:27:19,155 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD'
-2019-01-31 15:27:19,156 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增"]'}]
-2019-01-31 15:27:20,777 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS03 输入款号 input_text SM_STYLE 123
-2019-01-31 15:27:20,970 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_STYLE'
-2019-01-31 15:27:20,971 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ITEMMAS.XF_STYLE"]'}]
-2019-01-31 15:27:23,108 - logger.py[line:42] - INFO - 输入文本 123
-2019-01-31 15:27:23,110 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS04 输入货品描述 input_text SM_DESCI 测试货品
-2019-01-31 15:27:23,304 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_DESCI'
-2019-01-31 15:27:23,305 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI"]'}]
-2019-01-31 15:27:25,483 - logger.py[line:42] - INFO - 输入文本 测试货品
-2019-01-31 15:27:25,484 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS05 点击 添加货品分类 click ADD_ITEM_SORT None
-2019-01-31 15:27:25,684 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ITEM_SORT'
-2019-01-31 15:27:25,686 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="添加货品分类"]'}]
-2019-01-31 15:27:27,282 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text None L-A0001(空调1)
-2019-01-31 15:27:28,868 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS07 点击 确认 按钮 click COMFIRM None
-2019-01-31 15:27:29,044 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'COMFIRM'
-2019-01-31 15:27:29,045 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="确认"]'}]
-2019-01-31 15:27:30,626 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 15:27:30,627 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.989830 
-2019-01-31 15:27:33,483 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 15:27:33,484 - logger.py[line:42] - INFO - 
-2019-01-31 16:26:51,250 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 16:26:51,336 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 16:26:51,338 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 16:26:51,341 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 16:26:51,342 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 16:26:51,484 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 16:26:51,486 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 16:26:51,489 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': 'L-A0001(空调1)', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 16:26:51,490 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 16:26:51,491 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 16:26:51,502 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 16:26:51,503 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 16:26:51,504 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 16:26:51,505 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 16:26:51,506 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 16:26:51,507 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 16:26:51,508 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 16:26:51,509 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 16:26:51,529 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 16:26:59,344 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 16:27:03,147 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 16:27:05,444 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 16:27:07,036 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 16:27:07,037 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text 货品管理##货品资料维护##货品基础资料维护(颜色/尺码) None
-2019-01-31 16:27:07,200 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)'
-2019-01-31 16:27:07,201 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 16:27:07,202 - logger.py[line:42] - INFO - 执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text 货品管理##货品资料维护##货品基础资料维护(颜色/尺码) None 出错
-2019-01-31 16:27:07,203 - logger.py[line:48] - ERROR - list index out of range
+2019-02-21 11:17:53,835 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 11:17:53,836 - logger.py[line:42] - INFO - 执行用例时间: 0:00:30.172726 
+2019-02-21 11:17:56,368 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 11:17:56,369 - logger.py[line:42] - INFO - 
+2019-02-21 11:20:01,419 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 11:20:01,427 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 11:20:01,429 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 11:20:01,433 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 11:20:01,434 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 11:20:01,612 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 11:20:01,616 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 11:20:01,624 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 11:20:01,625 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 11:20:01,626 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 11:20:01,638 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 11:20:01,639 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 11:20:01,641 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:20:01,642 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:20:01,643 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 11:20:01,644 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 11:20:01,644 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 11:20:01,645 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 11:20:01,663 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 11:20:07,027 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 11:20:10,736 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 11:20:12,868 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 11:20:14,459 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 11:20:14,460 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 11:20:20,223 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 11:20:20,406 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 11:20:20,407 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 11:20:22,532 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 11:20:22,689 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 11:20:22,690 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%d"]'}]
+2019-02-21 11:20:33,734 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 11:20:33,735 - logger.py[line:48] - ERROR - Message: 
 Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 78, in func
-    location = self._get_location(location_id)  # get loaction value
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 53, in _get_location
-    location = location_list[0]['XF_LOCATION']
-IndexError: list index out of range
-2019-01-31 16:27:07,205 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 16:27:07,206 - logger.py[line:42] - INFO - 执行用例时间: 0:00:15.673896 
-2019-01-31 16:27:10,676 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 16:27:10,677 - logger.py[line:42] - INFO - 
-2019-01-31 16:50:35,004 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 16:50:35,017 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 16:50:35,018 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 16:50:35,024 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 16:50:35,025 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 16:50:35,464 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 16:50:35,467 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 16:50:35,470 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': 'L-A0001(空调1)', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 16:50:35,471 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 16:50:35,472 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 16:50:35,483 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 16:50:35,484 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 16:50:35,485 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 16:50:35,486 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 16:50:35,487 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 16:50:35,488 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 16:50:35,489 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 16:50:35,490 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 16:50:35,536 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 16:50:42,908 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 16:50:46,619 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 16:50:48,734 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 16:50:50,393 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 16:50:50,394 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text None 货品管理##货品资料维护##货品基础资料维护(颜色/尺码)
-2019-01-31 16:50:56,334 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS02 点击新增按钮 click ADD None
-2019-01-31 16:50:56,470 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD'
-2019-01-31 16:50:56,471 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增"]'}]
-2019-01-31 16:50:58,176 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS03 输入款号 input_text SM_STYLE 123
-2019-01-31 16:50:58,313 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_STYLE'
-2019-01-31 16:50:58,314 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ITEMMAS.XF_STYLE"]'}]
-2019-01-31 16:51:00,462 - logger.py[line:42] - INFO - 输入文本 123
-2019-01-31 16:51:00,463 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS04 输入货品描述 input_text SM_DESCI 测试货品
-2019-01-31 16:51:00,595 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_DESCI'
-2019-01-31 16:51:00,596 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI"]'}]
-2019-01-31 16:51:02,754 - logger.py[line:42] - INFO - 输入文本 测试货品
-2019-01-31 16:51:02,755 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS05 点击 添加货品分类 click ADD_ITEM_SORT None
-2019-01-31 16:51:02,904 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ITEM_SORT'
-2019-01-31 16:51:02,905 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="添加货品分类"]'}]
-2019-01-31 16:51:04,495 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text L-A0001(空调1) None
-2019-01-31 16:51:04,639 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'L-A0001(空调1)'
-2019-01-31 16:51:04,640 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 16:51:04,641 - logger.py[line:42] - INFO - 执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text L-A0001(空调1) None 出错
-2019-01-31 16:51:04,642 - logger.py[line:48] - ERROR - list index out of range
-Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 78, in func
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 84, in func
     location = self.get_location(location_id)  # get loaction value
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 53, in get_location
-    location = location_list[0]['XF_LOCATION']
-IndexError: list index out of range
-2019-01-31 16:51:04,643 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 16:51:04,644 - logger.py[line:42] - INFO - 执行用例时间: 0:00:29.105664 
-2019-01-31 16:51:08,156 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 16:51:08,158 - logger.py[line:42] - INFO - 
-2019-01-31 16:52:36,665 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 16:52:36,669 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 16:52:36,670 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS'}]
-2019-01-31 16:52:36,673 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 16:52:36,674 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 16:52:36,854 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 16:52:36,858 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS' order by xf_tsid
-2019-01-31 16:52:36,860 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '货品管理##货品资料维护##货品基础资料维护(颜色/尺码)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': 'L-A0001(空调1)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 16:52:36,861 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS
-2019-01-31 16:52:36,862 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 16:52:36,870 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 16:52:36,871 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 16:52:36,872 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS']
-2019-01-31 16:52:36,873 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS']
-2019-01-31 16:52:36,874 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 16:52:36,875 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 16:52:36,876 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS>]>
-2019-01-31 16:52:36,877 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 16:52:36,898 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 16:52:43,975 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 16:52:47,687 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 16:52:49,796 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 16:52:51,388 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 16:52:51,389 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_text None 货品管理##货品资料维护##货品基础资料维护(颜色/尺码)
-2019-01-31 16:52:57,237 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS02 点击新增按钮 click ADD None
-2019-01-31 16:52:57,390 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD'
-2019-01-31 16:52:57,392 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增"]'}]
-2019-01-31 16:52:59,005 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS03 输入款号 input_text SM_STYLE 123
-2019-01-31 16:52:59,147 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_STYLE'
-2019-01-31 16:52:59,148 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ITEMMAS.XF_STYLE"]'}]
-2019-01-31 16:53:01,296 - logger.py[line:42] - INFO - 输入文本 123
-2019-01-31 16:53:01,297 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS04 输入货品描述 input_text SM_DESCI 测试货品
-2019-01-31 16:53:01,442 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'SM_DESCI'
-2019-01-31 16:53:01,443 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI"]'}]
-2019-01-31 16:53:03,594 - logger.py[line:42] - INFO - 输入文本 测试货品
-2019-01-31 16:53:03,595 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS05 点击 添加货品分类 click ADD_ITEM_SORT None
-2019-01-31 16:53:03,738 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ITEM_SORT'
-2019-01-31 16:53:03,739 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="添加货品分类"]'}]
-2019-01-31 16:53:05,864 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS06 定位到菜单 L-A0001(空调1) locate_menu_by_text None L-A0001(空调1)
-2019-01-31 16:53:07,434 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS 的 TS07 点击 确认 按钮 click COMFIRM None
-2019-01-31 16:53:07,585 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'COMFIRM'
-2019-01-31 16:53:07,587 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="确认"]'}]
-2019-01-31 16:53:09,184 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 16:53:09,185 - logger.py[line:42] - INFO - 执行用例时间: 0:00:32.284847 
-2019-01-31 16:53:11,811 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 16:53:11,813 - logger.py[line:42] - INFO - 
-2019-01-31 18:02:02,720 - logger.py[line:42] - INFO - ***调试模式***
-2019-01-31 18:02:02,723 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
-2019-01-31 18:02:02,725 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS_02'}]
-2019-01-31 18:02:02,727 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
-2019-01-31 18:02:02,728 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 18:02:02,882 - logger.py[line:42] - INFO - <开始生成基础测试用例>
-2019-01-31 18:02:02,887 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='ITEMMAS_02' order by xf_tsid
-2019-01-31 18:02:02,890 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS01', 'XF_TSDESC': '进入货品基础资料维护（颜色/尺码） 菜单', 'XF_ACTION': 'locate_menu_by_id', 'XF_LOCATIONID': 'ITEM##ITEMMAS##STDIM008', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS03', 'XF_TSDESC': '输入款号', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_STYLE', 'XF_OPVALUES': '123', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS04', 'XF_TSDESC': '输入货品描述', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'SM_DESCI', 'XF_OPVALUES': '测试货品', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 添加货品分类', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ITEM_SORT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS06', 'XF_TSDESC': '定位到菜单 L-A0001(空调1)', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': 'L-A0001(空调1)', 'XF_IFMIX': None}, {'XF_CASEID': 'ITEMMAS_02', 'XF_CASEDESC': '货品基础资料维护（颜色/尺码）', 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 确认 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'COMFIRM', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
-2019-01-31 18:02:02,891 - logger.py[line:42] - INFO - 已生成用例 test_ITEMMAS_02
-2019-01-31 18:02:02,892 - logger.py[line:42] - INFO - <基础测试用例生成结束>
-2019-01-31 18:02:02,905 - logger.py[line:42] - INFO - 没有需要组合的用例
-2019-01-31 18:02:02,907 - logger.py[line:42] - INFO - <开始加载测试用例>
-2019-01-31 18:02:02,908 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_ITEMMAS_02']
-2019-01-31 18:02:02,909 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_ITEMMAS_02']
-2019-01-31 18:02:02,910 - logger.py[line:42] - INFO - <测试用例加载结束>
-2019-01-31 18:02:02,911 - logger.py[line:40] - DEBUG - <开始组合测试套件>
-2019-01-31 18:02:02,913 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_ITEMMAS_02>]>
-2019-01-31 18:02:02,914 - logger.py[line:40] - DEBUG - <测试套件组合结束>
-2019-01-31 18:02:02,955 - logger.py[line:42] - INFO - 【开始执行用例】
-2019-01-31 18:02:10,982 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
-2019-01-31 18:02:15,282 - logger.py[line:42] - INFO - 登录用户 SZ001
-2019-01-31 18:02:17,682 - logger.py[line:42] - INFO - 登录密码 SZ001
-2019-01-31 18:02:19,503 - logger.py[line:42] - INFO - **************************************************START**************************************************
-2019-01-31 18:02:19,504 - logger.py[line:42] - INFO - 正在执行用例 ITEMMAS_02 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_id ITEM##ITEMMAS##STDIM008 None
-2019-01-31 18:02:19,692 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ITEM##ITEMMAS##STDIM008'
-2019-01-31 18:02:19,693 - logger.py[line:40] - DEBUG - DBRESULTS - []
-2019-01-31 18:02:19,694 - logger.py[line:42] - INFO - 执行用例 ITEMMAS_02 的 TS01 进入货品基础资料维护（颜色/尺码） 菜单 locate_menu_by_id ITEM##ITEMMAS##STDIM008 None 出错
-2019-01-31 18:02:19,695 - logger.py[line:48] - ERROR - list index out of range
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 60, in get_location
+    count = BaseKeyword(self.driver).count_elements(location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 11:20:33,737 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 11:20:33,738 - logger.py[line:42] - INFO - 执行用例时间: 0:00:32.074835 
+2019-02-21 11:20:36,758 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 11:20:36,762 - logger.py[line:42] - INFO - 
+2019-02-21 11:22:25,334 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 11:22:25,337 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 11:22:25,338 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 11:22:25,340 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 11:22:25,341 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 11:22:25,515 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 11:22:25,519 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 11:22:25,521 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 11:22:25,522 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 11:22:25,523 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 11:22:25,529 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 11:22:25,530 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 11:22:25,531 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:22:25,533 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:22:25,534 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 11:22:25,535 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 11:22:25,536 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 11:22:25,537 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 11:22:25,554 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 11:22:30,022 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 11:22:33,903 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 11:22:36,029 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 11:22:37,596 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 11:22:37,598 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 11:22:43,721 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 11:22:43,868 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 11:22:43,869 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 11:22:45,473 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 11:22:45,719 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 11:22:45,720 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%d"]'}]
+2019-02-21 11:22:56,731 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 11:22:56,733 - logger.py[line:48] - ERROR - Message: 
 Traceback (most recent call last):
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 78, in func
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 85, in func
     location = self.get_location(location_id)  # get loaction value
-  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 53, in get_location
-    location = location_list[0]['XF_LOCATION']
-IndexError: list index out of range
-2019-01-31 18:02:19,696 - logger.py[line:42] - INFO - ***************************************************END***************************************************
-2019-01-31 18:02:19,697 - logger.py[line:42] - INFO - 执行用例时间: 0:00:16.739957 
-2019-01-31 18:02:23,217 - logger.py[line:42] - INFO - 【结束执行用例】
-2019-01-31 18:02:23,218 - logger.py[line:42] - INFO - 
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 60, in get_location
+    count = BaseKeyword(self.driver).count_elements(location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 11:22:56,735 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 11:22:56,736 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.180784 
+2019-02-21 11:22:59,922 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 11:22:59,923 - logger.py[line:42] - INFO - 
+2019-02-21 11:35:41,435 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 11:35:41,439 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 11:35:41,441 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 11:35:41,443 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 11:35:41,445 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 11:35:41,621 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 11:35:41,624 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 11:35:41,626 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 11:35:41,627 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 11:35:41,628 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 11:35:41,634 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 11:35:41,635 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 11:35:41,636 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:35:41,636 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:35:41,637 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 11:35:41,638 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 11:35:41,640 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 11:35:41,641 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 11:35:41,702 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 11:35:47,253 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 11:35:52,242 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 11:35:54,474 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 11:35:56,045 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 11:35:56,046 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 11:36:01,831 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 11:36:02,069 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 11:36:02,070 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 11:36:03,669 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 11:36:03,860 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 11:36:03,861 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%d"]'}]
+2019-02-21 11:36:03,862 - logger.py[line:42] - INFO - location : //*[@id="XF_COSTCENTER-%d"]
+2019-02-21 11:36:03,863 - logger.py[line:42] - INFO - location_ : //*[@id="XF_COSTCENTER-"]
+2019-02-21 11:36:14,924 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 11:36:14,926 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 87, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 62, in get_location
+    count = BaseKeyword(self.driver).count_elements(location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 11:36:14,929 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 11:36:14,930 - logger.py[line:42] - INFO - 执行用例时间: 0:00:33.226901 
+2019-02-21 11:36:17,560 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 11:36:17,561 - logger.py[line:42] - INFO - 
+2019-02-21 11:40:44,544 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 11:40:44,548 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 11:40:44,552 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 11:40:44,561 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 11:40:44,563 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 11:40:44,707 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 11:40:44,711 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 11:40:44,714 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 11:40:44,716 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 11:40:44,717 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 11:40:44,724 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 11:40:44,727 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 11:40:44,728 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:40:44,730 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 11:40:44,732 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 11:40:44,734 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 11:40:44,740 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 11:40:44,741 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 11:40:44,764 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 11:40:51,899 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 11:40:56,225 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 11:40:58,351 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 11:40:59,932 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 11:40:59,933 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 11:41:05,652 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 11:41:05,793 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 11:41:05,795 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 11:41:07,392 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 11:41:07,568 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 11:41:07,570 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%d"]'}]
+2019-02-21 11:41:18,101 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 11:41:18,102 - logger.py[line:48] - ERROR - replace() argument 2 must be str, not int
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 85, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 61, in get_location
+    location = location.replace("%d",count)
+TypeError: replace() argument 2 must be str, not int
+2019-02-21 11:41:18,104 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 11:41:18,105 - logger.py[line:42] - INFO - 执行用例时间: 0:00:33.327906 
+2019-02-21 11:41:20,754 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 11:41:20,755 - logger.py[line:42] - INFO - 
+2019-02-21 12:00:24,180 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:00:24,185 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:00:24,186 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:00:24,188 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:00:24,189 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:00:24,352 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:00:24,355 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:00:24,358 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:00:24,359 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:00:24,360 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:00:24,366 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:00:24,368 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:00:24,369 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:00:24,370 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:00:24,371 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:00:24,372 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:00:24,373 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:00:24,373 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:00:24,391 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:00:30,055 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:00:33,832 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:00:35,948 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:00:37,526 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:00:37,527 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:00:43,653 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:00:43,802 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:00:43,803 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:00:45,399 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:00:45,555 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:00:45,556 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:00:56,086 - logger.py[line:42] - INFO - //*[@id="XF_COSTCENTER--1"]
+2019-02-21 12:01:07,141 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:01:07,142 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 94, in func
+    self._use_keyword(key_dict["XF_ACTION"], opvalues)
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:01:07,146 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:01:07,147 - logger.py[line:42] - INFO - 执行用例时间: 0:00:42.753446 
+2019-02-21 12:01:10,448 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:01:10,449 - logger.py[line:42] - INFO - 
+2019-02-21 12:04:25,863 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:04:25,865 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:04:25,866 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:04:25,868 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:04:25,869 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:04:26,018 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:04:26,021 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:04:26,023 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:04:26,024 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:04:26,025 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:04:26,033 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:04:26,034 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:04:26,035 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:04:26,035 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:04:26,036 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:04:26,037 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:04:26,038 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:04:26,039 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:04:26,055 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:04:31,288 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:04:35,041 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:04:37,246 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:04:38,835 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:04:38,836 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:04:45,110 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:04:45,259 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:04:45,260 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:04:46,850 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:04:47,072 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:04:47,073 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:04:57,614 - logger.py[line:42] - INFO - //*[@id="XF_COSTCENTER--1"]
+2019-02-21 12:05:08,638 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:05:08,640 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 94, in func
+    self._use_keyword(key_dict["XF_ACTION"], opvalues)
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:05:08,642 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:05:08,643 - logger.py[line:42] - INFO - 执行用例时间: 0:00:42.586435 
+2019-02-21 12:05:11,147 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:05:11,148 - logger.py[line:42] - INFO - 
+2019-02-21 12:07:10,908 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:07:10,911 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:07:10,912 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:07:10,915 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:07:10,917 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:07:11,071 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:07:11,074 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:07:11,075 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:07:11,077 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:07:11,077 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:07:11,088 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:07:11,089 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:07:11,090 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:07:11,091 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:07:11,091 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:07:11,092 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:07:11,093 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:07:11,094 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:07:11,110 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:07:16,804 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:07:20,512 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:07:22,624 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:07:24,215 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:07:24,216 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:07:29,786 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:07:29,939 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:07:29,941 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:07:31,536 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:07:31,680 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:07:31,681 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:07:31,682 - logger.py[line:42] - INFO - location : //*[@id="XF_COSTCENTER-%s"]
+2019-02-21 12:07:31,683 - logger.py[line:42] - INFO - location_ : //*[@id="XF_COSTCENTER-"]
+2019-02-21 12:07:42,216 - logger.py[line:42] - INFO - //*[@id="XF_COSTCENTER--1"]
+2019-02-21 12:07:53,273 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:07:53,274 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 96, in func
+    self._use_keyword(key_dict["XF_ACTION"], opvalues)
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:07:53,276 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:07:53,277 - logger.py[line:42] - INFO - 执行用例时间: 0:00:42.165412 
+2019-02-21 12:07:55,827 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:07:55,828 - logger.py[line:42] - INFO - 
+2019-02-21 12:11:19,823 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:11:19,826 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:11:19,827 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:11:19,829 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:11:19,830 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:11:20,005 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:11:20,009 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:11:20,011 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:11:20,012 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:11:20,013 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:11:20,020 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:11:20,021 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:11:20,022 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:11:20,023 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:11:20,024 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:11:20,025 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:11:20,026 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:11:20,027 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:11:20,044 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:11:24,860 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:11:29,092 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:11:31,207 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:11:32,795 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:11:32,796 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:11:38,442 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:11:38,610 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:11:38,611 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:11:40,217 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:11:40,380 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:11:40,381 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:11:40,382 - logger.py[line:42] - INFO - location : //*[@id="XF_COSTCENTER-%s"]
+2019-02-21 12:11:40,383 - logger.py[line:42] - INFO - location_ : //*[@id="XF_COSTCENTER-"]
+2019-02-21 12:11:50,922 - logger.py[line:42] - INFO - []
+2019-02-21 12:11:50,923 - logger.py[line:42] - INFO - //*[@id="XF_COSTCENTER--1"]
+2019-02-21 12:12:01,939 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:12:01,940 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 99, in func
+    self._use_keyword(key_dict["XF_ACTION"], opvalues)
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:12:01,943 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:12:01,944 - logger.py[line:42] - INFO - 执行用例时间: 0:00:41.897397 
+2019-02-21 12:12:04,431 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:12:04,432 - logger.py[line:42] - INFO - 
+2019-02-21 12:18:12,651 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:18:12,661 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:18:12,662 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:18:12,664 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:18:12,665 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:18:13,324 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:18:13,327 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:18:13,330 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:18:13,331 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:18:13,332 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:18:13,342 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:18:13,343 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:18:13,344 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:18:13,345 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:18:13,346 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:18:13,346 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:18:13,347 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:18:13,348 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:18:13,366 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:18:18,460 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:18:22,148 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:18:24,266 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:18:25,844 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:18:25,846 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:18:32,076 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:18:32,233 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:18:32,235 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:18:33,831 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:18:34,014 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:18:34,015 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:18:34,021 - logger.py[line:42] - INFO - location : //*[@id="XF_COSTCENTER-%s"]
+2019-02-21 12:18:34,022 - logger.py[line:42] - INFO - location_ : //*[@id="XF_COSTCENTER-"]
+2019-02-21 12:18:44,560 - logger.py[line:42] - INFO - []
+2019-02-21 12:18:44,561 - logger.py[line:42] - INFO - //*[@id="XF_COSTCENTER--1"]
+2019-02-21 12:18:55,618 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:18:55,619 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 100, in func
+    self._use_keyword(key_dict["XF_ACTION"], opvalues)
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 64, in input_text
+    element = self.find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 76, in find_element
+    element = self._find_element(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 81, in _find_element
+    EC.visibility_of_element_located((By.XPATH, loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:18:55,706 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:18:55,707 - logger.py[line:42] - INFO - 执行用例时间: 0:00:42.339422 
+2019-02-21 12:18:58,199 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:18:58,200 - logger.py[line:42] - INFO - 
+2019-02-21 12:23:45,995 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 12:23:45,997 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 12:23:45,998 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 12:23:46,001 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 12:23:46,002 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 12:23:46,156 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 12:23:46,159 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 12:23:46,161 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 12:23:46,162 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 12:23:46,163 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 12:23:46,172 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 12:23:46,172 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 12:23:46,173 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:23:46,174 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 12:23:46,175 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 12:23:46,176 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 12:23:46,177 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 12:23:46,178 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 12:23:46,266 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 12:23:51,982 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 12:23:55,715 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 12:23:57,842 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 12:23:59,432 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 12:23:59,433 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 12:24:05,309 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 12:24:05,473 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 12:24:05,476 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 12:24:07,072 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 12:24:07,219 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 12:24:07,220 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 12:24:07,226 - logger.py[line:42] - INFO - location : //*[@id="XF_COSTCENTER-%s"]
+2019-02-21 12:24:07,227 - logger.py[line:42] - INFO - location_ : //*[@id="XF_COSTCENTER-"]
+2019-02-21 12:24:18,259 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 12:24:18,261 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 87, in func
+    count = self._use_keyword("count_elements",location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 48, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 12:24:18,263 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 12:24:18,264 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.994830 
+2019-02-21 12:24:21,280 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 12:24:21,281 - logger.py[line:42] - INFO - 
+2019-02-21 14:42:04,143 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 14:42:04,146 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 14:42:04,148 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 14:42:04,149 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 14:42:04,150 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 14:42:04,328 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 14:42:04,330 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 14:42:04,332 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 14:42:04,333 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 14:42:04,335 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 14:42:04,343 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 14:42:04,344 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 14:42:04,345 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:42:04,346 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:42:04,348 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 14:42:04,349 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 14:42:04,350 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 14:42:04,354 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 14:42:04,375 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 14:42:10,832 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 14:42:14,545 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 14:42:16,668 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 14:42:18,270 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 14:42:18,271 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 14:42:23,953 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 14:42:24,119 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 14:42:24,120 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 14:42:25,715 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 14:42:25,870 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 14:42:25,871 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 14:42:36,015 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 14:42:36,017 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 88, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 64, in get_location
+    count = self._use_keyword("count_elements", location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 47, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 14:42:36,019 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 14:42:36,020 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.641809 
+2019-02-21 14:42:39,567 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 14:42:39,568 - logger.py[line:42] - INFO - 
+2019-02-21 14:44:01,404 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 14:44:01,408 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 14:44:01,409 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 14:44:01,411 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 14:44:01,412 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 14:44:01,586 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 14:44:01,596 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 14:44:01,599 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 14:44:01,600 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 14:44:01,601 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 14:44:01,610 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 14:44:01,611 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 14:44:01,612 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:44:01,613 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:44:01,614 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 14:44:01,614 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 14:44:01,615 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 14:44:01,616 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 14:44:01,635 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 14:44:07,233 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 14:44:10,982 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 14:44:13,173 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 14:44:14,859 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 14:44:14,860 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 14:44:21,178 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 14:44:21,337 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 14:44:21,338 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 14:44:22,934 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 14:44:23,108 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 14:44:23,109 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 14:44:23,110 - logger.py[line:42] - INFO - //*contains(@id,"XF_COSTCENTER-")
+2019-02-21 14:44:33,238 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 14:44:33,239 - logger.py[line:48] - ERROR - Message: 
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 90, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 65, in get_location
+    count = self._use_keyword("count_elements", location_) - 1
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 47, in _use_keyword
+    func(*opvalist)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 193, in count_elements
+    elements = self.find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 86, in find_elements
+    elements = self._find_elements(loc)
+  File "E:\PycharmProjects\AutoTestV66\pages\keywords\keyword.py", line 91, in _find_elements
+    return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_all_elements_located((By.XPATH,loc)))
+  File "E:\PycharmProjects\AutoTestV66\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2019-02-21 14:44:33,241 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 14:44:33,242 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.605808 
+2019-02-21 14:44:36,177 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 14:44:36,178 - logger.py[line:42] - INFO - 
+2019-02-21 14:46:59,456 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 14:46:59,475 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 14:46:59,480 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 14:46:59,487 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 14:46:59,488 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 14:46:59,950 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 14:46:59,953 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 14:46:59,955 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 14:46:59,956 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 14:46:59,957 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 14:46:59,965 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 14:46:59,966 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 14:46:59,967 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:46:59,968 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:46:59,969 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 14:46:59,970 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 14:46:59,971 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 14:46:59,972 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 14:46:59,988 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 14:47:05,287 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 14:47:09,016 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 14:47:11,205 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 14:47:12,861 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 14:47:12,862 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 14:47:18,539 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 14:47:18,699 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 14:47:18,700 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 14:47:20,335 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 14:47:20,494 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 14:47:20,495 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 14:47:20,496 - logger.py[line:42] - INFO - //*[contains(@id,"XF_COSTCENTER-")]
+2019-02-21 14:47:23,244 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 14:47:23,245 - logger.py[line:48] - ERROR - unsupported operand type(s) for -: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 91, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 66, in get_location
+    count = self._use_keyword("count_elements", location_) - 1
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+2019-02-21 14:47:23,246 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 14:47:23,248 - logger.py[line:42] - INFO - 执行用例时间: 0:00:23.258330 
+2019-02-21 14:47:26,112 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 14:47:26,113 - logger.py[line:42] - INFO - 
+2019-02-21 14:57:55,422 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 14:57:55,425 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 14:57:55,426 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 14:57:55,429 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 14:57:55,430 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 14:57:55,594 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 14:57:55,596 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 14:57:55,598 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 14:57:55,599 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 14:57:55,600 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 14:57:55,609 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 14:57:55,610 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 14:57:55,612 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:57:55,612 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 14:57:55,613 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 14:57:55,614 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 14:57:55,615 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 14:57:55,616 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 14:57:55,632 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 14:58:01,299 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 14:58:04,989 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 14:58:07,624 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 14:58:09,186 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 14:58:09,187 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 14:58:15,063 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 14:58:15,207 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 14:58:15,208 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 14:58:16,786 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 14:58:16,942 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 14:58:16,943 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 14:58:16,944 - logger.py[line:42] - INFO - //*[contains(@id,"XF_COSTCENTER-")]
+2019-02-21 14:58:17,462 - logger.py[line:42] - INFO - [<selenium.webdriver.remote.webelement.WebElement (session="fd05525a84aec5065e0ab1c568cff9ff", element="0.8849788814519921-8")>, <selenium.webdriver.remote.webelement.WebElement (session="fd05525a84aec5065e0ab1c568cff9ff", element="0.8849788814519921-9")>, <selenium.webdriver.remote.webelement.WebElement (session="fd05525a84aec5065e0ab1c568cff9ff", element="0.8849788814519921-10")>, <selenium.webdriver.remote.webelement.WebElement (session="fd05525a84aec5065e0ab1c568cff9ff", element="0.8849788814519921-11")>]
+2019-02-21 14:58:20,019 - logger.py[line:42] - INFO - 执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA 出错
+2019-02-21 14:58:20,020 - logger.py[line:48] - ERROR - unsupported operand type(s) for -: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 92, in func
+    location = self.get_location(location_id)  # get loaction value
+  File "E:\PycharmProjects\AutoTestV66\engine\executionengine.py", line 67, in get_location
+    count = self._use_keyword("count_elements", location_) - 1
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+2019-02-21 14:58:20,021 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 14:58:20,022 - logger.py[line:42] - INFO - 执行用例时间: 0:00:24.388395 
+2019-02-21 14:58:22,594 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 14:58:22,595 - logger.py[line:42] - INFO - 
+2019-02-21 15:01:31,017 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 15:01:31,019 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 15:01:31,020 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 15:01:31,022 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 15:01:31,023 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 15:01:31,188 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 15:01:31,193 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 15:01:31,196 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 15:01:31,197 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 15:01:31,198 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 15:01:31,207 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 15:01:31,208 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 15:01:31,209 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:01:31,211 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:01:31,211 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 15:01:31,212 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 15:01:31,213 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 15:01:31,214 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 15:01:31,233 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 15:01:37,312 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 15:01:41,578 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 15:01:43,681 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 15:01:45,243 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 15:01:45,244 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 15:01:50,800 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 15:01:50,960 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 15:01:50,962 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 15:01:53,069 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 15:01:53,213 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 15:01:53,214 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 15:01:53,729 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:01:55,861 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:01:55,862 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS04 输入成本中心名称 input_text STDSB003_DESCI AAA
+2019-02-21 15:01:56,002 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_DESCI'
+2019-02-21 15:01:56,004 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI-%s"]'}]
+2019-02-21 15:01:56,523 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:01:58,671 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:01:58,673 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS05 点击 是否供本层使用 click STDSB003_ISLOCALUSE None
+2019-02-21 15:01:58,836 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_ISLOCALUSE'
+2019-02-21 15:01:58,838 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ISLOCALUSE-%s"]/input'}]
+2019-02-21 15:01:59,351 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:02:00,958 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 15:02:00,959 - logger.py[line:42] - INFO - 执行用例时间: 0:00:29.723700 
+2019-02-21 15:02:02,602 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 15:02:02,603 - logger.py[line:42] - INFO - 
+2019-02-21 15:04:48,277 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 15:04:48,280 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 15:04:48,281 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 15:04:48,283 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 15:04:48,284 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 15:04:48,447 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 15:04:48,452 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 15:04:48,454 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '点击 离开 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'QUIT', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 15:04:48,455 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 15:04:48,456 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 15:04:48,462 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 15:04:48,464 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 15:04:48,465 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:04:48,466 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:04:48,467 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 15:04:48,468 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 15:04:48,469 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 15:04:48,469 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 15:04:48,485 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 15:04:54,680 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 15:04:58,460 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 15:05:00,574 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 15:05:02,148 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 15:05:02,149 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 15:05:08,129 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 15:05:08,323 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 15:05:08,324 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 15:05:09,935 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 15:05:10,088 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 15:05:10,089 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 15:05:10,608 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:05:12,758 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:05:12,759 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS04 输入成本中心名称 input_text STDSB003_DESCI AAA
+2019-02-21 15:05:12,892 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_DESCI'
+2019-02-21 15:05:12,893 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI-%s"]'}]
+2019-02-21 15:05:13,408 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:05:15,525 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:05:15,526 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS05 点击 是否供本层使用 click STDSB003_ISLOCALUSE None
+2019-02-21 15:05:15,693 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_ISLOCALUSE'
+2019-02-21 15:05:15,694 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ISLOCALUSE-%s"]/input'}]
+2019-02-21 15:05:16,219 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:05:17,833 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS06 点击 离开 按钮 click QUIT None
+2019-02-21 15:05:17,978 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'QUIT'
+2019-02-21 15:05:17,979 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="离开"]'}]
+2019-02-21 15:05:19,553 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 15:05:19,554 - logger.py[line:42] - INFO - 执行用例时间: 0:00:31.065777 
+2019-02-21 15:05:21,127 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 15:05:21,128 - logger.py[line:42] - INFO - 
+2019-02-21 15:07:31,388 - logger.py[line:42] - INFO - ***调试模式***
+2019-02-21 15:07:31,426 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_caseid from xf_casedebug where xf_executeuser = 'Sincave' and xf_caseid is not null order by xf_caseid
+2019-02-21 15:07:31,427 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace'}]
+2019-02-21 15:07:31,435 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_mixid from xf_casedebug where xf_executeuser = 'Sincave' and xf_mixid is not null order by xf_mixid
+2019-02-21 15:07:31,436 - logger.py[line:40] - DEBUG - DBRESULTS - []
+2019-02-21 15:07:32,016 - logger.py[line:42] - INFO - <开始生成基础测试用例>
+2019-02-21 15:07:32,019 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select * from xf_testcase where xf_caseid='CostCenter_maintenace' order by xf_tsid
+2019-02-21 15:07:32,021 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS01', 'XF_TSDESC': '进入成本中心', 'XF_ACTION': 'locate_menu_by_text', 'XF_LOCATIONID': None, 'XF_OPVALUES': '系统设定##后台系统设定##成本中心维护', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS02', 'XF_TSDESC': '点击新增行', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'ADD_ROW', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS03', 'XF_TSDESC': '输入成本中心编码', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_COSTCENTER', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS04', 'XF_TSDESC': '输入成本中心名称', 'XF_ACTION': 'input_text', 'XF_LOCATIONID': 'STDSB003_DESCI', 'XF_OPVALUES': 'AAA', 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS05', 'XF_TSDESC': '点击 是否供本层使用', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'STDSB003_ISLOCALUSE', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS06', 'XF_TSDESC': '点击 离开 按钮', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'QUIT', 'XF_OPVALUES': None, 'XF_IFMIX': None}, {'XF_CASEID': 'CostCenter_maintenace', 'XF_CASEDESC': None, 'XF_TSID': 'TS07', 'XF_TSDESC': '点击 弹窗按钮： 是', 'XF_ACTION': 'click', 'XF_LOCATIONID': 'YES', 'XF_OPVALUES': None, 'XF_IFMIX': None}]
+2019-02-21 15:07:32,022 - logger.py[line:42] - INFO - 已生成用例 test_CostCenter_maintenace
+2019-02-21 15:07:32,023 - logger.py[line:42] - INFO - <基础测试用例生成结束>
+2019-02-21 15:07:32,032 - logger.py[line:42] - INFO - 没有需要组合的用例
+2019-02-21 15:07:32,034 - logger.py[line:42] - INFO - <开始加载测试用例>
+2019-02-21 15:07:32,035 - logger.py[line:42] - INFO - 已加载基础测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:07:32,036 - logger.py[line:42] - INFO - 已加载全部测试用例 ['test_CostCenter_maintenace']
+2019-02-21 15:07:32,037 - logger.py[line:42] - INFO - <测试用例加载结束>
+2019-02-21 15:07:32,038 - logger.py[line:40] - DEBUG - <开始组合测试套件>
+2019-02-21 15:07:32,038 - logger.py[line:40] - DEBUG - 已组合全部测试套件 <unittest.suite.TestSuite tests=[<engine.executionengine.DemoTestCase testMethod=test_CostCenter_maintenace>]>
+2019-02-21 15:07:32,039 - logger.py[line:40] - DEBUG - <测试套件组合结束>
+2019-02-21 15:07:32,055 - logger.py[line:42] - INFO - 【开始执行用例】
+2019-02-21 15:07:37,550 - logger.py[line:42] - INFO - 打开网址 http://172.31.1.126/OK66/
+2019-02-21 15:07:41,266 - logger.py[line:42] - INFO - 登录用户 SZ001
+2019-02-21 15:07:43,890 - logger.py[line:42] - INFO - 登录密码 SZ001
+2019-02-21 15:07:45,472 - logger.py[line:42] - INFO - **************************************************START**************************************************
+2019-02-21 15:07:45,473 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS01 进入成本中心 locate_menu_by_text None 系统设定##后台系统设定##成本中心维护
+2019-02-21 15:07:51,050 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS02 点击新增行 click ADD_ROW None
+2019-02-21 15:07:51,191 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'ADD_ROW'
+2019-02-21 15:07:51,192 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="新增行"]'}]
+2019-02-21 15:07:52,792 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS03 输入成本中心编码 input_text STDSB003_COSTCENTER AAA
+2019-02-21 15:07:52,951 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_COSTCENTER'
+2019-02-21 15:07:52,952 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_COSTCENTER-%s"]'}]
+2019-02-21 15:07:53,474 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:07:55,628 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:07:55,629 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS04 输入成本中心名称 input_text STDSB003_DESCI AAA
+2019-02-21 15:07:55,771 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_DESCI'
+2019-02-21 15:07:55,772 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_DESCI-%s"]'}]
+2019-02-21 15:07:56,287 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:07:58,412 - logger.py[line:42] - INFO - 输入文本 AAA
+2019-02-21 15:07:58,414 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS05 点击 是否供本层使用 click STDSB003_ISLOCALUSE None
+2019-02-21 15:07:58,603 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'STDSB003_ISLOCALUSE'
+2019-02-21 15:07:58,604 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//*[@id="XF_ISLOCALUSE-%s"]/input'}]
+2019-02-21 15:07:59,123 - logger.py[line:42] - INFO - count : 3
+2019-02-21 15:08:00,725 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS06 点击 离开 按钮 click QUIT None
+2019-02-21 15:08:00,886 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'QUIT'
+2019-02-21 15:08:00,888 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="离开"]'}]
+2019-02-21 15:08:02,495 - logger.py[line:42] - INFO - 正在执行用例 CostCenter_maintenace 的 TS07 点击 弹窗按钮： 是 click YES None
+2019-02-21 15:08:02,713 - logger.py[line:40] - DEBUG - DBSQLSTATEMENT - select xf_location from xf_pagelocation where xf_locationid = 'YES'
+2019-02-21 15:08:02,714 - logger.py[line:40] - DEBUG - DBRESULTS - [{'XF_LOCATION': '//span[text()="是"]'}]
+2019-02-21 15:08:04,301 - logger.py[line:42] - INFO - ***************************************************END***************************************************
+2019-02-21 15:08:04,302 - logger.py[line:42] - INFO - 执行用例时间: 0:00:32.244844 
+2019-02-21 15:08:06,131 - logger.py[line:42] - INFO - 【结束执行用例】
+2019-02-21 15:08:06,136 - logger.py[line:42] - INFO - 

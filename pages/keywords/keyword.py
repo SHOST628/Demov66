@@ -77,7 +77,9 @@ class BaseKeyword(object):
         return element
 
     def _find_element(self,loc,timeout=10,poll_frequency=0.5):
-        return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,loc)))
+        element = WebDriverWait(self._driver, timeout, poll_frequency).until(
+            EC.visibility_of_element_located((By.XPATH, loc)))
+        return element
         # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
 
     def find_elements(self,loc):
@@ -163,8 +165,7 @@ class BaseKeyword(object):
             self._driver.get_screenshot_as_file(image_path)
             logger.info("图片 %s 已保存到路径 %s" % (image_name,image_path))
         except Exception as e:
-            logger.error("图片保存失败")
-            logger.exception(e)
+            logger.exception("图片保存失败")
             raise e
 
     #get text in element
@@ -173,19 +174,25 @@ class BaseKeyword(object):
         return text
 
     # send file
-    def upload_file(self,loc,file_path):
+    def upload_file(self, loc, file_name):
         """
         upload file
         :param loc: the path of the input tag
-        :param file_path: file path
+        :param file_name: file path
         :return: None
         """
         # element = self.find_element("//input[@class='gwt-FileUpload']")
         element = self._driver.find_element(By.XPATH,loc)
+        upload_path = os.path.join(os.path.dirname(os.getcwd()),"upload",file_name)
         try:
-            element.send_keys(file_path)
+            element.send_keys(upload_path)
         except Exception:
-            logger.error("文件路径名:%s 不正确"% file_path)
+            logger.error("找不到文件:%s " % file_name)
+
+    def count_elements(self,loc):
+        elements = self.find_elements(loc)
+        count = len(elements)
+        return count
 
     def close(self):
         self._driver.close()

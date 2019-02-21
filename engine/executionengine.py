@@ -46,13 +46,27 @@ class DemoTestCase(unittest.TestCase):
             opvalist = opvalues.split('##')
             func(*opvalist)
 
-    def get_location(self, location_id):
+    def get_location(self,location_id):
         oracle = Oracle(readconfig.db_url)
         sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
         location_list = oracle.dict_fetchall(sql)
+        if not location_list:
+            raise Exception("错误location_id ：%s，无法找到对应的location" % location_id)
         location = location_list[0]['XF_LOCATION']
-        if location == None:
-            raise Exception("location_id 错误，无法找到对应的location")
+        # complement the location
+        # solve problem: prevent location id from maintain many time
+        # for example: add row case: location id change by rule
+        if "%s" in location:
+            location_ = location
+            location_ = location.replace("%s", "")
+            match_value = (re.findall("\[(.+?)\]",location_))[0]    # match a value in []
+            match_value = match_value.replace("=",",")
+            # change location format to "[contains(@id,XXX)]"  from [@id="XXX"]
+            rep_value = "[contains(" + match_value + ")]"
+            location_ = re.sub("\[(.+?)\]",rep_value,location_,count=1)
+            count = len(self.driver.find_elements_by_xpath(location_)) - 1
+            # count = self._use_keyword("count_elements", location_) - 1
+            location = location.replace("%s", str(count))
         return location
 
     @staticmethod
