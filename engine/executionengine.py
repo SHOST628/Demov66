@@ -53,6 +53,8 @@ class DemoTestCase(unittest.TestCase):
         if not location_list:
             raise Exception("错误location_id ：%s，无法找到对应的location" % location_id)
         location = location_list[0]['XF_LOCATION']
+        # clear string blank
+        location = location.strip()
         # complement the location
         # solve problem: prevent location id from maintain many time
         # for example: add row case: location id change by rule
