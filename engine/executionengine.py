@@ -110,6 +110,13 @@ class DemoTestCase(unittest.TestCase):
                     raise e
         return func
 
+
+# set description for testcase
+def _set_method_info(method_name, desc, cls):
+    func = getattr(cls,method_name)
+    func.__doc__ = desc
+
+
 def _generate_testcases(testcaseid_list):
     if testcaseid_list == []:
         logger.info("找不到基础用例信息")
@@ -127,13 +134,16 @@ def _generate_testcases(testcaseid_list):
                 logger.info("测试用例 %s 不能单独执行" % caseid)
             else:
                 func = DemoTestCase.group(loop_kwlist)
-                setattr(DemoTestCase, 'test_' + caseid, func)
-                logger.info("已生成用例 test_%s" % caseid)
+                method_name = "test_" + caseid
+                setattr(DemoTestCase, method_name, func)
+                logger.info("已生成用例 %s" % method_name)
+                _set_method_info(method_name,loop_kwlist[0]["XF_CASEDESC"],DemoTestCase)
         else:
             logger.info("找不到该用例id %s，无法生成用例 test_%s" % (caseid,caseid))
     logger.info("<基础测试用例生成结束>")
 
     oracle.close()
+
 
 # bug: it can  still generate mix testcase if has a true caseid although contains false caseid
 def _generate_mix_testcase(mixcase_list):
@@ -155,8 +165,10 @@ def _generate_mix_testcase(mixcase_list):
         loop_kwlist = oracle.dict_fetchall(sql)
         if loop_kwlist:
             func = DemoTestCase.group(loop_kwlist)
-            setattr(DemoTestCase, 'test_' + mixid, func)
-            logger.info("已生成组合用例 test_%s ,包含基础用例id %s" % (mixid,caseid_list))
+            method_name = "test_" + mixid
+            setattr(DemoTestCase, method_name, func)
+            logger.info("已生成组合用例 %s ,包含基础用例id %s" % (method_name,caseid_list))
+            _set_method_info(method_name,sl["XF_MIXCASEDESC"],DemoTestCase)
         else:
             logger.info("基础用例id %s 错误,无法生成组合用例 test_%s " % (caseid_list,mixid))
 
@@ -164,7 +176,8 @@ def _generate_mix_testcase(mixcase_list):
     oracle.close()
 
 # todo notice
-# another method to generate testsuite is that finds test method name containing character test by dir method,but order by method name
+# another method to generate testsuite is that finds test method name containing character test
+# by dir method,but order by method name
 def _generate_testsuite(testcaseid_list,mixid_list):
     if testcaseid_list == [] and mixid_list == []:
         return None
@@ -193,10 +206,13 @@ def _generate_testsuite(testcaseid_list,mixid_list):
     logger.debug("<测试套件组合结束>")
     return suite
 
+
 oracle = Oracle(readconfig.db_url)
 Flag = readconfig.debug_mode
 
-# deciding execute all testcases or debug some testcases controling by the config mode in ini,if mode == 1, debug case,else execute all testcases
+
+# deciding execute all testcases or debug some testcases controling by the config mode in ini,if mode == 1,
+# debug case,else execute all testcases
 # the config executeuser deciding whose testcase to execute
 if Flag:
     logger.info("***调试模式***")
