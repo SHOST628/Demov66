@@ -111,8 +111,14 @@ class DemoTestCase(unittest.TestCase):
         return func
 
 
-# set description for testcase
 def _set_method_info(method_name, desc, cls):
+    """
+    set description for testcase
+    :param method_name:
+    :param desc: testcase description
+    :param cls: class name
+    :return:
+    """
     func = getattr(cls,method_name)
     func.__doc__ = desc
 
