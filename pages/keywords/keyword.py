@@ -21,8 +21,12 @@ class BaseKeyword(object):
         logger.info("打开网址 %s"% url)
 
     def _open(self,url):
-        self._driver.get(url)
-        self._driver.implicitly_wait(10)
+        self._driver.set_page_load_timeout(10)
+        try:
+            self._driver.get(url)
+        except TimeoutException:
+            logger.info("页面加载超时")
+            raise Exception("页面加载超时")
 
     def click(self,loc,index=None):
         """
@@ -80,7 +84,6 @@ class BaseKeyword(object):
         element = WebDriverWait(self._driver, timeout, poll_frequency).until(
             EC.visibility_of_element_located((By.XPATH, loc)))
         return element
-        # return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.presence_of_element_located((By.XPATH,loc)))
 
     def find_elements(self,loc):
         elements = self._find_elements(loc)

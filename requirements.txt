@@ -1,4 +1,8 @@
+certifi==2019.3.9
+chardet==3.0.4
 cx-Oracle==7.0.0
 futures==3.1.1
+idna==2.8
+requests==2.21.0
 selenium==3.141.0
 tomorrow==0.2.4

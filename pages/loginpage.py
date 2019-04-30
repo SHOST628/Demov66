@@ -1,10 +1,9 @@
-from selenium.webdriver.common.by import By
 from config import readconfig
 from pages.keywords.keyword import BaseKeyword
-import unittest
 from common.logger import logger
 from selenium.webdriver.common.keys import Keys
 from common.oracle import Oracle
+import requests
 
 class LoginPage(BaseKeyword):
     _username_locationid = "//*[@id='xf_staffcode']/input"
@@ -39,7 +38,7 @@ class LoginPage(BaseKeyword):
         sql = "select xf_location from xf_pagelocation where xf_locationid = '%s'" % location_id
         location_list = oracle.dict_fetchall(sql)
         location = location_list[0]['XF_LOCATION']
-        if location == None:
+        if location is None:
             raise Exception("location_id 错误，无法找到对应的location")
         return location
 
@@ -60,30 +59,16 @@ class LoginPage(BaseKeyword):
         self.click(self._submit_locationid)
 
     def login(self,user,psw):
-        try:
-            self.open_backend()
-        except:
-            logger.error("无法访问该路径 %s"% readconfig.url)
+        self.open_backend()
         try:
             self.input_user(user)
             logger.info("登录用户 %s"% user)
             self.input_password(psw)
             logger.info("登录密码 %s"% psw)
-            # self.choose_language("简体中文 ( zh_CN )")
             self.click_submit()
         except Exception as e:
             logger.exception(e)
             raise e
-
-    def _get_title(self):
-        return self.find_element(self._title_loc).text
-
-    def if_login_success(self):
-        caption = "科传股份espos系统"
-        # caption = self._get_title()
-        unittest.TestCase().assertIn("test",caption,"login fail")
-        # self.assertIn("科传股份",caption,"login fail")
-
 
 
 
