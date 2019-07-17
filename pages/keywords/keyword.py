@@ -62,13 +62,17 @@ class BaseKeyword(object):
             index = int(index)
             element = elements[index]
             element.clear()
-            element.send_keys(text)
+            # element.send_keys(text)
+            for i in range(len(text)):
+                element.send_keys(text[i])
             element.send_keys(Keys.ENTER)
         else:
             element = self.find_element(loc)
             element.clear()
             element.send_keys(text)
-        logger.info("输入文本 %s" % text)
+        # comsume = time.time() - self.start
+        # logger.info(comsume)
+        # logger.info("输入文本 %s" % text)
 
     # def find_element_by_text(self,contain_text):
     #     self._find_element_by_text(contain_text)
@@ -77,6 +81,7 @@ class BaseKeyword(object):
     #     return WebDriverWait(self._driver,timeout,poll_frequency).until(EC.visibility_of_element_located((By.XPATH,".//span[contains(text(),'%s')]"%contain_text)))
 
     def find_element(self,loc):
+        # self.start = time.time()
         element = self._find_element(loc)
         return element
 
