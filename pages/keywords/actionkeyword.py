@@ -71,3 +71,16 @@ class Action(BaseKeyword):
 
     def testcase_doc(self,desci):
         logger.info("用例描述 ：%s" % desci)
+
+    @staticmethod
+    def set_case_info(method_name, desc, cls):
+        """
+        set description for testcase
+        :param method_name:
+        :param desc: testcase description
+        :param cls: class name
+        :return:
+        """
+        func = getattr(cls, method_name)
+        func.__doc__ = desc
+

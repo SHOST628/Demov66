@@ -1,21 +1,21 @@
 import os
 import sys
+import time
 root_path = os.path.dirname(os.getcwd())
 sys.path.append(root_path)
 from common.HTMLTestRunner import HTMLTestRunner
-from engine.executionengine import testsuite
-import time
 from common.file import mkdir
 from common.logger import logger
 from config import readconfig
 from common.mail import Mail
+from engine.gentestcase import generate_testcases
+from engine.gentestcase import generate_mix_testcase
+from engine.gentestcase import generate_testsuite
+from engine.caselist import testcaseid_list
+from engine.caselist import mixcase_list
+from engine.caselist import mixid_list
 
-# from tomorrow import threads
-# import threading
-# _lock = threading.RLock()
-# _cond = threading.Condition(lock=_lock)
 
-# @threads(2)
 def run(testsuite):
     report_title = "测试报告"
     curtime = time.strftime("%Y%m%d_%H%M%S", time.localtime())
@@ -32,20 +32,13 @@ def run(testsuite):
         runner.run(testsuite)
     return report_path
 
+
 if __name__ == "__main__":
+    generate_testcases(testcaseid_list)
+    generate_mix_testcase(mixcase_list)
+    testsuite = generate_testsuite(testcaseid_list, mixid_list)
     if testsuite:
         logger.info("【开始执行用例】")
-        # report_title = "测试报告"
-        # curtime = time.strftime("%Y%m%d_%H%M%S",time.localtime())
-        # report_folder = '../report/htmlreport'
-        # mkdir(report_folder)
-        # report_path = '../report/htmlreport/%s_Report.html'%(curtime)
-        # with open(report_path,'wb') as report:
-        #     runner = HTMLTestRunner(stream=report,title=report_title,description="")
-        #     runner.run(testsuite)
-        # for case in testsuite:
-        #     run(case)
-
         report_path = run(testsuite)
         logger.info("【结束执行用例】")
         logger.info("")
